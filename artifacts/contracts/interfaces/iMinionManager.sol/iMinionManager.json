@@ -1,0 +1,155 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "iMinionManager",
+  "sourceName": "contracts/interfaces/iMinionManager.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "groupId_",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "minionList_",
+          "type": "address[]"
+        }
+      ],
+      "name": "addMinionGroup",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "worker_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isWorker_",
+          "type": "bool"
+        }
+      ],
+      "name": "assignWorker",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "groupId_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getMinionGroup",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        }
+      ],
+      "name": "isMinion",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isMinionManager",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        }
+      ],
+      "name": "isWorker",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        }
+      ],
+      "name": "isWorkerOrMinion",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "groupId_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "removeMinionGroup",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

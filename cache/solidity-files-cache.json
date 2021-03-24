@@ -4357,6 +4357,3028 @@
       "artifacts": [
         "SafeCast"
       ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/Admin.sol": {
+      "lastModificationDate": 1616103445100,
+      "contentHash": "8074551932bfb077dfe875b5bd2b4317",
+      "sourceName": "contracts/Admin.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/contracts/access/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Admin"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "80fba54514bd6969409886d7f3d9ec78",
+      "sourceName": "contracts/openzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/EnumerableSet.sol",
+        "../utils/Address.sol",
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableSet.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "7d5806dec94de00ddcfb1e9fdd6c9545",
+      "sourceName": "contracts/openzeppelin/contracts/utils/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "72d77402f6854b7ccf9af282e805f292",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/GSN/Context.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "2adbd82f6d055a4751566d4671512b03",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/Context.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/NFTbase.sol": {
+      "lastModificationDate": 1616547791710,
+      "contentHash": "4febab1b0fbeb7fe86f1e4aa85de5881",
+      "sourceName": "contracts/NFTbase.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+        "./openzeppelin/contracts/utils/Strings.sol",
+        "./Admin.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "NFTbase"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1616546735310,
+      "contentHash": "cfb888ed09f8856535fc60a18e227c86",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol",
+        "./IERC1155MetadataURI.sol",
+        "./IERC1155Receiver.sol",
+        "../../GSN/Context.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "32edba478e719cc27c3ec096284a44d6",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "cb9dc62067a205eeab4f390c72c7fe14",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "9a313e25e2a837a50f7ae87017539457",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155MetadataURI"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "27af002e8fc1118d099c99fc8852bb73",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC1155Receiver"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "1fdb418b30c8564d01d922c285fa6ee6",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "4d29a22b28b7ec0e89c3cdf1c5e72b83",
+      "sourceName": "contracts/openzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC165.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "0d62a8380952235f135dae91590f90a3",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "04e0b44d842daa01caadc9cd264855fd",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./IERC721.sol",
+        "./IERC721Metadata.sol",
+        "./IERC721Enumerable.sol",
+        "./IERC721Receiver.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol",
+        "../../utils/EnumerableSet.sol",
+        "../../utils/EnumerableMap.sol",
+        "../../utils/Strings.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "b7983b35319221315a13595768746bdf",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol": {
+      "lastModificationDate": 1616103445110,
+      "contentHash": "370e7a48f316401b5063bcb604843e1b",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "eaebc3874248c26f6ea0b13b9a140a94",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Enumerable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "fad0b3f4424bdbb4b35467b29ea8d334",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableMap.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "8f02d41c25552d7894bdd98db412b9b0",
+      "sourceName": "contracts/openzeppelin/contracts/utils/EnumerableMap.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "EnumerableMap"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "46f79ddd76e77a7c5bf841b830d0ed1e",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC721.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC721Pausable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/Pausable.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "8e1426287776ef63005695dfc289ec56",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "42c0638e45b2c33154488610fe3091fe",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC20.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Pausable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "1d93743f6ca9d2ecf9b3c26718faf610",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "1d275c09f45d34743142f399a40258a1",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../math/SafeMath.sol",
+        "../../utils/Arrays.sol",
+        "../../utils/Counters.sol",
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Snapshot"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/Arrays.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "1dbebf76b7e090e7b226ed3fcc29058b",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Arrays.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../math/Math.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Arrays"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "304a56eb1322144704fb39f8c7e6d722",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/math/Math.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "e5c844515b04deabacef7eb872abc384",
+      "sourceName": "contracts/openzeppelin/contracts/math/Math.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/ERC777.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "908206b190e60731e24ef3e0a5c6f6a2",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/ERC777.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./IERC777.sol",
+        "./IERC777Recipient.sol",
+        "./IERC777Sender.sol",
+        "../../token/ERC20/IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol",
+        "../../introspection/IERC1820Registry.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC777"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "5833aafefffbdbdb5f5ee567a3f51b86",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC777"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "c611b2349e7afbb03e4fd314878861e0",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC777Recipient"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "c59a76b8a23eaef6f259de54f672d59e",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC777Sender"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "820888c202bc007f6112423ee95b9cf0",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC1820Registry"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "686980f2a53d793b815368f676364b8e",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Proxy.sol",
+        "../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "UpgradeableProxy"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/proxy/Proxy.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "a6f1021015ca14abd4852d6a1e22861c",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/Proxy.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "c6d0338de5744b70a7c6cdcda5310a99",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./UpgradeableProxy.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "TransparentUpgradeableProxy"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "1fb4daec0de5a54ffe01e92fc9cc5aa4",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../access/Ownable.sol",
+        "./TransparentUpgradeableProxy.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ProxyAdmin"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "38c56382c57a9e9dab92cee051155870",
+      "sourceName": "contracts/openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/Escrow.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "ff1d5619edddf81b163071835903272d",
+      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/Escrow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../math/SafeMath.sol",
+        "../../access/Ownable.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Escrow"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/payment/PullPayment.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "629b6b6c6ce2547851a7a650e1336380",
+      "sourceName": "contracts/openzeppelin/contracts/payment/PullPayment.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./escrow/Escrow.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "PullPayment"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "aa3e8c91094948828e236ec0a5603e58",
+      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Escrow.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ConditionalEscrow"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "3a60b76e68f4a9ddd7486fc020081120",
+      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ConditionalEscrow.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "RefundEscrow"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "c8e2094331111d20cf525223560d67f1",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./GSNRecipient.sol",
+        "../math/SafeMath.sol",
+        "../access/Ownable.sol",
+        "../token/ERC20/SafeERC20.sol",
+        "../token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "GSNRecipientERC20Fee",
+        "__unstable__ERC20Owned"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipient.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "b1c354497eceaa86f2f253502d5693b9",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IRelayRecipient.sol",
+        "./IRelayHub.sol",
+        "./Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "GSNRecipient"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "33e22842646d746e5c4124c2fdc051aa",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "0bf08baf48262eb41bc206529963621d",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IRelayRecipient"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayHub.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "3d76829bda93b091eafa44820d8a7596",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayHub.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IRelayHub"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "8c436bb9f5a3643ed1f64cf370c277f0",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "TokenTimelock"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "cfa3c366a1a8c8b8411df236b763cc20",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./GSNRecipient.sol",
+        "../cryptography/ECDSA.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "GSNRecipientSignature"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/cryptography/ECDSA.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "06d35974124c53de900f77f0b35bb077",
+      "sourceName": "contracts/openzeppelin/contracts/cryptography/ECDSA.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ECDSA"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol": {
+      "lastModificationDate": 1616103445110,
+      "contentHash": "36eba6b896e5b04a5a71f02ce01087fe",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./ERC721.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC721Burnable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "88fa53d283b53c53e143c9fe1c191a18",
+      "sourceName": "contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../access/AccessControl.sol",
+        "../GSN/Context.sol",
+        "../utils/Counters.sol",
+        "../token/ERC721/ERC721.sol",
+        "../token/ERC721/ERC721Burnable.sol",
+        "../token/ERC721/ERC721Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC721PresetMinterPauserAutoId"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "79adb927bc2f4af9231ff1951ee7a707",
+      "sourceName": "contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../access/AccessControl.sol",
+        "../GSN/Context.sol",
+        "../token/ERC20/ERC20.sol",
+        "../token/ERC20/ERC20Burnable.sol",
+        "../token/ERC20/ERC20Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20PresetMinterPauser"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "f4a80522fa4ffe888e0cfbd5ba56de6b",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Burnable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "6e1f7d4550336d2e2fbf4f11ce18b033",
+      "sourceName": "contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../access/AccessControl.sol",
+        "../GSN/Context.sol",
+        "../token/ERC1155/ERC1155.sol",
+        "../token/ERC1155/ERC1155Burnable.sol",
+        "../token/ERC1155/ERC1155Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155PresetMinterPauser"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "e9e23a67a9d60cd0e6d133323b704b8d",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC1155.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155Burnable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "90de6a370710a61994975feed325e093",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC1155.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155Pausable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "17e413fe28eee62a8d6e686fa9aec405",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155Receiver.sol",
+        "../../introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155Receiver"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "ca5387e1c39109d459f2ff8f22deafd4",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC1155Receiver.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155Holder"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/access/TimelockController.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "d1ad44453ff9ce36dfcfa4f5dd243d19",
+      "sourceName": "contracts/openzeppelin/contracts/access/TimelockController.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./../math/SafeMath.sol",
+        "./AccessControl.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.9 <0.8.0"
+      ],
+      "artifacts": [
+        "TimelockController"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/payment/PaymentSplitter.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "d7a2cefa8bcd057cbd1266070ca314ed",
+      "sourceName": "contracts/openzeppelin/contracts/payment/PaymentSplitter.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol",
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "PaymentSplitter"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/bondingSale.sol": {
+      "lastModificationDate": 1616548176320,
+      "contentHash": "139ea70197a387024bf24fa1f0723099",
+      "sourceName": "contracts/bondingSale.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/iGAME_ERC20.sol",
+        "./openzeppelin/contracts/math/SafeMath.sol",
+        "./interfaces/iGAME_Master.sol",
+        "./NFTbase.sol"
+      ],
+      "versionPragmas": [],
+      "artifacts": [
+        "bondingSale"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol": {
+      "lastModificationDate": 1616440324420,
+      "contentHash": "d0877b3edae7c6286bfc8c9332fe2fcc",
+      "sourceName": "contracts/interfaces/iGAME_ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_ERC20"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iGAME_Master.sol": {
+      "lastModificationDate": 1616440324450,
+      "contentHash": "9f3a802d91cb8f88e33ffec54bc7f789",
+      "sourceName": "contracts/interfaces/iGAME_Master.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_Master"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iLocalContract.sol": {
+      "lastModificationDate": 1616440324460,
+      "contentHash": "966bb923e1bcc9938d80ab527c8cb7e1",
+      "sourceName": "contracts/interfaces/iLocalContract.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./iGAME_Master.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iLocalContract"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "4cef998c21c9cfceba627ea47b5a5b28",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Capped"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "683d46b8e6a400847a831fc9623233cf",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721Receiver.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC721Holder"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iChildToken.sol": {
+      "lastModificationDate": 1616440324440,
+      "contentHash": "ca876f8df1e6a48b2b8d7ac4442eec56",
+      "sourceName": "contracts/interfaces/iChildToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iChildToken"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iERC20.sol": {
+      "lastModificationDate": 1616440324480,
+      "contentHash": "3958a5e4aa8d8e2246b4e3aebb850caa",
+      "sourceName": "contracts/interfaces/iERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC20"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iERC721.sol": {
+      "lastModificationDate": 1616440324470,
+      "contentHash": "3a0435a81d84eb5202abe2bdb8803a8c",
+      "sourceName": "contracts/interfaces/iERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC721"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iERC721Receiver.sol": {
+      "lastModificationDate": 1616440324430,
+      "contentHash": "7618664094f91961d4014dca9ed57503",
+      "sourceName": "contracts/interfaces/iERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC721Receiver"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iGAME_ERC721.sol": {
+      "lastModificationDate": 1616440324490,
+      "contentHash": "844d13726bfbf3c52a8b2b38b1d99c01",
+      "sourceName": "contracts/interfaces/iGAME_ERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_ERC721"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iGAME_Game.sol": {
+      "lastModificationDate": 1616440324490,
+      "contentHash": "4882545a82908e60fe00adf1f7afa478",
+      "sourceName": "contracts/interfaces/iGAME_Game.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_Game"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/interfaces/iMinionManager.sol": {
+      "lastModificationDate": 1616440324500,
+      "contentHash": "84dd70531e775d98b502f3aa8f837260",
+      "sourceName": "contracts/interfaces/iMinionManager.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iMinionManager"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/cryptography/MerkleProof.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "44bd823687d58263d3b1da555235f93e",
+      "sourceName": "contracts/openzeppelin/contracts/cryptography/MerkleProof.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "MerkleProof"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165Checker.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "33e1e632b2a4fc45f845e42a99bc56a4",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/ERC165Checker.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC165Checker"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "a44e936347d0c6d6aeb7b0acf404d175",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1820Implementer.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1820Implementer"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "663251cfa9462cad6003a81bc876c938",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC1820Implementer"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/math/SignedSafeMath.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "159169e078460f380436878421b73431",
+      "sourceName": "contracts/openzeppelin/contracts/math/SignedSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SignedSafeMath"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/proxy/Initializable.sol": {
+      "lastModificationDate": 1616103445140,
+      "contentHash": "99bd69d93b6e25a9cdf9c04550e1780f",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/Initializable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.24 <0.8.0"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/Create2.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "79d4a7e7426effc35937c12ad475b2dc",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Create2.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Create2"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "1c60f58cee45c61469e1aea31e4dd879",
+      "sourceName": "contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/openzeppelin/contracts/utils/SafeCast.sol": {
+      "lastModificationDate": 1616103445120,
+      "contentHash": "c227dcf457382aabf2d78218f6457799",
+      "sourceName": "contracts/openzeppelin/contracts/utils/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
     }
   }
 }

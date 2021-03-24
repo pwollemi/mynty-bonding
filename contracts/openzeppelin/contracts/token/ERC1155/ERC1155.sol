@@ -24,7 +24,7 @@ contract ERC1155 is Context, ERC165, IERC1155 {
 
     // Mapping from token ID to account balances
     mapping (uint256 => mapping(address => uint256)) private _balances;
-
+    mapping(uint256 =>bool)  private _minted;
     // Mapping from account to operator approvals
     mapping (address => mapping(address => bool)) private _operatorApprovals;
 
@@ -84,7 +84,9 @@ contract ERC1155 is Context, ERC165, IERC1155 {
         require(account != address(0), "ERC1155: balance query for the zero address");
         return _balances[id][account];
     }
-
+    function hasMinted(uint id) public view returns(bool){
+        return _minted[id];
+    }
     /**
      * @dev See {IERC1155-balanceOfBatch}.
      *
@@ -241,7 +243,9 @@ contract ERC1155 is Context, ERC165, IERC1155 {
      */
     function _mint(address account, uint256 id, uint256 amount, bytes memory data) internal virtual {
         require(account != address(0), "ERC1155: mint to the zero address");
+        if(_minted[id]==false) _minted[id]=true;
 
+        
         address operator = _msgSender();
 
         _beforeTokenTransfer(operator, address(0), account, _asSingletonArray(id), _asSingletonArray(amount), data);
@@ -270,6 +274,7 @@ contract ERC1155 is Context, ERC165, IERC1155 {
         _beforeTokenTransfer(operator, address(0), to, ids, amounts, data);
 
         for (uint i = 0; i < ids.length; i++) {
+            if(_minted[ids[i]]==false) _minted[ids[i]]=true;
             _balances[ids[i]][to] = amounts[i].add(_balances[ids[i]][to]);
         }
 
