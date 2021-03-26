@@ -4535,8 +4535,8 @@
       ]
     },
     "/home/jjj/GAME/bondingcontracts/contracts/NFTbase.sol": {
-      "lastModificationDate": 1616547791710,
-      "contentHash": "4febab1b0fbeb7fe86f1e4aa85de5881",
+      "lastModificationDate": 1616604756830,
+      "contentHash": "becda0158cf69aaa5de2eedf429bd24b",
       "sourceName": "contracts/NFTbase.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -6622,8 +6622,8 @@
       ]
     },
     "/home/jjj/GAME/bondingcontracts/contracts/bondingSale.sol": {
-      "lastModificationDate": 1616548176320,
-      "contentHash": "139ea70197a387024bf24fa1f0723099",
+      "lastModificationDate": 1616778320090,
+      "contentHash": "6c7b87a3ea9de05010c7bfec5eec0357",
       "sourceName": "contracts/bondingSale.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -7378,6 +7378,76 @@
       ],
       "artifacts": [
         "SafeCast"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/mocks/mockToken.sol": {
+      "lastModificationDate": 1616778267660,
+      "contentHash": "00a91e9222d91f99f2425a6b4cf68175",
+      "sourceName": "contracts/mocks/mockToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "mockToken"
+      ]
+    },
+    "/home/jjj/GAME/bondingcontracts/contracts/mocks/mockAdmin.sol": {
+      "lastModificationDate": 1616777430100,
+      "contentHash": "75ad9cc98359a4ae6c22d155dcf20410",
+      "sourceName": "contracts/mocks/mockAdmin.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "mockAdmin"
       ]
     }
   }

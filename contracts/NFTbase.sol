@@ -16,8 +16,8 @@ contract NFTbase is ERC1155,Admin{
  
 
     
-    constructor () ERC1155() {
-        //_baseURI=uri;
+    constructor (string memory uri) ERC1155() {
+        _baseURI=uri;
         // solhint-disable-previous-line no-empty-blocks
     }
     mapping(uint=>string) public _tokenURIs;

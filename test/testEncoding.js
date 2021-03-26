@@ -1,4 +1,4 @@
-const LAND = artifacts.require("LANDRegistry");
+const LAND = artifacts.require("bondingSale");
 
 let utils=require('web3-utils')
 const {
@@ -28,50 +28,5 @@ contract("encoderTests", accounts => {
        let token=await land.encodeTokenId(1, 1,1)
        assert.equal(token.toString(),'110011001',"correct encoding for case 1")
     })
-    it("decodes test case 1:",async function(){
-        let decoded=await land.decodeTokenId(110011001)
-        console.log(decoded.x.toString())
-        console.log(decoded.y.toString())
-        console.log(decoded.w.toString())
-    })
-    it("encodes test case 2:",async function(){
-        let token=await land.encodeTokenId(0, 0,1)
-        assert.equal(token.toString(),'110001000',"correct encoding for case 1")
-    })
-    it("decodes test case 2:",async function(){
-        let decoded=await land.decodeTokenId(110001000)
-        console.log(decoded.x.toString())
-        console.log(decoded.y.toString())
-        console.log(decoded.w.toString())
-    })
-    it("encodes test case 3:",async function(){
-        let token=await land.encodeTokenId(-1, -1,1)
-        assert.equal(token.toString(),'109990999',"correct encoding for case 1")
-    })
-    it("decodes test case 3:",async function(){
-        let decoded=await land.decodeTokenId(109990999)
-        assert.equal(decoded.x,-1,"correc decode of x for case 4")
-        assert.equal(decoded.y,-1,"correc decode of y for case 4")
-        assert.equal(decoded.w, 1 ,"correc decode of w for case 4")
-    })
-    it("encodes test case 4:",async function(){
-        let token=await land.encodeTokenId(-1000, -1000,1)
-        assert.equal(token.toString(),'100000000',"correct encoding for case 1")
-    })
-    it("decodes test case 4:",async function(){
-        let decoded=await land.decodeTokenId(100000000)
-       
-        assert.equal(decoded.x,-1000,"correc decode of x for case 4")
-        assert.equal(decoded.y,-1000,"correc decode of y for case 4")
-        assert.equal(decoded.w, 1 ,"correc decode of w for case 4")
-    })
-    it("reverts with invalid x encoding:",async function(){
-        await expectRevert(land.encodeTokenId(-1001, -1000,1),"invalid coordinate values")
-    })
-    it("reverts with invalid y encoding:",async function(){
-        await expectRevert(land.encodeTokenId(-1000, -1001,1),"invalid coordinate values")
-    })
-    it("reverts with invalid w encoding:",async function(){
-        await expectRevert(land.encodeTokenId(-1000, -1000,1000001),"invalid coordinate values")
-    })
+    
 })

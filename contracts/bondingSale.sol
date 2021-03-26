@@ -13,6 +13,7 @@ contract bondingSale is NFTbase{
     uint baseTokenDecimals=10**18;
     uint public MAX_PRICE;
     bool public mintingActive;
+    bool public burningActive;
     mapping(uint=>uint) public curves;
     mapping(uint=>bool) public initialized;
     mapping(uint=>uint) public saleStarts;
@@ -60,11 +61,14 @@ contract bondingSale is NFTbase{
     );
     //event TokensBought();
     event TokenOnSale(uint id,uint date);
-    constructor(address _gameToken,address _gameMaster) public NFTbase() {
+    event TokenBought(uint id,address account,uint supply);
+    constructor(address _gameToken,address _gameMaster) public NFTbase("test") {
       gameToken=iGAME_ERC20(_gameToken);
       gameAdmin=iGAME_Master(_gameMaster);
     }
-
+    function toggleTokenMinting() public  isGlobalAdmin(){
+       mintingActive=!mintingActive;
+    }
     function getTokenID(uint _creatorID,uint token) internal returns(uint){
         return baseTokenDecimals*_creatorID+token;
     }
@@ -118,7 +122,7 @@ contract bondingSale is NFTbase{
     require(curve > 0 && curve <= 20 && multiplier > 0 && multiplier <=1000000,"valid curve and multipliers");
     require(bytes(json).length>1,"json must non null");
     require(initialized[tokenId]==true,"token must be initialized");
-    uint creator= tokenId/multiple;
+    uint creator = tokenId/multiple;
     curves[tokenId]=curve;
     multipliers[tokenId]=multiplier;
     emit TokenData(tokenId,json,curve,multiplier);
@@ -139,9 +143,11 @@ contract bondingSale is NFTbase{
   
   function buyNFTwithGAME(uint tokenId, uint maxPrice) public{
        require(block.timestamp>saleStarts[tokenId] && saleStarts[tokenId]>0,"");
+       
        uint price=getPrintPrice(tokenId, TokenSupply[tokenId]);
        require(price > 0 && price < MAX_PRICE);
       TokenSupply[tokenId]+=1;
+
        gameToken.transferByContract(msg.sender, address(this), price);
        gameToken.transferByContract(address(this), msg.sender,maxPrice.sub(price));
        uint gamefee= price.div(50);
@@ -150,6 +156,7 @@ contract bondingSale is NFTbase{
        uint creatorID= tokenId/multiple;
        gameToken.transferByContract( address(this),address(creatorID), creatorfee);
        _mint(msg.sender, tokenId, 1, "");
+       emit TokenBought(tokenId,msg.sender,TokenSupply[tokenId]);
   }
   function burn(uint tokenId) public{
     require(balanceOf(msg.sender,tokenId)>=1,"sender must have at least one token");

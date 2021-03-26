@@ -1,0 +1,30 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "mockAdmin",
+  "sourceName": "contracts/mocks/mockAdmin.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        }
+      ],
+      "name": "isWorkerOrMinion",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060c58061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063c2babfd714602d575b600080fd5b606c60048036036020811015604157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506084565b60405180821515815260200191505060405180910390f35b60006001905091905056fea264697066735822122008ac399f263dc07bc2a4c476f70c1ff4742d8b3574576654b23cfd8c065e6c3564736f6c63430007030033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063c2babfd714602d575b600080fd5b606c60048036036020811015604157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506084565b60405180821515815260200191505060405180910390f35b60006001905091905056fea264697066735822122008ac399f263dc07bc2a4c476f70c1ff4742d8b3574576654b23cfd8c065e6c3564736f6c63430007030033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
