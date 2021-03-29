@@ -1,0 +1,1551 @@
+{
+  "id": "09ec3b819f38bb0e00ba2e6057f5029c",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.7.3",
+  "solcLongVersion": "0.7.3+commit.9bfce1f6",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/interfaces/iGAME_ERC721.sol": {
+        "content": "pragma solidity ^0.7.0;\n\n\n// @title iGAME_ERC721\n// @dev The interface for the main Token Manager contract\n//  Only methods required for calling by sibling contracts are required here\n// @author GAME Credits (gamecredits.org)\n// (c) 2020 GAME Credits All Rights Reserved. This code is not open source.\n// SPDX-License-Identifier: UNLICENSED\nabstract contract iGAME_ERC721 {\n\n  function auctionTransfer(address from_, address to_, uint tokenId_) virtual external;\n\n  function inGameOwnerOf(uint tokenId_) virtual external view returns (bytes32 owner_);\n\n  function revokeToken(uint game_, uint tokenId_, bytes32 purchaseId_)\n    virtual external returns (bool _isRevoked);\n\n  function transferNewToken(bytes32 recipient_, uint tokenId_, uint tradeLockTime_)\n    virtual external;\n\n  function getCryptoAccount(uint game_, bytes32 inGameAccount_)\n    virtual public view returns(address cryptoAccount);\n\n  function getValidCryptoAccount(uint game_, bytes32 inGameAccount_)\n    virtual public view returns(address cryptoAccount);\n\n  function getInGameAccount(uint game_, address cryptoAccount_)\n    virtual public view returns(bytes32 inGameAccount);\n\n  function getValidInGameAccount(uint game_, address cryptoAccount_)\n    virtual public view returns(bytes32 inGameAccount);\n\n  function getOrCreateInGameAccount(uint game_, address cryptoAccount_)\n    virtual external returns(bytes32 inGameAccount);\n\n  function linkContracts(address gameContract_, address erc20Contract_) virtual external;\n\n  function generateCollectible(uint tokenId_, uint xp_, uint xpPerHour_, uint creationTime_) virtual external;\n}"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/interfaces/iGAME_ERC721.sol": {
+        "iGAME_ERC721": {
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "from_",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "to_",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId_",
+                  "type": "uint256"
+                }
+              ],
+              "name": "auctionTransfer",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "xp_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "xpPerHour_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "creationTime_",
+                  "type": "uint256"
+                }
+              ],
+              "name": "generateCollectible",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "game_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "inGameAccount_",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "getCryptoAccount",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "cryptoAccount",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "game_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "cryptoAccount_",
+                  "type": "address"
+                }
+              ],
+              "name": "getInGameAccount",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "inGameAccount",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "game_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "cryptoAccount_",
+                  "type": "address"
+                }
+              ],
+              "name": "getOrCreateInGameAccount",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "inGameAccount",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "game_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "inGameAccount_",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "getValidCryptoAccount",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "cryptoAccount",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "game_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "cryptoAccount_",
+                  "type": "address"
+                }
+              ],
+              "name": "getValidInGameAccount",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "inGameAccount",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId_",
+                  "type": "uint256"
+                }
+              ],
+              "name": "inGameOwnerOf",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "owner_",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "gameContract_",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "erc20Contract_",
+                  "type": "address"
+                }
+              ],
+              "name": "linkContracts",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "game_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "purchaseId_",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "revokeToken",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "_isRevoked",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "recipient_",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId_",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tradeLockTime_",
+                  "type": "uint256"
+                }
+              ],
+              "name": "transferNewToken",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "methodIdentifiers": {
+              "auctionTransfer(address,address,uint256)": "3f013042",
+              "generateCollectible(uint256,uint256,uint256,uint256)": "c3ac8060",
+              "getCryptoAccount(uint256,bytes32)": "81312c3c",
+              "getInGameAccount(uint256,address)": "8d791974",
+              "getOrCreateInGameAccount(uint256,address)": "f2a74f4d",
+              "getValidCryptoAccount(uint256,bytes32)": "ea2a2486",
+              "getValidInGameAccount(uint256,address)": "7b1c0650",
+              "inGameOwnerOf(uint256)": "ae5a849a",
+              "linkContracts(address,address)": "3dc9abfa",
+              "revokeToken(uint256,uint256,bytes32)": "88110efd",
+              "transferNewToken(bytes32,uint256,uint256)": "9a43573c"
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "contracts/interfaces/iGAME_ERC721.sol": {
+        "ast": {
+          "absolutePath": "contracts/interfaces/iGAME_ERC721.sol",
+          "exportedSymbols": {
+            "iGAME_ERC721": [
+              101
+            ]
+          },
+          "id": 102,
+          "license": "UNLICENSED",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                "^",
+                "0.7",
+                ".0"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "0:23:0"
+            },
+            {
+              "abstract": true,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "contract",
+              "fullyImplemented": false,
+              "id": 101,
+              "linearizedBaseContracts": [
+                101
+              ],
+              "name": "iGAME_ERC721",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "functionSelector": "3f013042",
+                  "id": 10,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "auctionTransfer",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 8,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 3,
+                        "mutability": "mutable",
+                        "name": "from_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 10,
+                        "src": "402:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 2,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "402:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 5,
+                        "mutability": "mutable",
+                        "name": "to_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 10,
+                        "src": "417:11:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 4,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "417:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 7,
+                        "mutability": "mutable",
+                        "name": "tokenId_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 10,
+                        "src": "430:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 6,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "430:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "401:43:0"
+                  },
+                  "returnParameters": {
+                    "id": 9,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "461:0:0"
+                  },
+                  "scope": 101,
+                  "src": "377:85:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": true,
+                  "visibility": "external"
+                },
+                {
+                  "functionSelector": "ae5a849a",
+                  "id": 17,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "inGameOwnerOf",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 13,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 12,
+                        "mutability": "mutable",
+                        "name": "tokenId_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 17,
+                        "src": "489:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 11,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "489:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "488:15:0"
+                  },
+                  "returnParameters": {
+                    "id": 16,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 15,
+                        "mutability": "mutable",
+                        "name": "owner_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 17,
+                        "src": "535:14:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 14,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "535:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "534:16:0"
+                  },
+                  "scope": 101,
+                  "src": "466:85:0",
+                  "stateMutability": "view",
+                  "virtual": true,
+                  "visibility": "external"
+                },
+                {
+                  "functionSelector": "88110efd",
+                  "id": 28,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "revokeToken",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 24,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 19,
+                        "mutability": "mutable",
+                        "name": "game_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 28,
+                        "src": "576:10:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 18,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "576:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 21,
+                        "mutability": "mutable",
+                        "name": "tokenId_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 28,
+                        "src": "588:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 20,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "588:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 23,
+                        "mutability": "mutable",
+                        "name": "purchaseId_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 28,
+                        "src": "603:19:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 22,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "603:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "575:48:0"
+                  },
+                  "returnParameters": {
+                    "id": 27,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 26,
+                        "mutability": "mutable",
+                        "name": "_isRevoked",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 28,
+                        "src": "654:15:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "typeName": {
+                          "id": 25,
+                          "name": "bool",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "654:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "653:17:0"
+                  },
+                  "scope": 101,
+                  "src": "555:116:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": true,
+                  "visibility": "external"
+                },
+                {
+                  "functionSelector": "9a43573c",
+                  "id": 37,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "transferNewToken",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 35,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 30,
+                        "mutability": "mutable",
+                        "name": "recipient_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 37,
+                        "src": "701:18:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 29,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "701:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 32,
+                        "mutability": "mutable",
+                        "name": "tokenId_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 37,
+                        "src": "721:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 31,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "721:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 34,
+                        "mutability": "mutable",
+                        "name": "tradeLockTime_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 37,
+                        "src": "736:19:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 33,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "736:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "700:56:0"
+                  },
+                  "returnParameters": {
+                    "id": 36,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "777:0:0"
+                  },
+                  "scope": 101,
+                  "src": "675:103:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": true,
+                  "visibility": "external"
+                },
+                {
+                  "functionSelector": "81312c3c",
+                  "id": 46,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "getCryptoAccount",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 42,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 39,
+                        "mutability": "mutable",
+                        "name": "game_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 46,
+                        "src": "808:10:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 38,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "808:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 41,
+                        "mutability": "mutable",
+                        "name": "inGameAccount_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 46,
+                        "src": "820:22:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 40,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "820:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "807:36:0"
+                  },
+                  "returnParameters": {
+                    "id": 45,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 44,
+                        "mutability": "mutable",
+                        "name": "cryptoAccount",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 46,
+                        "src": "876:21:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 43,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "876:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "875:23:0"
+                  },
+                  "scope": 101,
+                  "src": "782:117:0",
+                  "stateMutability": "view",
+                  "virtual": true,
+                  "visibility": "public"
+                },
+                {
+                  "functionSelector": "ea2a2486",
+                  "id": 55,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "getValidCryptoAccount",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 51,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 48,
+                        "mutability": "mutable",
+                        "name": "game_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 55,
+                        "src": "934:10:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 47,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "934:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 50,
+                        "mutability": "mutable",
+                        "name": "inGameAccount_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 55,
+                        "src": "946:22:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 49,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "946:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "933:36:0"
+                  },
+                  "returnParameters": {
+                    "id": 54,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 53,
+                        "mutability": "mutable",
+                        "name": "cryptoAccount",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 55,
+                        "src": "1002:21:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 52,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1002:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1001:23:0"
+                  },
+                  "scope": 101,
+                  "src": "903:122:0",
+                  "stateMutability": "view",
+                  "virtual": true,
+                  "visibility": "public"
+                },
+                {
+                  "functionSelector": "8d791974",
+                  "id": 64,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "getInGameAccount",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 60,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 57,
+                        "mutability": "mutable",
+                        "name": "game_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 64,
+                        "src": "1055:10:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 56,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1055:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 59,
+                        "mutability": "mutable",
+                        "name": "cryptoAccount_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 64,
+                        "src": "1067:22:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 58,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1067:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1054:36:0"
+                  },
+                  "returnParameters": {
+                    "id": 63,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 62,
+                        "mutability": "mutable",
+                        "name": "inGameAccount",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 64,
+                        "src": "1123:21:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 61,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1123:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1122:23:0"
+                  },
+                  "scope": 101,
+                  "src": "1029:117:0",
+                  "stateMutability": "view",
+                  "virtual": true,
+                  "visibility": "public"
+                },
+                {
+                  "functionSelector": "7b1c0650",
+                  "id": 73,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "getValidInGameAccount",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 69,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 66,
+                        "mutability": "mutable",
+                        "name": "game_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 73,
+                        "src": "1181:10:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 65,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1181:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 68,
+                        "mutability": "mutable",
+                        "name": "cryptoAccount_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 73,
+                        "src": "1193:22:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 67,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1193:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1180:36:0"
+                  },
+                  "returnParameters": {
+                    "id": 72,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 71,
+                        "mutability": "mutable",
+                        "name": "inGameAccount",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 73,
+                        "src": "1249:21:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 70,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1249:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1248:23:0"
+                  },
+                  "scope": 101,
+                  "src": "1150:122:0",
+                  "stateMutability": "view",
+                  "virtual": true,
+                  "visibility": "public"
+                },
+                {
+                  "functionSelector": "f2a74f4d",
+                  "id": 82,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "getOrCreateInGameAccount",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 78,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 75,
+                        "mutability": "mutable",
+                        "name": "game_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 82,
+                        "src": "1310:10:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 74,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1310:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 77,
+                        "mutability": "mutable",
+                        "name": "cryptoAccount_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 82,
+                        "src": "1322:22:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 76,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1322:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1309:36:0"
+                  },
+                  "returnParameters": {
+                    "id": 81,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 80,
+                        "mutability": "mutable",
+                        "name": "inGameAccount",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 82,
+                        "src": "1375:21:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 79,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1375:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1374:23:0"
+                  },
+                  "scope": 101,
+                  "src": "1276:122:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": true,
+                  "visibility": "external"
+                },
+                {
+                  "functionSelector": "3dc9abfa",
+                  "id": 89,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "linkContracts",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 87,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 84,
+                        "mutability": "mutable",
+                        "name": "gameContract_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 89,
+                        "src": "1425:21:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 83,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1425:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 86,
+                        "mutability": "mutable",
+                        "name": "erc20Contract_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 89,
+                        "src": "1448:22:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 85,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1448:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1424:47:0"
+                  },
+                  "returnParameters": {
+                    "id": 88,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "1488:0:0"
+                  },
+                  "scope": 101,
+                  "src": "1402:87:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": true,
+                  "visibility": "external"
+                },
+                {
+                  "functionSelector": "c3ac8060",
+                  "id": 100,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "generateCollectible",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 98,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 91,
+                        "mutability": "mutable",
+                        "name": "tokenId_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 100,
+                        "src": "1522:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 90,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1522:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 93,
+                        "mutability": "mutable",
+                        "name": "xp_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 100,
+                        "src": "1537:8:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 92,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1537:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 95,
+                        "mutability": "mutable",
+                        "name": "xpPerHour_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 100,
+                        "src": "1547:15:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 94,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1547:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 97,
+                        "mutability": "mutable",
+                        "name": "creationTime_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 100,
+                        "src": "1564:18:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 96,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1564:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1521:62:0"
+                  },
+                  "returnParameters": {
+                    "id": 99,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "1600:0:0"
+                  },
+                  "scope": 101,
+                  "src": "1493:108:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": true,
+                  "visibility": "external"
+                }
+              ],
+              "scope": 102,
+              "src": "341:1262:0"
+            }
+          ],
+          "src": "0:1603:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}

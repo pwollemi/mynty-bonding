@@ -1,5 +1,6 @@
-const LAND = artifacts.require("bondingSale");
-
+const SALE = artifacts.require("bondingSale");
+const ADMIN= artifacts.require("mockAdmin")
+const GAME = artifacts.require("mockToken")
 let utils=require('web3-utils')
 const {
   BN,           // Big Number support 
@@ -7,9 +8,12 @@ const {
   expectEvent,  // Assertions for emitted events
   expectRevert,
   increase,
-  increastTo, // Assertions for transactions that should fail
+  increastTo,
+  time, // Assertions for transactions that should fail
 } = require('@openzeppelin/test-helpers');
-let land;
+let sale;
+let admin;
+let game;
 /**
     * W:1 X: 1 Y: 1 encodes to:		110011001
     W:1 X: 0 Y: 0 encodes to:		110001000
@@ -20,13 +24,30 @@ let land;
 
 contract("encoderTests", accounts => {
     
-    before(async function() {
-     land = await LAND.new()
-      
+    beforeEach(async function() {
+     let tokens='1000000000000000000000'
+     admin =await ADMIN.new()
+     game=await GAME.new()
+     sale = await SALE.new(game.address,admin.address)
+     
+     game.transfer(accounts[1],tokens,{from:accounts[0]})
+     game.transfer(accounts[2],tokens,{from:accounts[0]})
+     game.transfer(accounts[3],tokens,{from:accounts[0]})
+     await sale.setFEERECEIVER(accounts[6],{from:accounts[0]})
     });
     it("encode test case 1:",async function(){
-       let token=await land.encodeTokenId(1, 1,1)
-       assert.equal(token.toString(),'110011001',"correct encoding for case 1")
+      let currentTimeStamp = await time.latest()
+      let tokenID = await sale.getTokenID(2,1)
+      console.log(tokenID.toString())
+      await sale.CreateToken(2,"json data",5,9 )
+      await sale.SetTokenOnSaleDate(tokenID,currentTimeStamp)
+      await time.increase(100)
+      let initPrice= await sale.getPrintPrice(tokenID, 2)
+      console.log("the price is")
+      console.log(initPrice.toString())
+
+      await sale.buyNFTwithGAME(tokenID,initPrice,{from:accounts[2]})
+     
     })
     
 })
