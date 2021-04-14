@@ -24,7 +24,7 @@ contract("bonding Test", accounts => {
      let tokens='100000000000000000000000'
      admin =await ADMIN.new()
      game=await GAME.new()
-     sale = await SALE.new(game.address,admin.address)
+     sale = await SALE.new(game.address,admin.address,accounts[9])
      
      game.transfer(accounts[1],tokens,{from:accounts[0]})
      game.transfer(accounts[2],tokens,{from:accounts[0]})
@@ -138,7 +138,13 @@ contract("bonding Test", accounts => {
         10,
         5
         ),"token has not been minted")
-        let nonCreatedToken = await sale.getTokenID(2,2)
+      let nonCreatedToken = await sale.getTokenID(2,2)
+      await expectRevert( sale.UpdateTokenData(
+          nonCreatedToken,
+          "new json data",
+          3,
+          7
+         ),"curve must be set")
     })
     
    

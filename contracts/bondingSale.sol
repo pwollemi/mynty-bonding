@@ -65,13 +65,14 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         uint256 reserve
     );
 
-    constructor(address _gameToken, address _gameMaster)
-        public
-        NFTbase("test")
-        NetworkAgnostic("bonding", "1")
-    {
+    constructor(
+        address _gameToken,
+        address _gameAdmin,
+        address _gameMaster
+    ) public NFTbase("test") NetworkAgnostic("bonding", "1") {
         gameToken = iGAME_ERC20(_gameToken);
-        gameAdmin = iGAME_Game(_gameMaster);
+        gameAdmin = iGAME_Game(_gameAdmin);
+        masterContract = iGAME_Master(_gameMaster);
     }
 
     function toggleTokenMinting() public isGlobalAdmin() {
