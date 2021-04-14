@@ -1,0 +1,313 @@
+{
+  "id": "0d518f10591822066a3a1c81d19f7c4c",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.7.3",
+  "solcLongVersion": "0.7.3+commit.9bfce1f6",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/mocks/mockAdmin.sol": {
+        "content": "pragma solidity >=0.6.0 <0.8.0;\r\n\r\ncontract mockAdmin {\r\n    function isOperatorOrMinion(uint256 c, address account_)\r\n        external\r\n        view\r\n        virtual\r\n        returns (bool)\r\n    {\r\n        return true;\r\n    }\r\n}\r\n"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/mocks/mockAdmin.sol": {
+        "mockAdmin": {
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "c",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "account_",
+                  "type": "address"
+                }
+              ],
+              "name": "isOperatorOrMinion",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "6080604052348015600f57600080fd5b5060a88061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80634ba3d74814602d575b600080fd5b605660048036036040811015604157600080fd5b50803590602001356001600160a01b0316606a565b604080519115158252519081900360200190f35b60019291505056fea2646970667358221220e5766e0b12f5247a8103304603d93534579b78af2a2f7dd21518f6dfd89f28ce64736f6c63430007030033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xA8 DUP1 PUSH2 0x1E PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x4BA3D748 EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x56 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x40 DUP2 LT ISZERO PUSH1 0x41 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x6A JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 ISZERO ISZERO DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x1 SWAP3 SWAP2 POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xE5 PUSH23 0x6E0B12F5247A8103304603D93534579B78AF2A2F7DD215 XOR 0xF6 0xDF 0xD8 SWAP16 0x28 0xCE PUSH5 0x736F6C6343 STOP SMOD SUB STOP CALLER ",
+              "sourceMap": "35:194:0:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "6080604052348015600f57600080fd5b506004361060285760003560e01c80634ba3d74814602d575b600080fd5b605660048036036040811015604157600080fd5b50803590602001356001600160a01b0316606a565b604080519115158252519081900360200190f35b60019291505056fea2646970667358221220e5766e0b12f5247a8103304603d93534579b78af2a2f7dd21518f6dfd89f28ce64736f6c63430007030033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x4BA3D748 EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x56 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x40 DUP2 LT ISZERO PUSH1 0x41 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x6A JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 ISZERO ISZERO DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x1 SWAP3 SWAP2 POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xE5 PUSH23 0x6E0B12F5247A8103304603D93534579B78AF2A2F7DD215 XOR 0xF6 0xDF 0xD8 SWAP16 0x28 0xCE PUSH5 0x736F6C6343 STOP SMOD SUB STOP CALLER ",
+              "sourceMap": "35:194:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;61:165;;;;;;;;;;;;;;;;-1:-1:-1;61:165:0;;;;;;-1:-1:-1;;;;;61:165:0;;:::i;:::-;;;;;;;;;;;;;;;;;;;214:4;61:165;;;;:::o"
+            },
+            "methodIdentifiers": {
+              "isOperatorOrMinion(uint256,address)": "4ba3d748"
+            }
+          }
+        }
+      }
+    },
+    "errors": [
+      {
+        "component": "general",
+        "errorCode": "1878",
+        "formattedMessage": "contracts/mocks/mockAdmin.sol: Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n",
+        "message": "SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.",
+        "severity": "warning",
+        "sourceLocation": {
+          "end": -1,
+          "file": "contracts/mocks/mockAdmin.sol",
+          "start": -1
+        },
+        "type": "Warning"
+      },
+      {
+        "component": "general",
+        "errorCode": "5667",
+        "formattedMessage": "contracts/mocks/mockAdmin.sol:4:33: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.\n    function isOperatorOrMinion(uint256 c, address account_)\n                                ^-------^\n",
+        "message": "Unused function parameter. Remove or comment out the variable name to silence this warning.",
+        "severity": "warning",
+        "sourceLocation": {
+          "end": 98,
+          "file": "contracts/mocks/mockAdmin.sol",
+          "start": 89
+        },
+        "type": "Warning"
+      },
+      {
+        "component": "general",
+        "errorCode": "5667",
+        "formattedMessage": "contracts/mocks/mockAdmin.sol:4:44: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.\n    function isOperatorOrMinion(uint256 c, address account_)\n                                           ^--------------^\n",
+        "message": "Unused function parameter. Remove or comment out the variable name to silence this warning.",
+        "severity": "warning",
+        "sourceLocation": {
+          "end": 116,
+          "file": "contracts/mocks/mockAdmin.sol",
+          "start": 100
+        },
+        "type": "Warning"
+      }
+    ],
+    "sources": {
+      "contracts/mocks/mockAdmin.sol": {
+        "ast": {
+          "absolutePath": "contracts/mocks/mockAdmin.sol",
+          "exportedSymbols": {
+            "mockAdmin": [
+              14
+            ]
+          },
+          "id": 15,
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                ">=",
+                "0.6",
+                ".0",
+                "<",
+                "0.8",
+                ".0"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "0:31:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "contract",
+              "fullyImplemented": true,
+              "id": 14,
+              "linearizedBaseContracts": [
+                14
+              ],
+              "name": "mockAdmin",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "body": {
+                    "id": 12,
+                    "nodeType": "Block",
+                    "src": "196:30:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "hexValue": "74727565",
+                          "id": 10,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "214:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "functionReturnParameters": 9,
+                        "id": 11,
+                        "nodeType": "Return",
+                        "src": "207:11:0"
+                      }
+                    ]
+                  },
+                  "functionSelector": "4ba3d748",
+                  "id": 13,
+                  "implemented": true,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "isOperatorOrMinion",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 6,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 3,
+                        "mutability": "mutable",
+                        "name": "c",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 13,
+                        "src": "89:9:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 2,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "89:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 5,
+                        "mutability": "mutable",
+                        "name": "account_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 13,
+                        "src": "100:16:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 4,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "100:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "88:29:0"
+                  },
+                  "returnParameters": {
+                    "id": 9,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 8,
+                        "mutability": "mutable",
+                        "name": "",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 13,
+                        "src": "185:4:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "typeName": {
+                          "id": 7,
+                          "name": "bool",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "185:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "184:6:0"
+                  },
+                  "scope": 14,
+                  "src": "61:165:0",
+                  "stateMutability": "view",
+                  "virtual": true,
+                  "visibility": "external"
+                }
+              ],
+              "scope": 15,
+              "src": "35:194:0"
+            }
+          ],
+          "src": "0:231:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}

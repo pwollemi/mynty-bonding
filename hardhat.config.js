@@ -1,6 +1,8 @@
 require("@nomiclabs/hardhat-truffle5");
 require('hardhat-gas-reporter')
+require("hardhat-tracer");
 require('hardhat-contract-sizer')
+
 module.exports = {
   
   solidity: {
