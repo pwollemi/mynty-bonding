@@ -6,6 +6,8 @@ import "./NFTbase.sol";
 import "./WorkerMetaTransactions.sol";
 import "hardhat/console.sol";
 
+/// name GameCreditsBondedNFTS
+//"1"//
 contract bondingSale is NFTbase, WorkerMetaTransactions {
     using SafeMath for uint256;
     bool public mintingActive;
@@ -79,6 +81,10 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         mintingActive = !mintingActive;
     }
 
+    /**
+        Checks to see if call is worker or minion and if they have enough gas to make call
+        
+     */
     function metaTxSenderIsWorkerOrMinion() internal override returns (bool) {
         return masterContract.makeFundedCall(msg.sender);
     }
@@ -240,7 +246,7 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         TokenSupply[tokenId] += 1;
 
         gameToken.transferByContract(_msgSender(), address(this), price);
-
+        console.log(price);
         uint256 gamefee = price.div(50);
         uint256 creatorfee = (price.mul(8)).div(100);
 

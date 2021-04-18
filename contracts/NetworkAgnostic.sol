@@ -22,7 +22,8 @@ abstract contract NetworkAgnostic is EIP712Base {
         bytes functionSignature
     );
     mapping(address => uint256) nonces;
-
+    string public CONTRACT_ERC712_VERSION;
+    string public CONTRACT_ERC712_NAME;
     /*
      * Meta transaction structure.
      * No point of including value field here as if user is doing value transfer then he has the funds to pay for gas
@@ -36,7 +37,10 @@ abstract contract NetworkAgnostic is EIP712Base {
 
     constructor(string memory name, string memory version)
         EIP712Base(name, version)
-    {}
+    {
+        CONTRACT_ERC712_VERSION = version;
+        CONTRACT_ERC712_NAME = name;
+    }
 
     function executeMetaTransaction(
         address userAddress,

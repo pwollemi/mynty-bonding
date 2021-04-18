@@ -19,7 +19,7 @@ let game;
 
 
 contract("bonding Test", accounts => {
-    
+    console.log(accounts)
     beforeEach(async function() {
      let tokens='100000000000000000000000'
      admin =await ADMIN.new()

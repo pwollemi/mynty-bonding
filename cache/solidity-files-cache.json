@@ -2299,8 +2299,8 @@
       ]
     },
     "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/bondingSale.sol": {
-      "lastModificationDate": 1618433594762,
-      "contentHash": "516a90c9060de69b5d9fb3797236a01e",
+      "lastModificationDate": 1618715891118,
+      "contentHash": "e6a5eb3536d81eab84ef4eecdd843cf3",
       "sourceName": "contracts/bondingSale.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -3132,7 +3132,7 @@
       ]
     },
     "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/EIP712Base.sol": {
-      "lastModificationDate": 1618335787624,
+      "lastModificationDate": 1618690917643,
       "contentHash": "f778567159858f84470cc12aa18ba071",
       "sourceName": "contracts/EIP712Base.sol",
       "solcConfig": {
@@ -3200,8 +3200,8 @@
       ]
     },
     "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/NetworkAgnostic.sol": {
-      "lastModificationDate": 1618334178180,
-      "contentHash": "46a9fbcefb3f89a9ad93005649f37372",
+      "lastModificationDate": 1618689089732,
+      "contentHash": "e8451d27709021934a39f0e5c0af27a9",
       "sourceName": "contracts/NetworkAgnostic.sol",
       "solcConfig": {
         "version": "0.7.3",
