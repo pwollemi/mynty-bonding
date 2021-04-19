@@ -224,10 +224,11 @@ const sendMetaTx = async (contract, from, functionSignature, r, s, v, relayerAcc
  
   
   console.log(functionSignature)
+  console.log('sending from')
+    console.log(from)
   const gas = await contract.methods.executeMetaTransaction(from, functionSignature, r, s, v)
     .estimateGas({ from: relayer });
-    console.log('sending from')
-    console.log(from)
+  console.log("gas ")
   let tx = await contract.methods
     .executeMetaTransaction(from, functionSignature, r, s, v)
     .send({ from: relayer, gasLimit: gas });

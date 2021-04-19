@@ -23,6 +23,9 @@ contract("bonding Test", accounts => {
     beforeEach(async function() {
      let tokens='100000000000000000000000'
      admin =await ADMIN.new()
+     for(let i=0;i<9;i++){
+      await admin.addOperator(accounts[i])
+     }
      game=await GAME.new()
      sale = await SALE.new(game.address,admin.address,accounts[9])
      

@@ -24,6 +24,9 @@ contract("bonding Test", accounts => {
     beforeEach(async function() {
      let tokens='100000000000000000000000'
      admin =await ADMIN.new()
+     for(let i=0;i<9;i++){
+        await admin.addOperator(accounts[i])
+     }
      game=await GAME.new()
      sale = await SALE.new(game.address,admin.address,accounts[9])
      
@@ -57,7 +60,7 @@ contract("bonding Test", accounts => {
             console.log(`making call ${i}`)
             await time.increase(time.duration.seconds(100000))
             const { from, r, s, v, replayProtection } = await nativeMetaTx.getMetaTxSignature(sale.contract, funcs[i], sender, isWorker);
-            
+            console.log(`call is from ${from}`)
             const result = await nativeMetaTx.sendWorkerOrNormalTx(sale.contract, funcs[i], from, r, s, v, relayer, isWorker);
         }
         
