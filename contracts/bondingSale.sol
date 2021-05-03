@@ -180,7 +180,7 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         );
         require(bytes(json).length > 1, "json must non null");
         require(
-            gameAdmin.isOperatorOrMinion(creatorId, _msgSender()) == true,
+            gameAdmin.isOperaqtorOrMinion(creatorId, _msgSender()) == true,
             "sender must be minion or worker"
         );
 

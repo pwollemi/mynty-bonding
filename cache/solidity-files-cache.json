@@ -1,42 +1,8 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/mocks/mockAdmin.sol": {
-      "lastModificationDate": 1618716252976,
-      "contentHash": "1b6018db603d7116c1cf50ed9393f058",
-      "sourceName": "contracts/mocks/mockAdmin.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "mockAdmin"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/Admin.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/Admin.sol": {
+      "lastModificationDate": 1620063405784,
       "contentHash": "8074551932bfb077dfe875b5bd2b4317",
       "sourceName": "contracts/Admin.sol",
       "solcConfig": {
@@ -71,8 +37,8 @@
         "Admin"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/access/AccessControl.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1620063405792,
       "contentHash": "80fba54514bd6969409886d7f3d9ec78",
       "sourceName": "contracts/openzeppelin/contracts/access/AccessControl.sol",
       "solcConfig": {
@@ -109,8 +75,8 @@
         "AccessControl"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableSet.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableSet.sol": {
+      "lastModificationDate": 1620063405828,
       "contentHash": "7d5806dec94de00ddcfb1e9fdd6c9545",
       "sourceName": "contracts/openzeppelin/contracts/utils/EnumerableSet.sol",
       "solcConfig": {
@@ -143,8 +109,8 @@
         "EnumerableSet"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1620063405827,
       "contentHash": "72d77402f6854b7ccf9af282e805f292",
       "sourceName": "contracts/openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
@@ -177,8 +143,8 @@
         "Address"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/Context.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/Context.sol": {
+      "lastModificationDate": 1620063405790,
       "contentHash": "2adbd82f6d055a4751566d4671512b03",
       "sourceName": "contracts/openzeppelin/contracts/GSN/Context.sol",
       "solcConfig": {
@@ -211,8 +177,8 @@
         "Context"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/NFTbase.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/NFTbase.sol": {
+      "lastModificationDate": 1620063405785,
       "contentHash": "becda0158cf69aaa5de2eedf429bd24b",
       "sourceName": "contracts/NFTbase.sol",
       "solcConfig": {
@@ -249,8 +215,8 @@
         "NFTbase"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1620063405819,
       "contentHash": "cfb888ed09f8856535fc60a18e227c86",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol",
       "solcConfig": {
@@ -291,8 +257,8 @@
         "ERC1155"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1620063405829,
       "contentHash": "32edba478e719cc27c3ec096284a44d6",
       "sourceName": "contracts/openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
@@ -325,8 +291,8 @@
         "Strings"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1620063405821,
       "contentHash": "cb9dc62067a205eeab4f390c72c7fe14",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol",
       "solcConfig": {
@@ -361,8 +327,8 @@
         "IERC1155"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1620063405821,
       "contentHash": "9a313e25e2a837a50f7ae87017539457",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
       "solcConfig": {
@@ -397,8 +363,8 @@
         "IERC1155MetadataURI"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1620063405821,
       "contentHash": "27af002e8fc1118d099c99fc8852bb73",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
       "solcConfig": {
@@ -433,8 +399,8 @@
         "IERC1155Receiver"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165.sol": {
+      "lastModificationDate": 1620063405810,
       "contentHash": "1fdb418b30c8564d01d922c285fa6ee6",
       "sourceName": "contracts/openzeppelin/contracts/introspection/ERC165.sol",
       "solcConfig": {
@@ -469,8 +435,8 @@
         "ERC165"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/math/SafeMath.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1620063405813,
       "contentHash": "4d29a22b28b7ec0e89c3cdf1c5e72b83",
       "sourceName": "contracts/openzeppelin/contracts/math/SafeMath.sol",
       "solcConfig": {
@@ -503,8 +469,8 @@
         "SafeMath"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC165.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC165.sol": {
+      "lastModificationDate": 1620063405811,
       "contentHash": "0d62a8380952235f135dae91590f90a3",
       "sourceName": "contracts/openzeppelin/contracts/introspection/IERC165.sol",
       "solcConfig": {
@@ -537,8 +503,8 @@
         "IERC165"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1620063405824,
       "contentHash": "04e0b44d842daa01caadc9cd264855fd",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
@@ -583,8 +549,8 @@
         "ERC721"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "b7983b35319221315a13595768746bdf",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
@@ -619,8 +585,8 @@
         "IERC721"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "370e7a48f316401b5063bcb604843e1b",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
       "solcConfig": {
@@ -655,8 +621,8 @@
         "IERC721Metadata"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "eaebc3874248c26f6ea0b13b9a140a94",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol",
       "solcConfig": {
@@ -691,8 +657,8 @@
         "IERC721Enumerable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "fad0b3f4424bdbb4b35467b29ea8d334",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
       "solcConfig": {
@@ -725,8 +691,8 @@
         "IERC721Receiver"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableMap.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableMap.sol": {
+      "lastModificationDate": 1620063405828,
       "contentHash": "8f02d41c25552d7894bdd98db412b9b0",
       "sourceName": "contracts/openzeppelin/contracts/utils/EnumerableMap.sol",
       "solcConfig": {
@@ -759,8 +725,8 @@
         "EnumerableMap"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "46f79ddd76e77a7c5bf841b830d0ed1e",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol",
       "solcConfig": {
@@ -796,8 +762,8 @@
         "ERC721Pausable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Pausable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Pausable.sol": {
+      "lastModificationDate": 1620063405828,
       "contentHash": "8e1426287776ef63005695dfc289ec56",
       "sourceName": "contracts/openzeppelin/contracts/utils/Pausable.sol",
       "solcConfig": {
@@ -832,8 +798,8 @@
         "Pausable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol": {
+      "lastModificationDate": 1620063405823,
       "contentHash": "42c0638e45b2c33154488610fe3091fe",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol",
       "solcConfig": {
@@ -869,8 +835,8 @@
         "ERC20Pausable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1620063405822,
       "contentHash": "1d93743f6ca9d2ecf9b3c26718faf610",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
@@ -907,8 +873,8 @@
         "ERC20"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1620063405823,
       "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
@@ -941,8 +907,8 @@
         "IERC20"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol": {
+      "lastModificationDate": 1620063405823,
       "contentHash": "1d275c09f45d34743142f399a40258a1",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol",
       "solcConfig": {
@@ -980,8 +946,8 @@
         "ERC20Snapshot"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Arrays.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Arrays.sol": {
+      "lastModificationDate": 1620063405827,
       "contentHash": "1dbebf76b7e090e7b226ed3fcc29058b",
       "sourceName": "contracts/openzeppelin/contracts/utils/Arrays.sol",
       "solcConfig": {
@@ -1016,8 +982,8 @@
         "Arrays"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Counters.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1620063405827,
       "contentHash": "304a56eb1322144704fb39f8c7e6d722",
       "sourceName": "contracts/openzeppelin/contracts/utils/Counters.sol",
       "solcConfig": {
@@ -1052,8 +1018,8 @@
         "Counters"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/math/Math.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/math/Math.sol": {
+      "lastModificationDate": 1620063405812,
       "contentHash": "e5c844515b04deabacef7eb872abc384",
       "sourceName": "contracts/openzeppelin/contracts/math/Math.sol",
       "solcConfig": {
@@ -1086,8 +1052,8 @@
         "Math"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/ERC777.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/ERC777.sol": {
+      "lastModificationDate": 1620063405826,
       "contentHash": "908206b190e60731e24ef3e0a5c6f6a2",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC777/ERC777.sol",
       "solcConfig": {
@@ -1129,8 +1095,8 @@
         "ERC777"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777.sol": {
+      "lastModificationDate": 1620063405826,
       "contentHash": "5833aafefffbdbdb5f5ee567a3f51b86",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777.sol",
       "solcConfig": {
@@ -1163,8 +1129,8 @@
         "IERC777"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol": {
+      "lastModificationDate": 1620063405826,
       "contentHash": "c611b2349e7afbb03e4fd314878861e0",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol",
       "solcConfig": {
@@ -1197,8 +1163,8 @@
         "IERC777Recipient"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol": {
+      "lastModificationDate": 1620063405826,
       "contentHash": "c59a76b8a23eaef6f259de54f672d59e",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol",
       "solcConfig": {
@@ -1231,8 +1197,8 @@
         "IERC777Sender"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol": {
+      "lastModificationDate": 1620063405812,
       "contentHash": "820888c202bc007f6112423ee95b9cf0",
       "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol",
       "solcConfig": {
@@ -1265,8 +1231,8 @@
         "IERC1820Registry"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol": {
+      "lastModificationDate": 1620063405819,
       "contentHash": "686980f2a53d793b815368f676364b8e",
       "sourceName": "contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol",
       "solcConfig": {
@@ -1302,8 +1268,8 @@
         "UpgradeableProxy"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/Proxy.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/Proxy.sol": {
+      "lastModificationDate": 1620063405818,
       "contentHash": "a6f1021015ca14abd4852d6a1e22861c",
       "sourceName": "contracts/openzeppelin/contracts/proxy/Proxy.sol",
       "solcConfig": {
@@ -1336,8 +1302,8 @@
         "Proxy"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol": {
+      "lastModificationDate": 1620063405818,
       "contentHash": "c6d0338de5744b70a7c6cdcda5310a99",
       "sourceName": "contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol",
       "solcConfig": {
@@ -1372,8 +1338,8 @@
         "TransparentUpgradeableProxy"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol": {
+      "lastModificationDate": 1620063405818,
       "contentHash": "1fb4daec0de5a54ffe01e92fc9cc5aa4",
       "sourceName": "contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol",
       "solcConfig": {
@@ -1409,8 +1375,8 @@
         "ProxyAdmin"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1620063405792,
       "contentHash": "38c56382c57a9e9dab92cee051155870",
       "sourceName": "contracts/openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
@@ -1445,8 +1411,8 @@
         "Ownable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/Escrow.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/Escrow.sol": {
+      "lastModificationDate": 1620063405815,
       "contentHash": "ff1d5619edddf81b163071835903272d",
       "sourceName": "contracts/openzeppelin/contracts/payment/escrow/Escrow.sol",
       "solcConfig": {
@@ -1483,8 +1449,8 @@
         "Escrow"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/PullPayment.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/PullPayment.sol": {
+      "lastModificationDate": 1620063405814,
       "contentHash": "629b6b6c6ce2547851a7a650e1336380",
       "sourceName": "contracts/openzeppelin/contracts/payment/PullPayment.sol",
       "solcConfig": {
@@ -1519,8 +1485,8 @@
         "PullPayment"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol": {
+      "lastModificationDate": 1620063405815,
       "contentHash": "aa3e8c91094948828e236ec0a5603e58",
       "sourceName": "contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol",
       "solcConfig": {
@@ -1555,8 +1521,8 @@
         "ConditionalEscrow"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol": {
+      "lastModificationDate": 1620063405816,
       "contentHash": "3a60b76e68f4a9ddd7486fc020081120",
       "sourceName": "contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol",
       "solcConfig": {
@@ -1591,8 +1557,8 @@
         "RefundEscrow"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol": {
+      "lastModificationDate": 1620063405790,
       "contentHash": "c8e2094331111d20cf525223560d67f1",
       "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol",
       "solcConfig": {
@@ -1632,8 +1598,8 @@
         "__unstable__ERC20Owned"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipient.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipient.sol": {
+      "lastModificationDate": 1620063405790,
       "contentHash": "b1c354497eceaa86f2f253502d5693b9",
       "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipient.sol",
       "solcConfig": {
@@ -1670,8 +1636,8 @@
         "GSNRecipient"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
+      "lastModificationDate": 1620063405824,
       "contentHash": "33e22842646d746e5c4124c2fdc051aa",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol",
       "solcConfig": {
@@ -1708,8 +1674,8 @@
         "SafeERC20"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol": {
+      "lastModificationDate": 1620063405791,
       "contentHash": "0bf08baf48262eb41bc206529963621d",
       "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol",
       "solcConfig": {
@@ -1742,8 +1708,8 @@
         "IRelayRecipient"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayHub.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayHub.sol": {
+      "lastModificationDate": 1620063405791,
       "contentHash": "3d76829bda93b091eafa44820d8a7596",
       "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayHub.sol",
       "solcConfig": {
@@ -1776,8 +1742,8 @@
         "IRelayHub"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol": {
+      "lastModificationDate": 1620063405824,
       "contentHash": "8c436bb9f5a3643ed1f64cf370c277f0",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol",
       "solcConfig": {
@@ -1812,8 +1778,8 @@
         "TokenTimelock"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol": {
+      "lastModificationDate": 1620063405790,
       "contentHash": "cfa3c366a1a8c8b8411df236b763cc20",
       "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol",
       "solcConfig": {
@@ -1849,8 +1815,8 @@
         "GSNRecipientSignature"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/cryptography/ECDSA.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/cryptography/ECDSA.sol": {
+      "lastModificationDate": 1620063405810,
       "contentHash": "06d35974124c53de900f77f0b35bb077",
       "sourceName": "contracts/openzeppelin/contracts/cryptography/ECDSA.sol",
       "solcConfig": {
@@ -1883,8 +1849,8 @@
         "ECDSA"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol": {
+      "lastModificationDate": 1620063405824,
       "contentHash": "36eba6b896e5b04a5a71f02ce01087fe",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol",
       "solcConfig": {
@@ -1920,8 +1886,8 @@
         "ERC721Burnable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol": {
+      "lastModificationDate": 1620063405817,
       "contentHash": "88fa53d283b53c53e143c9fe1c191a18",
       "sourceName": "contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol",
       "solcConfig": {
@@ -1961,8 +1927,8 @@
         "ERC721PresetMinterPauserAutoId"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol": {
+      "lastModificationDate": 1620063405816,
       "contentHash": "79adb927bc2f4af9231ff1951ee7a707",
       "sourceName": "contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol",
       "solcConfig": {
@@ -2001,8 +1967,8 @@
         "ERC20PresetMinterPauser"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol": {
+      "lastModificationDate": 1620063405822,
       "contentHash": "f4a80522fa4ffe888e0cfbd5ba56de6b",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol",
       "solcConfig": {
@@ -2038,8 +2004,8 @@
         "ERC20Burnable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol": {
+      "lastModificationDate": 1620063405816,
       "contentHash": "6e1f7d4550336d2e2fbf4f11ce18b033",
       "sourceName": "contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol",
       "solcConfig": {
@@ -2078,8 +2044,8 @@
         "ERC1155PresetMinterPauser"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol": {
+      "lastModificationDate": 1620063405820,
       "contentHash": "e9e23a67a9d60cd0e6d133323b704b8d",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol",
       "solcConfig": {
@@ -2114,8 +2080,8 @@
         "ERC1155Burnable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol": {
+      "lastModificationDate": 1620063405820,
       "contentHash": "90de6a370710a61994975feed325e093",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol",
       "solcConfig": {
@@ -2151,8 +2117,8 @@
         "ERC1155Pausable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol": {
+      "lastModificationDate": 1620063405821,
       "contentHash": "17e413fe28eee62a8d6e686fa9aec405",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol",
       "solcConfig": {
@@ -2188,8 +2154,8 @@
         "ERC1155Receiver"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol": {
+      "lastModificationDate": 1620063405820,
       "contentHash": "ca5387e1c39109d459f2ff8f22deafd4",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol",
       "solcConfig": {
@@ -2224,8 +2190,8 @@
         "ERC1155Holder"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/access/TimelockController.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/access/TimelockController.sol": {
+      "lastModificationDate": 1620063405792,
       "contentHash": "d1ad44453ff9ce36dfcfa4f5dd243d19",
       "sourceName": "contracts/openzeppelin/contracts/access/TimelockController.sol",
       "solcConfig": {
@@ -2261,8 +2227,8 @@
         "TimelockController"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/PaymentSplitter.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/PaymentSplitter.sol": {
+      "lastModificationDate": 1620063405814,
       "contentHash": "d7a2cefa8bcd057cbd1266070ca314ed",
       "sourceName": "contracts/openzeppelin/contracts/payment/PaymentSplitter.sol",
       "solcConfig": {
@@ -2298,8 +2264,186 @@
         "PaymentSplitter"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/bondingSale.sol": {
-      "lastModificationDate": 1618715945171,
+    "/Users/paulbarclay/bondingcontracts/contracts/NetworkAgnostic.sol": {
+      "lastModificationDate": 1620063405785,
+      "contentHash": "e8451d27709021934a39f0e5c0af27a9",
+      "sourceName": "contracts/NetworkAgnostic.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/contracts/math/SafeMath.sol",
+        "./EIP712Base.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "NetworkAgnostic"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/EIP712Base.sol": {
+      "lastModificationDate": 1620063405785,
+      "contentHash": "f778567159858f84470cc12aa18ba071",
+      "sourceName": "contracts/EIP712Base.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EIP712Base"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/WorkerMetaTransactions.sol": {
+      "lastModificationDate": 1620063405785,
+      "contentHash": "6ba44e48f18afe6827293b6dd0f997b6",
+      "sourceName": "contracts/WorkerMetaTransactions.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./NetworkAgnostic.sol",
+        "./interfaces/iLocalContract.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WorkerMetaTransactions"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iLocalContract.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "966bb923e1bcc9938d80ab527c8cb7e1",
+      "sourceName": "contracts/interfaces/iLocalContract.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./iGAME_Master.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iLocalContract"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_Master.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "9f3a802d91cb8f88e33ffec54bc7f789",
+      "sourceName": "contracts/interfaces/iGAME_Master.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_Master"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/bondingSale.sol": {
+      "lastModificationDate": 1620063405785,
       "contentHash": "63756d334a07cd0a5d1b5e6f8b8b4378",
       "sourceName": "contracts/bondingSale.sol",
       "solcConfig": {
@@ -2337,8 +2481,8 @@
         "bondingSale"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol": {
-      "lastModificationDate": 1617156272329,
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol": {
+      "lastModificationDate": 1620063405786,
       "contentHash": "3e3265ba6474c03d86bea1d82fdeec82",
       "sourceName": "contracts/interfaces/iGAME_ERC20.sol",
       "solcConfig": {
@@ -2373,10 +2517,10 @@
         "iGAME_ERC20"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iGAME_Master.sol": {
-      "lastModificationDate": 1617027699253,
-      "contentHash": "9f3a802d91cb8f88e33ffec54bc7f789",
-      "sourceName": "contracts/interfaces/iGAME_Master.sol",
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_Game.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "069d609294a2f24c93faf56b3dad6bb6",
+      "sourceName": "contracts/interfaces/iGAME_Game.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -2404,11 +2548,11 @@
         "^0.7.0"
       ],
       "artifacts": [
-        "iGAME_Master"
+        "iGAME_Game"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1617027755915,
+    "/Users/paulbarclay/bondingcontracts/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1620063517456,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
@@ -2441,10 +2585,10 @@
         "console"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iLocalContract.sol": {
-      "lastModificationDate": 1617027699253,
-      "contentHash": "966bb923e1bcc9938d80ab527c8cb7e1",
-      "sourceName": "contracts/interfaces/iLocalContract.sol",
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iERC20.sol": {
+      "lastModificationDate": 1620063405786,
+      "contentHash": "3958a5e4aa8d8e2246b4e3aebb850caa",
+      "sourceName": "contracts/interfaces/iERC20.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -2467,18 +2611,16 @@
           }
         }
       },
-      "imports": [
-        "./iGAME_Master.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
         "^0.7.0"
       ],
       "artifacts": [
-        "iLocalContract"
+        "iERC20"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol": {
+      "lastModificationDate": 1620063405823,
       "contentHash": "4cef998c21c9cfceba627ea47b5a5b28",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol",
       "solcConfig": {
@@ -2513,8 +2655,8 @@
         "ERC20Capped"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/mocks/mockToken.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/mocks/mockToken.sol": {
+      "lastModificationDate": 1620063405788,
       "contentHash": "00a91e9222d91f99f2425a6b4cf68175",
       "sourceName": "contracts/mocks/mockToken.sol",
       "solcConfig": {
@@ -2549,8 +2691,8 @@
         "mockToken"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol": {
+      "lastModificationDate": 1620063405824,
       "contentHash": "683d46b8e6a400847a831fc9623233cf",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol",
       "solcConfig": {
@@ -2585,10 +2727,10 @@
         "ERC721Holder"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iERC20.sol": {
-      "lastModificationDate": 1617027699253,
-      "contentHash": "3958a5e4aa8d8e2246b4e3aebb850caa",
-      "sourceName": "contracts/interfaces/iERC20.sol",
+    "/Users/paulbarclay/bondingcontracts/contracts/Context.sol": {
+      "lastModificationDate": 1620063405785,
+      "contentHash": "9b848c8d3591d5c693539a4fd417750e",
+      "sourceName": "contracts/Context.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -2616,181 +2758,11 @@
         "^0.7.0"
       ],
       "artifacts": [
-        "iERC20"
+        "Context"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iERC721.sol": {
-      "lastModificationDate": 1617027699253,
-      "contentHash": "3a0435a81d84eb5202abe2bdb8803a8c",
-      "sourceName": "contracts/interfaces/iERC721.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iERC721"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iERC721Receiver.sol": {
-      "lastModificationDate": 1617027699253,
-      "contentHash": "7618664094f91961d4014dca9ed57503",
-      "sourceName": "contracts/interfaces/iERC721Receiver.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iERC721Receiver"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC721.sol": {
-      "lastModificationDate": 1617027699253,
-      "contentHash": "844d13726bfbf3c52a8b2b38b1d99c01",
-      "sourceName": "contracts/interfaces/iGAME_ERC721.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iGAME_ERC721"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iGAME_Game.sol": {
-      "lastModificationDate": 1617719497788,
-      "contentHash": "069d609294a2f24c93faf56b3dad6bb6",
-      "sourceName": "contracts/interfaces/iGAME_Game.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iGAME_Game"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iMinionManager.sol": {
-      "lastModificationDate": 1617027699253,
-      "contentHash": "84dd70531e775d98b502f3aa8f837260",
-      "sourceName": "contracts/interfaces/iMinionManager.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iMinionManager"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/interfaces/iChildToken.sol": {
-      "lastModificationDate": 1617027699253,
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iChildToken.sol": {
+      "lastModificationDate": 1620063405786,
       "contentHash": "ca876f8df1e6a48b2b8d7ac4442eec56",
       "sourceName": "contracts/interfaces/iChildToken.sol",
       "solcConfig": {
@@ -2823,8 +2795,178 @@
         "iChildToken"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/cryptography/MerkleProof.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iERC721.sol": {
+      "lastModificationDate": 1620063405786,
+      "contentHash": "3a0435a81d84eb5202abe2bdb8803a8c",
+      "sourceName": "contracts/interfaces/iERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC721"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iERC721Receiver.sol": {
+      "lastModificationDate": 1620063405786,
+      "contentHash": "7618664094f91961d4014dca9ed57503",
+      "sourceName": "contracts/interfaces/iERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC721Receiver"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_ERC721.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "844d13726bfbf3c52a8b2b38b1d99c01",
+      "sourceName": "contracts/interfaces/iGAME_ERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_ERC721"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iMinionManager.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "84dd70531e775d98b502f3aa8f837260",
+      "sourceName": "contracts/interfaces/iMinionManager.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iMinionManager"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/mocks/mockAdmin.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "1b6018db603d7116c1cf50ed9393f058",
+      "sourceName": "contracts/mocks/mockAdmin.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "mockAdmin"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/cryptography/MerkleProof.sol": {
+      "lastModificationDate": 1620063405810,
       "contentHash": "44bd823687d58263d3b1da555235f93e",
       "sourceName": "contracts/openzeppelin/contracts/cryptography/MerkleProof.sol",
       "solcConfig": {
@@ -2857,8 +2999,8 @@
         "MerkleProof"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165Checker.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165Checker.sol": {
+      "lastModificationDate": 1620063405811,
       "contentHash": "33e1e632b2a4fc45f845e42a99bc56a4",
       "sourceName": "contracts/openzeppelin/contracts/introspection/ERC165Checker.sol",
       "solcConfig": {
@@ -2891,8 +3033,8 @@
         "ERC165Checker"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol": {
+      "lastModificationDate": 1620063405811,
       "contentHash": "a44e936347d0c6d6aeb7b0acf404d175",
       "sourceName": "contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol",
       "solcConfig": {
@@ -2927,8 +3069,8 @@
         "ERC1820Implementer"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol": {
+      "lastModificationDate": 1620063405812,
       "contentHash": "663251cfa9462cad6003a81bc876c938",
       "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol",
       "solcConfig": {
@@ -2961,8 +3103,8 @@
         "IERC1820Implementer"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/math/SignedSafeMath.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/math/SignedSafeMath.sol": {
+      "lastModificationDate": 1620063405813,
       "contentHash": "159169e078460f380436878421b73431",
       "sourceName": "contracts/openzeppelin/contracts/math/SignedSafeMath.sol",
       "solcConfig": {
@@ -2995,8 +3137,8 @@
         "SignedSafeMath"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/Initializable.sol": {
-      "lastModificationDate": 1617027699257,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/Initializable.sol": {
+      "lastModificationDate": 1620063405817,
       "contentHash": "99bd69d93b6e25a9cdf9c04550e1780f",
       "sourceName": "contracts/openzeppelin/contracts/proxy/Initializable.sol",
       "solcConfig": {
@@ -3029,8 +3171,8 @@
         "Initializable"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Create2.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Create2.sol": {
+      "lastModificationDate": 1620063405827,
       "contentHash": "79d4a7e7426effc35937c12ad475b2dc",
       "sourceName": "contracts/openzeppelin/contracts/utils/Create2.sol",
       "solcConfig": {
@@ -3063,8 +3205,8 @@
         "Create2"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+      "lastModificationDate": 1620063405828,
       "contentHash": "1c60f58cee45c61469e1aea31e4dd879",
       "sourceName": "contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol",
       "solcConfig": {
@@ -3097,8 +3239,8 @@
         "ReentrancyGuard"
       ]
     },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/SafeCast.sol": {
-      "lastModificationDate": 1617027699261,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/SafeCast.sol": {
+      "lastModificationDate": 1620063405829,
       "contentHash": "c227dcf457382aabf2d78218f6457799",
       "sourceName": "contracts/openzeppelin/contracts/utils/SafeCast.sol",
       "solcConfig": {
@@ -3129,148 +3271,6 @@
       ],
       "artifacts": [
         "SafeCast"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/EIP712Base.sol": {
-      "lastModificationDate": 1618690917643,
-      "contentHash": "f778567159858f84470cc12aa18ba071",
-      "sourceName": "contracts/EIP712Base.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "EIP712Base"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/Context.sol": {
-      "lastModificationDate": 1618247067138,
-      "contentHash": "9b848c8d3591d5c693539a4fd417750e",
-      "sourceName": "contracts/Context.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "Context"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/NetworkAgnostic.sol": {
-      "lastModificationDate": 1618689089732,
-      "contentHash": "e8451d27709021934a39f0e5c0af27a9",
-      "sourceName": "contracts/NetworkAgnostic.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./openzeppelin/contracts/math/SafeMath.sol",
-        "./EIP712Base.sol"
-      ],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "NetworkAgnostic"
-      ]
-    },
-    "/home/john/Documents/Code/Current_Work/GameCredits/bondingcontracts/contracts/WorkerMetaTransactions.sol": {
-      "lastModificationDate": 1618334631961,
-      "contentHash": "6ba44e48f18afe6827293b6dd0f997b6",
-      "sourceName": "contracts/WorkerMetaTransactions.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./NetworkAgnostic.sol",
-        "./interfaces/iLocalContract.sol"
-      ],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "WorkerMetaTransactions"
       ]
     }
   }
