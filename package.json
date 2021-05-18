@@ -35,6 +35,7 @@
     "hardhat-deploy": "^0.7.0-beta.55",
     "hardhat-gas-reporter": "^1.0.4",
     "hardhat-tracer": "^1.0.0-alpha.3",
+    "truffle-contract-size": "^2.0.1",
     "web3-utils": "^1.3.0"
   }
 }

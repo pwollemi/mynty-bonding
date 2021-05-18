@@ -1,0 +1,2136 @@
+{
+  "contractName": "iGAME_ERC20",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancelAuctionByManager",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value_",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferByContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "gameContract_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "erc721Contract_",
+          "type": "address"
+        }
+      ],
+      "name": "linkContracts",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getGameBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        }
+      ],
+      "name": "getLoyaltyPointsGranted",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentPoints",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        }
+      ],
+      "name": "getLoyaltyPointSpends",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentPoints",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        }
+      ],
+      "name": "getLoyaltyPointsTotal",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentPoints",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "pointsToSpend_",
+          "type": "uint256"
+        }
+      ],
+      "name": "thirdPartySpendLoyaltyPoints",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.3+commit.9bfce1f6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId_\",\"type\":\"uint256\"}],\"name\":\"cancelAuctionByManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"game_\",\"type\":\"uint256\"}],\"name\":\"getGameBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"game_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account_\",\"type\":\"address\"}],\"name\":\"getLoyaltyPointSpends\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"currentPoints\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"game_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account_\",\"type\":\"address\"}],\"name\":\"getLoyaltyPointsGranted\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"currentPoints\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"game_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account_\",\"type\":\"address\"}],\"name\":\"getLoyaltyPointsTotal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"currentPoints\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"gameContract_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"erc721Contract_\",\"type\":\"address\"}],\"name\":\"linkContracts\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"game_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"pointsToSpend_\",\"type\":\"uint256\"}],\"name\":\"thirdPartySpendLoyaltyPoints\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value_\",\"type\":\"uint256\"}],\"name\":\"transferByContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"allowance(address,address)\":{\"details\":\"Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called.\"},\"approve(address,uint256)\":{\"details\":\"Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the amount of tokens owned by `account`.\"},\"totalSupply()\":{\"details\":\"Returns the amount of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol\":\"iGAME_ERC20\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":10000},\"remappings\":[]},\"sources\":{\"/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iERC20.sol\":{\"keccak256\":\"0x4d93ce495057fa6f12c9658bd1208e8b00fd26a1eaa6636ecb2f660faee890ea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f2fb0095cbdf3e414a9061e893b9d1751bcc98b6cecb26632d354ee362419fb4\",\"dweb:/ipfs/QmXrAmERo7sodyUpA2maQbfVUv1cY3K3N3ksSmcYSek7Qb\"]},\"/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol\":{\"keccak256\":\"0x914be4cb260514ceb04e6a1d9dab4379e1a3c996830ad21d4f127ee4e6a54283\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f82ae6cfdf56dc9aeb8e74b035c6593f53367bc09eb10395a0129fe5e7678029\",\"dweb:/ipfs/QmeJ93amnYrjMj1aU9wLpSH3UqP2zHh1LMKjq6r9oiDN75\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.7.0;\n\nimport './iERC20.sol';\n// @title iGAME_ERC20\n// @dev The interface for the Auction & ERC-20 contract\n//  Only methods required for calling by sibling contracts are required here\n// @author GAME Credits (gamecredits.org)\n// (c) 2020 GAME Credits All Rights Reserved. This code is not open source.\n// SPDX-License-Identifier: UNLICENSED\nabstract contract iGAME_ERC20 is iERC20{\n    function cancelAuctionByManager(uint256 tokenId_) external virtual;\n\n  \n\n    function transferByContract(\n        address from_,\n        address to_,\n        uint256 value_\n    ) external virtual;\n\n    function linkContracts(address gameContract_, address erc721Contract_)\n        external\n        virtual;\n\n    function getGameBalance(uint256 game_)\n        public\n        view\n        virtual\n        returns (uint256 balance);\n\n    function getLoyaltyPointsGranted(uint256 game_, address account_)\n        public\n        view\n        virtual\n        returns (uint256 currentPoints);\n\n    function getLoyaltyPointSpends(uint256 game_, address account_)\n        public\n        view\n        virtual\n        returns (uint256 currentPoints);\n\n    function getLoyaltyPointsTotal(uint256 game_, address account_)\n        public\n        view\n        virtual\n        returns (uint256 currentPoints);\n\n    function thirdPartySpendLoyaltyPoints(\n        uint256 game_,\n        address account_,\n        uint256 pointsToSpend_\n    ) external virtual;\n}\n",
+  "sourcePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol",
+  "ast": {
+    "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol",
+    "exportedSymbols": {
+      "iERC20": [
+        1908
+      ],
+      "iGAME_ERC20": [
+        2070
+      ]
+    },
+    "id": 2071,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2002,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iERC20.sol",
+        "file": "./iERC20.sol",
+        "id": 2003,
+        "nodeType": "ImportDirective",
+        "scope": 2071,
+        "sourceUnit": 1909,
+        "src": "25:22:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2004,
+              "name": "iERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1908,
+              "src": "393:6:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_iERC20_$1908",
+                "typeString": "contract iERC20"
+              }
+            },
+            "id": 2005,
+            "nodeType": "InheritanceSpecifier",
+            "src": "393:6:10"
+          }
+        ],
+        "contractDependencies": [
+          1908
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 2070,
+        "linearizedBaseContracts": [
+          2070,
+          1908
+        ],
+        "name": "iGAME_ERC20",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "3250c6d1",
+            "id": 2010,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelAuctionByManager",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2008,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2007,
+                  "mutability": "mutable",
+                  "name": "tokenId_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2010,
+                  "src": "437:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2006,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "437:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "436:18:10"
+            },
+            "returnParameters": {
+              "id": 2009,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "471:0:10"
+            },
+            "scope": 2070,
+            "src": "405:67:10",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "e2b8e7d3",
+            "id": 2019,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferByContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2017,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2012,
+                  "mutability": "mutable",
+                  "name": "from_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2019,
+                  "src": "519:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2011,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "519:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2014,
+                  "mutability": "mutable",
+                  "name": "to_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2019,
+                  "src": "542:11:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2013,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "542:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2016,
+                  "mutability": "mutable",
+                  "name": "value_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2019,
+                  "src": "563:14:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2015,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "563:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "509:74:10"
+            },
+            "returnParameters": {
+              "id": 2018,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "600:0:10"
+            },
+            "scope": 2070,
+            "src": "482:119:10",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "3dc9abfa",
+            "id": 2026,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "linkContracts",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2024,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2021,
+                  "mutability": "mutable",
+                  "name": "gameContract_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2026,
+                  "src": "630:21:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2020,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "630:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2023,
+                  "mutability": "mutable",
+                  "name": "erc721Contract_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2026,
+                  "src": "653:23:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2022,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "653:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "629:48:10"
+            },
+            "returnParameters": {
+              "id": 2025,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "710:0:10"
+            },
+            "scope": 2070,
+            "src": "607:104:10",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "9dad1da5",
+            "id": 2033,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGameBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2029,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2028,
+                  "mutability": "mutable",
+                  "name": "game_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2033,
+                  "src": "741:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2027,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "741:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:15:10"
+            },
+            "returnParameters": {
+              "id": 2032,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2031,
+                  "mutability": "mutable",
+                  "name": "balance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2033,
+                  "src": "817:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2030,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "817:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "816:17:10"
+            },
+            "scope": 2070,
+            "src": "717:117:10",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "functionSelector": "be46fcb9",
+            "id": 2042,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLoyaltyPointsGranted",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2038,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2035,
+                  "mutability": "mutable",
+                  "name": "game_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2042,
+                  "src": "873:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2034,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "873:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2037,
+                  "mutability": "mutable",
+                  "name": "account_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2042,
+                  "src": "888:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2036,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "888:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "872:33:10"
+            },
+            "returnParameters": {
+              "id": 2041,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2040,
+                  "mutability": "mutable",
+                  "name": "currentPoints",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2042,
+                  "src": "967:21:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2039,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "967:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "966:23:10"
+            },
+            "scope": 2070,
+            "src": "840:150:10",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "functionSelector": "368a5a1a",
+            "id": 2051,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLoyaltyPointSpends",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2047,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2044,
+                  "mutability": "mutable",
+                  "name": "game_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2051,
+                  "src": "1027:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2043,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1027:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2046,
+                  "mutability": "mutable",
+                  "name": "account_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2051,
+                  "src": "1042:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2045,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1042:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1026:33:10"
+            },
+            "returnParameters": {
+              "id": 2050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2049,
+                  "mutability": "mutable",
+                  "name": "currentPoints",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2051,
+                  "src": "1121:21:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2048,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1121:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1120:23:10"
+            },
+            "scope": 2070,
+            "src": "996:148:10",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "functionSelector": "42bf989d",
+            "id": 2060,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLoyaltyPointsTotal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2056,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2053,
+                  "mutability": "mutable",
+                  "name": "game_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2060,
+                  "src": "1181:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2052,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1181:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2055,
+                  "mutability": "mutable",
+                  "name": "account_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2060,
+                  "src": "1196:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2054,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1196:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1180:33:10"
+            },
+            "returnParameters": {
+              "id": 2059,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2058,
+                  "mutability": "mutable",
+                  "name": "currentPoints",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2060,
+                  "src": "1275:21:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2057,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1275:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1274:23:10"
+            },
+            "scope": 2070,
+            "src": "1150:148:10",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "functionSelector": "9a1d8044",
+            "id": 2069,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "thirdPartySpendLoyaltyPoints",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2067,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2062,
+                  "mutability": "mutable",
+                  "name": "game_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2069,
+                  "src": "1351:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2061,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1351:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2064,
+                  "mutability": "mutable",
+                  "name": "account_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2069,
+                  "src": "1374:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2063,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1374:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2066,
+                  "mutability": "mutable",
+                  "name": "pointsToSpend_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2069,
+                  "src": "1400:22:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2065,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1400:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1341:87:10"
+            },
+            "returnParameters": {
+              "id": 2068,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1445:0:10"
+            },
+            "scope": 2070,
+            "src": "1304:142:10",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2071,
+        "src": "360:1088:10"
+      }
+    ],
+    "src": "0:1449:10"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol",
+      "exportedSymbols": {
+        "iERC20": [
+          1908
+        ],
+        "iGAME_ERC20": [
+          2070
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 2002,
+        "name": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1909,
+          "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iERC20.sol",
+          "file": "./iERC20.sol",
+          "scope": 2071,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2003,
+        "name": "ImportDirective",
+        "src": "25:22:10"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "contractDependencies": [
+            1908
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            2070,
+            1908
+          ],
+          "name": "iGAME_ERC20",
+          "scope": 2071
+        },
+        "children": [
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {
+                  "name": "iERC20",
+                  "referencedDeclaration": 1908,
+                  "type": "contract iERC20"
+                },
+                "id": 2004,
+                "name": "UserDefinedTypeName",
+                "src": "393:6:10"
+              }
+            ],
+            "id": 2005,
+            "name": "InheritanceSpecifier",
+            "src": "393:6:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "3250c6d1",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "cancelAuctionByManager",
+              "scope": 2070,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tokenId_",
+                      "scope": 2010,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2006,
+                        "name": "ElementaryTypeName",
+                        "src": "437:7:10"
+                      }
+                    ],
+                    "id": 2007,
+                    "name": "VariableDeclaration",
+                    "src": "437:16:10"
+                  }
+                ],
+                "id": 2008,
+                "name": "ParameterList",
+                "src": "436:18:10"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2009,
+                "name": "ParameterList",
+                "src": "471:0:10"
+              }
+            ],
+            "id": 2010,
+            "name": "FunctionDefinition",
+            "src": "405:67:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "e2b8e7d3",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "transferByContract",
+              "scope": 2070,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "from_",
+                      "scope": 2019,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2011,
+                        "name": "ElementaryTypeName",
+                        "src": "519:7:10"
+                      }
+                    ],
+                    "id": 2012,
+                    "name": "VariableDeclaration",
+                    "src": "519:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "to_",
+                      "scope": 2019,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2013,
+                        "name": "ElementaryTypeName",
+                        "src": "542:7:10"
+                      }
+                    ],
+                    "id": 2014,
+                    "name": "VariableDeclaration",
+                    "src": "542:11:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "value_",
+                      "scope": 2019,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2015,
+                        "name": "ElementaryTypeName",
+                        "src": "563:7:10"
+                      }
+                    ],
+                    "id": 2016,
+                    "name": "VariableDeclaration",
+                    "src": "563:14:10"
+                  }
+                ],
+                "id": 2017,
+                "name": "ParameterList",
+                "src": "509:74:10"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2018,
+                "name": "ParameterList",
+                "src": "600:0:10"
+              }
+            ],
+            "id": 2019,
+            "name": "FunctionDefinition",
+            "src": "482:119:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "3dc9abfa",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "linkContracts",
+              "scope": 2070,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "gameContract_",
+                      "scope": 2026,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2020,
+                        "name": "ElementaryTypeName",
+                        "src": "630:7:10"
+                      }
+                    ],
+                    "id": 2021,
+                    "name": "VariableDeclaration",
+                    "src": "630:21:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "erc721Contract_",
+                      "scope": 2026,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2022,
+                        "name": "ElementaryTypeName",
+                        "src": "653:7:10"
+                      }
+                    ],
+                    "id": 2023,
+                    "name": "VariableDeclaration",
+                    "src": "653:23:10"
+                  }
+                ],
+                "id": 2024,
+                "name": "ParameterList",
+                "src": "629:48:10"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2025,
+                "name": "ParameterList",
+                "src": "710:0:10"
+              }
+            ],
+            "id": 2026,
+            "name": "FunctionDefinition",
+            "src": "607:104:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "9dad1da5",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getGameBalance",
+              "scope": 2070,
+              "stateMutability": "view",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "game_",
+                      "scope": 2033,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2027,
+                        "name": "ElementaryTypeName",
+                        "src": "741:7:10"
+                      }
+                    ],
+                    "id": 2028,
+                    "name": "VariableDeclaration",
+                    "src": "741:13:10"
+                  }
+                ],
+                "id": 2029,
+                "name": "ParameterList",
+                "src": "740:15:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "balance",
+                      "scope": 2033,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2030,
+                        "name": "ElementaryTypeName",
+                        "src": "817:7:10"
+                      }
+                    ],
+                    "id": 2031,
+                    "name": "VariableDeclaration",
+                    "src": "817:15:10"
+                  }
+                ],
+                "id": 2032,
+                "name": "ParameterList",
+                "src": "816:17:10"
+              }
+            ],
+            "id": 2033,
+            "name": "FunctionDefinition",
+            "src": "717:117:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "be46fcb9",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getLoyaltyPointsGranted",
+              "scope": 2070,
+              "stateMutability": "view",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "game_",
+                      "scope": 2042,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2034,
+                        "name": "ElementaryTypeName",
+                        "src": "873:7:10"
+                      }
+                    ],
+                    "id": 2035,
+                    "name": "VariableDeclaration",
+                    "src": "873:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "account_",
+                      "scope": 2042,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2036,
+                        "name": "ElementaryTypeName",
+                        "src": "888:7:10"
+                      }
+                    ],
+                    "id": 2037,
+                    "name": "VariableDeclaration",
+                    "src": "888:16:10"
+                  }
+                ],
+                "id": 2038,
+                "name": "ParameterList",
+                "src": "872:33:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "currentPoints",
+                      "scope": 2042,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2039,
+                        "name": "ElementaryTypeName",
+                        "src": "967:7:10"
+                      }
+                    ],
+                    "id": 2040,
+                    "name": "VariableDeclaration",
+                    "src": "967:21:10"
+                  }
+                ],
+                "id": 2041,
+                "name": "ParameterList",
+                "src": "966:23:10"
+              }
+            ],
+            "id": 2042,
+            "name": "FunctionDefinition",
+            "src": "840:150:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "368a5a1a",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getLoyaltyPointSpends",
+              "scope": 2070,
+              "stateMutability": "view",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "game_",
+                      "scope": 2051,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2043,
+                        "name": "ElementaryTypeName",
+                        "src": "1027:7:10"
+                      }
+                    ],
+                    "id": 2044,
+                    "name": "VariableDeclaration",
+                    "src": "1027:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "account_",
+                      "scope": 2051,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2045,
+                        "name": "ElementaryTypeName",
+                        "src": "1042:7:10"
+                      }
+                    ],
+                    "id": 2046,
+                    "name": "VariableDeclaration",
+                    "src": "1042:16:10"
+                  }
+                ],
+                "id": 2047,
+                "name": "ParameterList",
+                "src": "1026:33:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "currentPoints",
+                      "scope": 2051,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2048,
+                        "name": "ElementaryTypeName",
+                        "src": "1121:7:10"
+                      }
+                    ],
+                    "id": 2049,
+                    "name": "VariableDeclaration",
+                    "src": "1121:21:10"
+                  }
+                ],
+                "id": 2050,
+                "name": "ParameterList",
+                "src": "1120:23:10"
+              }
+            ],
+            "id": 2051,
+            "name": "FunctionDefinition",
+            "src": "996:148:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "42bf989d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getLoyaltyPointsTotal",
+              "scope": 2070,
+              "stateMutability": "view",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "game_",
+                      "scope": 2060,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2052,
+                        "name": "ElementaryTypeName",
+                        "src": "1181:7:10"
+                      }
+                    ],
+                    "id": 2053,
+                    "name": "VariableDeclaration",
+                    "src": "1181:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "account_",
+                      "scope": 2060,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2054,
+                        "name": "ElementaryTypeName",
+                        "src": "1196:7:10"
+                      }
+                    ],
+                    "id": 2055,
+                    "name": "VariableDeclaration",
+                    "src": "1196:16:10"
+                  }
+                ],
+                "id": 2056,
+                "name": "ParameterList",
+                "src": "1180:33:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "currentPoints",
+                      "scope": 2060,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2057,
+                        "name": "ElementaryTypeName",
+                        "src": "1275:7:10"
+                      }
+                    ],
+                    "id": 2058,
+                    "name": "VariableDeclaration",
+                    "src": "1275:21:10"
+                  }
+                ],
+                "id": 2059,
+                "name": "ParameterList",
+                "src": "1274:23:10"
+              }
+            ],
+            "id": 2060,
+            "name": "FunctionDefinition",
+            "src": "1150:148:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "9a1d8044",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "thirdPartySpendLoyaltyPoints",
+              "scope": 2070,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "game_",
+                      "scope": 2069,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2061,
+                        "name": "ElementaryTypeName",
+                        "src": "1351:7:10"
+                      }
+                    ],
+                    "id": 2062,
+                    "name": "VariableDeclaration",
+                    "src": "1351:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "account_",
+                      "scope": 2069,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2063,
+                        "name": "ElementaryTypeName",
+                        "src": "1374:7:10"
+                      }
+                    ],
+                    "id": 2064,
+                    "name": "VariableDeclaration",
+                    "src": "1374:16:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "pointsToSpend_",
+                      "scope": 2069,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2065,
+                        "name": "ElementaryTypeName",
+                        "src": "1400:7:10"
+                      }
+                    ],
+                    "id": 2066,
+                    "name": "VariableDeclaration",
+                    "src": "1400:22:10"
+                  }
+                ],
+                "id": 2067,
+                "name": "ParameterList",
+                "src": "1341:87:10"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2068,
+                "name": "ParameterList",
+                "src": "1445:0:10"
+              }
+            ],
+            "id": 2069,
+            "name": "FunctionDefinition",
+            "src": "1304:142:10"
+          }
+        ],
+        "id": 2070,
+        "name": "ContractDefinition",
+        "src": "360:1088:10"
+      }
+    ],
+    "id": 2071,
+    "name": "SourceUnit",
+    "src": "0:1449:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.3+commit.9bfce1f6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-05-14T01:48:40.483Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "allowance(address,address)": {
+        "details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
+      },
+      "approve(address,uint256)": {
+        "details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
+      },
+      "balanceOf(address)": {
+        "details": "Returns the amount of tokens owned by `account`."
+      },
+      "totalSupply()": {
+        "details": "Returns the amount of tokens in existence."
+      },
+      "transfer(address,uint256)": {
+        "details": "Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
+      },
+      "transferFrom(address,address,uint256)": {
+        "details": "Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

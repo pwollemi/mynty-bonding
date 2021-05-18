@@ -1,0 +1,656 @@
+{
+  "contractName": "iLocalContract",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "contract_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isLocal_",
+          "type": "bool"
+        }
+      ],
+      "name": "updateLocalContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isLocalContract",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.3+commit.9bfce1f6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"isLocalContract\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isLocal_\",\"type\":\"bool\"}],\"name\":\"updateLocalContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iLocalContract.sol\":\"iLocalContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_Master.sol\":{\"keccak256\":\"0x9ee049eca396ffdbeb44ddae15956542f47e62583cce2dd79b848f7a446cb442\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://35c1362a6fd09989583d58da476a6de806ea8df0a9812a29f120474a5abe57a1\",\"dweb:/ipfs/QmSjkuHR7Y9sVRr9mK2xxGoHxraRo5GKNNjrbUXoJrFQkR\"]},\"/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iLocalContract.sol\":{\"keccak256\":\"0x942d7290def87ce6b28322dd1eda88f4fe43f4396b9428e7c45092bcdda9c111\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://cd5b53bddb5856d689fe761ec9438acda5e74e620ab625723ab9e76d06584b00\",\"dweb:/ipfs/QmdJQ4SEd1parPpyMHxxE8W9uc4RmPZKXKinfN4t3Wd487\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.7.0;\n\nimport \"./iGAME_Master.sol\";\n\n// @title iLocalContract\n// @dev The interface for the main Token Manager contract\n//  Only methods required for calling by sibling contracts are required here\n// @author GAME Credits (gamecredits.org)\n// (c) 2020 GAME Credits All Rights Reserved. This code is not open source.\n// SPDX-License-Identifier: UNLICENSED\nabstract contract iLocalContract {\n\n  function updateLocalContract(address contract_, bool isLocal_) virtual external;\n\n  function metaTxSenderIsWorkerOrMinion() internal virtual returns (bool);\n\n  function isLocalContract()\n    external\n    virtual\n    pure\n  returns(bool) {\n    return true;\n  }\n}",
+  "sourcePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iLocalContract.sol",
+  "ast": {
+    "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iLocalContract.sol",
+    "exportedSymbols": {
+      "iGAME_Master": [
+        2333
+      ],
+      "iLocalContract": [
+        2357
+      ]
+    },
+    "id": 2358,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2335,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_Master.sol",
+        "file": "./iGAME_Master.sol",
+        "id": 2336,
+        "nodeType": "ImportDirective",
+        "scope": 2358,
+        "sourceUnit": 2334,
+        "src": "25:28:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 2357,
+        "linearizedBaseContracts": [
+          2357
+        ],
+        "name": "iLocalContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "5958b301",
+            "id": 2343,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateLocalContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2341,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2338,
+                  "mutability": "mutable",
+                  "name": "contract_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2343,
+                  "src": "439:17:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2337,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "439:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2340,
+                  "mutability": "mutable",
+                  "name": "isLocal_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2343,
+                  "src": "458:13:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2339,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "438:34:14"
+            },
+            "returnParameters": {
+              "id": 2342,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "489:0:14"
+            },
+            "scope": 2357,
+            "src": "410:80:14",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "id": 2348,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "metaTxSenderIsWorkerOrMinion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2344,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "531:2:14"
+            },
+            "returnParameters": {
+              "id": 2347,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2346,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2348,
+                  "src": "560:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2345,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "560:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:6:14"
+            },
+            "scope": 2357,
+            "src": "494:72:14",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2355,
+              "nodeType": "Block",
+              "src": "647:22:14",
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "74727565",
+                    "id": 2353,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "660:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 2352,
+                  "id": 2354,
+                  "nodeType": "Return",
+                  "src": "653:11:14"
+                }
+              ]
+            },
+            "functionSelector": "765d6cce",
+            "id": 2356,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isLocalContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2349,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "594:2:14"
+            },
+            "returnParameters": {
+              "id": 2352,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2351,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2356,
+                  "src": "641:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2350,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "641:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "640:6:14"
+            },
+            "scope": 2357,
+            "src": "570:99:14",
+            "stateMutability": "pure",
+            "virtual": true,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2358,
+        "src": "372:299:14"
+      }
+    ],
+    "src": "0:671:14"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iLocalContract.sol",
+      "exportedSymbols": {
+        "iGAME_Master": [
+          2333
+        ],
+        "iLocalContract": [
+          2357
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 2335,
+        "name": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 2334,
+          "absolutePath": "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_Master.sol",
+          "file": "./iGAME_Master.sol",
+          "scope": 2358,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2336,
+        "name": "ImportDirective",
+        "src": "25:28:14"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            2357
+          ],
+          "name": "iLocalContract",
+          "scope": 2358
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "5958b301",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "updateLocalContract",
+              "scope": 2357,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "contract_",
+                      "scope": 2343,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2337,
+                        "name": "ElementaryTypeName",
+                        "src": "439:7:14"
+                      }
+                    ],
+                    "id": 2338,
+                    "name": "VariableDeclaration",
+                    "src": "439:17:14"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "isLocal_",
+                      "scope": 2343,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2339,
+                        "name": "ElementaryTypeName",
+                        "src": "458:4:14"
+                      }
+                    ],
+                    "id": 2340,
+                    "name": "VariableDeclaration",
+                    "src": "458:13:14"
+                  }
+                ],
+                "id": 2341,
+                "name": "ParameterList",
+                "src": "438:34:14"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2342,
+                "name": "ParameterList",
+                "src": "489:0:14"
+              }
+            ],
+            "id": 2343,
+            "name": "FunctionDefinition",
+            "src": "410:80:14"
+          },
+          {
+            "attributes": {
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "metaTxSenderIsWorkerOrMinion",
+              "scope": 2357,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2344,
+                "name": "ParameterList",
+                "src": "531:2:14"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 2348,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2345,
+                        "name": "ElementaryTypeName",
+                        "src": "560:4:14"
+                      }
+                    ],
+                    "id": 2346,
+                    "name": "VariableDeclaration",
+                    "src": "560:4:14"
+                  }
+                ],
+                "id": 2347,
+                "name": "ParameterList",
+                "src": "559:6:14"
+              }
+            ],
+            "id": 2348,
+            "name": "FunctionDefinition",
+            "src": "494:72:14"
+          },
+          {
+            "attributes": {
+              "functionSelector": "765d6cce",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isLocalContract",
+              "scope": 2357,
+              "stateMutability": "pure",
+              "virtual": true,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2349,
+                "name": "ParameterList",
+                "src": "594:2:14"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 2356,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2350,
+                        "name": "ElementaryTypeName",
+                        "src": "641:4:14"
+                      }
+                    ],
+                    "id": 2351,
+                    "name": "VariableDeclaration",
+                    "src": "641:4:14"
+                  }
+                ],
+                "id": 2352,
+                "name": "ParameterList",
+                "src": "640:6:14"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2352
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 2353,
+                        "name": "Literal",
+                        "src": "660:4:14"
+                      }
+                    ],
+                    "id": 2354,
+                    "name": "Return",
+                    "src": "653:11:14"
+                  }
+                ],
+                "id": 2355,
+                "name": "Block",
+                "src": "647:22:14"
+              }
+            ],
+            "id": 2356,
+            "name": "FunctionDefinition",
+            "src": "570:99:14"
+          }
+        ],
+        "id": 2357,
+        "name": "ContractDefinition",
+        "src": "372:299:14"
+      }
+    ],
+    "id": 2358,
+    "name": "SourceUnit",
+    "src": "0:671:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.3+commit.9bfce1f6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-05-12T19:34:18.434Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

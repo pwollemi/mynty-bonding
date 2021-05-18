@@ -1,8 +1,6 @@
-
 const sigUtil = require('eth-sig-util');
 const Web3 = require('web3');
 const utilWeb3 = new Web3();
-//const util = require("./utils.js");
 const bip39 = require('bip39');
 
 const {wallet,hdkey} = require('ethereumjs-wallet');
@@ -211,8 +209,6 @@ const sendWorkerMetaTx = async (contract, from, functionSignature, r, s, v, rela
     .workerExecuteMetaTransaction(from, replayProtection, functionSignature, r, s, v)
     .estimateGas({ from: relayer });
   console.log(gas);
-  console.log('sending from')
-  console.log(from)
   let tx = await contract.methods
     .workerExecuteMetaTransaction(from, replayProtection, functionSignature, r, s, v)
     .send({ from: relayer, gasLimit: gas });
@@ -221,14 +217,9 @@ const sendWorkerMetaTx = async (contract, from, functionSignature, r, s, v, rela
 const sendMetaTx = async (contract, from, functionSignature, r, s, v, relayerAccountIndex) => {
   const { address } = await getKeys(relayerAccountIndex);
   const relayer = address;
- 
-  
-  console.log(functionSignature)
-  console.log('sending from')
-    console.log(from)
-  const gas = await contract.methods.executeMetaTransaction(from, functionSignature, r, s, v)
+  const gas = await contract.methods
+    .executeMetaTransaction(from, functionSignature, r, s, v)
     .estimateGas({ from: relayer });
-  console.log("gas ")
   let tx = await contract.methods
     .executeMetaTransaction(from, functionSignature, r, s, v)
     .send({ from: relayer, gasLimit: gas });

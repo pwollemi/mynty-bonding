@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.0 <0.8.0;
+
 import "./interfaces/iGAME_ERC20.sol";
 //import "./openzeppelin/contracts/math/SafeMath.sol";
 import "./interfaces/iGAME_Game.sol";
@@ -24,14 +27,13 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
     iGAME_Game public gameAdmin;
     iGAME_Master public masterContract;
     mapping(uint256 => uint256) public curves;
-    mapping(uint256 => bool) public initialized;
     mapping(uint256 => uint256) public saleStarts;
     mapping(uint256 => uint256) public TokenSupply;
     mapping(uint256 => uint256) public multipliers;
     mapping(uint256 => uint256) public nextTokenIDs;
+    mapping(address => uint256) internal userLatestBlock;
 
     uint256 public multiple = 10**7;
-    uint256 public nextTokenId;
 
     event TokenData(
         uint256 tokenId,
@@ -71,7 +73,7 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         address _gameToken,
         address _gameAdmin,
         address _gameMaster
-    ) public NFTbase("test") NetworkAgnostic("bonding", "1") {
+    ) NFTbase("test") NetworkAgnostic("GAME Bonding Curves", "1") {
         gameToken = iGAME_ERC20(_gameToken);
         gameAdmin = iGAME_Game(_gameAdmin);
         masterContract = iGAME_Master(_gameMaster);
@@ -79,6 +81,10 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
 
     function toggleTokenMinting() public isGlobalAdmin() {
         mintingActive = !mintingActive;
+    }
+
+    function toggleTokenBurning() public isGlobalAdmin() {
+        burningActive = !burningActive;
     }
 
     /**
@@ -89,6 +95,30 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         return masterContract.makeFundedCall(msg.sender);
     }
 
+    function _beforeTokenTransfer(
+        address operator,
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory amounts,
+        bytes memory data
+    ) internal override {
+        if (to != address(0)) {
+            for (uint256 i = 0; i < amounts.length; ++i) {
+                require(amounts[i] == 1, "Amount should be 1");
+            }
+            if (from != address(0)) {
+                for (uint256 i = 0; i < ids.length; ++i) {
+                    require(
+                        balanceOf(to, ids[i]) == 0,
+                        "to_address should own 0 of each"
+                    );
+                }
+            }
+        }
+        super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
+    }
+
     function updateLocalContract(address contract_, bool isLocal_)
         external
         override
@@ -97,14 +127,6 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         //require(contract_ != address(erc721Contract), "can't reset the erc721 contract");
         // require(contract_ != address(0), "can't be the zero address");
         //localContracts[contract_] = isLocal_;
-    }
-
-    function creatorAddress(uint256 c) public view returns (address) {
-        return address(c);
-    }
-
-    function toggleTokenBurning() public isGlobalAdmin() {
-        burningActive = !burningActive;
     }
 
     function getNextTokenID(uint256 creator) public view returns (uint256) {
@@ -136,7 +158,7 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
     function getPrintPrice(uint256 tokenId, uint256 printNumber)
         public
         view
-        returns (uint256 price)
+        returns (uint256)
     {
         uint256 C = curves[tokenId];
         // C must be set at between 1 to 16;
@@ -170,17 +192,17 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         uint256 curve,
         uint256 multiplier
     ) public {
-        nextTokenIDs[creatorId] += 1;
-        uint256 nextTokenId = getNextTokenID(creatorId);
+        uint256 nextTokenId = nextTokenIDs[creatorId] + 1;
+        nextTokenIDs[creatorId] = nextTokenId;
 
         require(nextTokenId < 1000000, "max token of 1000000");
         require(
             curve > 0 && curve <= 20 && multiplier > 0 && multiplier <= 1000000,
-            "valid curve and multipliers"
+            "invalid curve and multipliers"
         );
         require(bytes(json).length > 1, "json must non null");
         require(
-            gameAdmin.isOperaqtorOrMinion(creatorId, _msgSender()) == true,
+            gameAdmin.isOperatorOrMinion(creatorId, _msgSender()) == true,
             "sender must be minion or worker"
         );
 
@@ -188,7 +210,6 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
 
         curves[tokenId] = curve;
         multipliers[tokenId] = multiplier;
-        initialized[tokenId] = true;
         emit TokenData(tokenId, json, curve, multiplier);
     }
 
@@ -211,7 +232,6 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
             "invalid curve or multipliers"
         );
         require(bytes(json).length > 1, "json must non null");
-        //require(initialized[tokenId] == true, "token must be initialized");
         require(curves[tokenId] > 0, "curve must be set");
         curves[tokenId] = curve;
         multipliers[tokenId] = multiplier;
@@ -222,7 +242,6 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         require(hasMinted(tokenId) == false, "token has not been minted");
         require(curves[tokenId] > 0, "curve must be set");
         //require(onSaleDate > 0, "sale date must be nonzero");
-        //require(initialized[tokenId] == true, "token must be initialized");
         uint256 creator = tokenId / baseTokenDecimals;
         require(
             gameAdmin.isOperatorOrMinion(creator, _msgSender()) == true,
@@ -236,17 +255,21 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
     }
 
     function buyNFTwithGAME(uint256 tokenId, uint256 maxPrice) public {
+        require(mintingActive, "minting is not active");
         require(
             block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
             "sale has not started yet"
         );
+        require(userLatestBlock[_msgSender()] < block.number);
+        userLatestBlock[_msgSender()] = block.number;
+
         uint256 creatorID = tokenId / baseTokenDecimals;
         uint256 price = getBuyPrice(tokenId);
         require(price > 0 && price <= maxPrice, "invalid price");
         TokenSupply[tokenId] += 1;
 
         gameToken.transferByContract(_msgSender(), address(this), price);
-        console.log(price);
+        // console.log(price);
         uint256 gamefee = price.div(50);
         uint256 creatorfee = (price.mul(8)).div(100);
 
@@ -273,6 +296,7 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
     }
 
     function burn(uint256 tokenId) public {
+        require(burningActive, "burning is not active");
         require(
             balanceOf(msg.sender, tokenId) >= 1,
             "sender must have at least one token"

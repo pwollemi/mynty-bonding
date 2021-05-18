@@ -1,6 +1,6 @@
-import './iERC20.sol';
 pragma solidity ^0.7.0;
 
+import './iERC20.sol';
 // @title iGAME_ERC20
 // @dev The interface for the Auction & ERC-20 contract
 //  Only methods required for calling by sibling contracts are required here

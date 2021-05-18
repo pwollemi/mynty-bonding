@@ -5,6 +5,7 @@ pragma solidity ^0.7.0;
 
 import "./openzeppelin/contracts/math/SafeMath.sol";
 import "./EIP712Base.sol";
+import "hardhat/console.sol";
 
 //import "./Context.sol";
 

@@ -52,7 +52,7 @@ contract ERC1155 is Context, ERC165, IERC1155 {
     /**
      * @dev See {_setURI}.
      */
-    constructor () public {
+    constructor () {
       //  _setURI(uri_);
 
         // register the supported interfaces to conform to ERC1155 via ERC165
