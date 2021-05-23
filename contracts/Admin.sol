@@ -21,7 +21,7 @@ contract Admin is AccessControl {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(METADATA_ADMIN, _msgSender());
         _setupRole(MINTER, _msgSender());
-        _setRoleAdmin(DEFAULT_ADMIN_ROLE, MINTER);
-        _setRoleAdmin(DEFAULT_ADMIN_ROLE, METADATA_ADMIN);
+        _setRoleAdmin(MINTER, DEFAULT_ADMIN_ROLE);
+        _setRoleAdmin(METADATA_ADMIN, DEFAULT_ADMIN_ROLE);
     }
 }

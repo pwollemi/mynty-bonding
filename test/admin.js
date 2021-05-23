@@ -1,34 +1,40 @@
-const BASE = artifacts.require("NFTbase");
-const SALE = artifacts.require("bondingSale");
-const ADMIN= artifacts.require("mockAdmin")
-const GAME = artifacts.require("mockToken")
+const { ethers } = require("hardhat");
+const { solidity } = require("ethereum-waffle");
+const chai = require("chai");
 
+chai.use(solidity);
+const { assert, expect } = chai;
 
-let utils=require('web3-utils')
-const {
-  BN,           // Big Number support 
-  constants,    // Common constants, like the zero address and largest integers
-  expectEvent,  // Assertions for emitted events
-  expectRevert,
-  increase,
-  increastTo,
-  time, // Assertions for transactions that should fail
-} = require('@openzeppelin/test-helpers');
-const { assert } = require('hardhat');
 const baseURI = "https://test.com/"
 
-contract("NFTbase", accounts => {
+describe("Admin function test", () => {
   let base;
   let sale;
   let admin;
   let game;
-  let feeReceiver = accounts[6];
+  let accounts, signers;
+  let feeReceiver;
 
   beforeEach(async function() {
-    base = await BASE.new(baseURI, { from: accounts[0] })
-    game = await GAME.new()
-    admin = await ADMIN.new()
-    sale = await SALE.new(game.address,admin.address,accounts[9])
+    signers = await ethers.getSigners();
+    accounts = signers.map((signer) => signer.address)
+    feeReceiver = accounts[6];
+
+    const BASE = await ethers.getContractFactory("NFTbase");
+    base = await BASE.deploy(baseURI);
+    await base.deployed();
+
+    const mockToken = await ethers.getContractFactory("mockToken");
+    game = await mockToken.deploy();
+    await game.deployed();
+
+    const mockAdmin = await ethers.getContractFactory("mockAdmin");
+    admin = await mockAdmin.deploy();
+    await admin.deployed();
+
+    const BondingSale = await ethers.getContractFactory("BondingSale");
+    sale = await BondingSale.deploy(game.address, admin.address, accounts[9]);
+    await sale.deployed();
 
     // add all accounts as operators
     for (let i = 0;i < 9; i++){
@@ -36,54 +42,54 @@ contract("NFTbase", accounts => {
     }
 
     // transfer specific amount of tokens to accounts 1 ~ 4
-    game.transfer(accounts[1], '100000000000000000000000', { from:accounts[0] })
-    game.transfer(accounts[2], '100000000000000000000000', { from:accounts[0] })
-    game.transfer(accounts[3], '100000000000000000000000', { from:accounts[0] })
-    game.transfer(accounts[4], '100000000000000000000000', { from:accounts[0] })
+    game.transfer(accounts[1], '100000000000000000000000')
+    game.transfer(accounts[2], '100000000000000000000000')
+    game.transfer(accounts[3], '100000000000000000000000')
+    game.transfer(accounts[4], '100000000000000000000000')
 
     // set fee receiver
-    await sale.setFEERECEIVER(feeReceiver, { from:accounts[0] })
+    await sale.setFEERECEIVER(feeReceiver)
   });
 
   it("MetadataAdmin can change uri (and someone with no roles cannot)", async function(){
     let tokenID = 1
 
-    await base.setURI("new uri", tokenID, { from: accounts[0] })
-    await base.setBaseURI("new uri", { from: accounts[0] })
+    await base.setURI("new uri", tokenID)
+    await base.setBaseURI("new uri")
 
-    await expectRevert.unspecified(base.setURI("new uri", tokenID, { from: accounts[1] }))
-    await expectRevert.unspecified(base.setBaseURI("new uri", { from: accounts[1] }))
+    await expect(base.connect(signers[1]).setURI("new uri", tokenID)).to.be.reverted
+    await expect(base.connect(signers[1]).setBaseURI("new uri")).to.be.reverted
   })
 
   it("GlobalAdmin can change metadata admin (and other roles cannot)", async function(){
     let tokenID = 1
     const METADATA_ADMIN = await base.METADATA_ADMIN()
     
-    await base.setURI("new uri", tokenID, { from: accounts[0] })
-    await base.setBaseURI("new uri", { from: accounts[0] })
+    await base.setURI("new uri", tokenID)
+    await base.setBaseURI("new uri")
 
-    await base.grantRole(METADATA_ADMIN, accounts[1], { from: accounts[0] })
-    await expectRevert.unspecified(base.grantRole(METADATA_ADMIN, accounts[2], { from: accounts[3] }))
+    await base.grantRole(METADATA_ADMIN, accounts[1])
+    await expect(base.connect(signers[3]).grantRole(METADATA_ADMIN, accounts[2])).to.be.reverted
 
-    await base.setURI("new uri", tokenID, { from: accounts[1] })
-    await base.setBaseURI("new uri", { from: accounts[1] })
+    await base.connect(signers[1]).setURI("new uri", tokenID)
+    await base.connect(signers[1]).setBaseURI("new uri")
 
-    await expectRevert.unspecified(base.setURI("new uri", tokenID, { from: accounts[2] }))
-    await expectRevert.unspecified(base.setBaseURI("new uri", { from: accounts[2] }))
+    await expect(base.connect(signers[2]).setURI("new uri", tokenID)).to.be.reverted
+    await expect(base.connect(signers[2]).setBaseURI("new uri")).to.be.reverted
   })
 
   it("GlobalAdmin can toggle token minted (and other roles cannot)", async function(){
-    await sale.toggleTokenMinting({ from: accounts[0]})
-    await expectRevert.unspecified(sale.toggleTokenMinting({ from: accounts[1]}), { from: accounts[1] })
+    await sale.toggleTokenMinting()
+    await expect(sale.connect(signers[1]).toggleTokenMinting()).to.be.reverted
   })
 
   it("GlobalAdmin can set fee receiver (and other roles cannot)", async function(){
-    await sale.setFEERECEIVER(feeReceiver, { from:accounts[0] })
-    await expectRevert.unspecified(sale.setFEERECEIVER(feeReceiver, { from:accounts[1] }))
+    await sale.setFEERECEIVER(feeReceiver)
+    await expect(sale.connect(signers[1]).setFEERECEIVER(feeReceiver)).to.be.reverted
   })
 
   it("toggleTokenBurning/toggleTokenMinting prevents minting (but can be reactivated)", async function(){
-    let currentTimeStamp = await time.latest()
+    let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
     let creatorId = 2
     let token = 1
     let curve = 5
@@ -93,20 +99,19 @@ contract("NFTbase", accounts => {
 
     await sale.CreateToken(creatorId, "json data", curve, multiplier)
     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-    await time.increase(100)
 
     let initPrice = await sale.getPrintPrice(tokenID, 1)
 
-    await expectRevert(sale.buyNFTwithGAME(tokenID, initPrice, { from: accounts[2] }), "minting is not active")
+    await expect(sale.connect(signers[2]).buyNFTwithGAME(tokenID, initPrice)).to.be.revertedWith("minting is not active")
     await sale.toggleTokenMinting()
-    await sale.buyNFTwithGAME(tokenID, initPrice, { from: accounts[2] })
+    await sale.connect(signers[2]).buyNFTwithGAME(tokenID, initPrice)
     await sale.toggleTokenMinting()
-    await expectRevert(sale.buyNFTwithGAME(tokenID, initPrice, { from: accounts[2] }), "minting is not active")
+    await expect(sale.connect(signers[2]).buyNFTwithGAME(tokenID, initPrice)).to.be.revertedWith("minting is not active")
 
-    await expectRevert(sale.burn(tokenID, { from: accounts[2] }), "burning is not active")
+    await expect(sale.connect(signers[2]).burn(tokenID)).to.be.revertedWith("burning is not active")
     await sale.toggleTokenBurning()
-    await sale.burn(tokenID, { from: accounts[2] })
+    await sale.connect(signers[2]).burn(tokenID)
     await sale.toggleTokenBurning()
-    await expectRevert(sale.burn(tokenID, { from: accounts[2] }), "burning is not active")
+    await expect(sale.connect(signers[2]).burn(tokenID)).to.be.revertedWith("burning is not active")
   })
 })

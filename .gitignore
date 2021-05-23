@@ -48,5 +48,8 @@ Thumbs.db
 *.mov
 *.wmv
 
+# environment
+.env
+
 # solidity
 cache/

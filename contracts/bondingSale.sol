@@ -5,13 +5,14 @@ import "./interfaces/iGAME_ERC20.sol";
 //import "./openzeppelin/contracts/math/SafeMath.sol";
 import "./interfaces/iGAME_Game.sol";
 import "./interfaces/iGAME_Master.sol";
+import "./interfaces/IUniswapV2Router02.sol";
 import "./NFTbase.sol";
 import "./WorkerMetaTransactions.sol";
 import "hardhat/console.sol";
 
 /// name GameCreditsBondedNFTS
 //"1"//
-contract bondingSale is NFTbase, WorkerMetaTransactions {
+contract BondingSale is NFTbase, WorkerMetaTransactions {
     using SafeMath for uint256;
     bool public mintingActive;
     bool public burningActive;
@@ -34,6 +35,11 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
     mapping(address => uint256) internal userLatestBlock;
 
     uint256 public multiple = 10**7;
+
+    IUniswapV2Router02 public uniswapRouter;
+
+    address public wMatic = 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270;
+    address public quick = 0x831753DD7087CaC61aB5644b308642cc1c33Dc13;
 
     event TokenData(
         uint256 tokenId,
@@ -79,6 +85,14 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         masterContract = iGAME_Master(_gameMaster);
     }
 
+    function setUniswapRouter(address uniswapRouter_) public isGlobalAdmin() {
+        uniswapRouter = IUniswapV2Router02(uniswapRouter_);
+    }
+
+    function setFEERECEIVER(address a) public isGlobalAdmin() {
+        GAMEFEE_RECEIVER = a;
+    }
+
     function toggleTokenMinting() public isGlobalAdmin() {
         mintingActive = !mintingActive;
     }
@@ -89,8 +103,7 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
 
     /**
         Checks to see if call is worker or minion and if they have enough gas to make call
-        
-     */
+    **/
     function metaTxSenderIsWorkerOrMinion() internal override returns (bool) {
         return masterContract.makeFundedCall(msg.sender);
     }
@@ -139,10 +152,6 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
         returns (uint256)
     {
         return baseTokenDecimals * _creatorID + token;
-    }
-
-    function setFEERECEIVER(address a) public isGlobalAdmin() {
-        GAMEFEE_RECEIVER = a;
     }
 
     function getBuyPrice(uint256 tokenId) public view returns (uint256) {
@@ -294,6 +303,128 @@ contract bondingSale is NFTbase, WorkerMetaTransactions {
             creatorfee
         );
     }
+
+    function buyNFTwithMatic(uint256 tokenId, uint256 maxPrice) public payable {
+        require(mintingActive, "minting is not active");
+        require(
+            block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
+            "sale has not started yet"
+        );
+        require(userLatestBlock[_msgSender()] < block.number);
+        userLatestBlock[_msgSender()] = block.number;
+
+        uint256 creatorID = tokenId / baseTokenDecimals;
+        uint256 price = getBuyPrice(tokenId);
+        require(price > 0 && price <= maxPrice, "invalid price");
+        TokenSupply[tokenId] += 1;
+
+        {
+            address[] memory path = new address[](3);
+            path[0] = wMatic;
+            path[1] = quick;
+            path[2] = address(gameToken);
+
+            uint[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
+            require(msg.value >= amountsIn[0], "buyNFTwithMatic: value is not enough");
+
+            uint256[] memory amounts = uniswapRouter.swapETHForExactTokens{value: amountsIn[0]}(
+                price,
+                path,
+                msg.sender,
+                block.timestamp + 100);
+
+            // send MATIC back
+            if (amounts[0] < msg.value) {
+                msg.sender.transfer(msg.value.sub(amounts[0]));
+            }
+        }
+
+        uint256 gamefee = price.div(50);
+        uint256 creatorfee = (price.mul(8)).div(100);
+
+        _mint(_msgSender(), tokenId, 1, "");
+
+        //emit TokenBought(tokenId, msg.sender, TokenSupply[tokenId]);
+        emit TokenBought(
+            _msgSender(),
+            tokenId,
+            price,
+            getBuyPrice(tokenId),
+            getSellPrice(tokenId),
+            TokenSupply[tokenId],
+            creatorfee,
+            gameToken.balanceOf(address(this)),
+            address(creatorID)
+        );
+        gameToken.transferByContract(address(this), GAMEFEE_RECEIVER, gamefee);
+        gameToken.transferByContract(
+            address(this),
+            address(creatorID),
+            creatorfee
+        );
+    }
+
+    // function buyNFTwithERC20(uint256 tokenId, uint256 maxPrice, address asset) public payable {
+    //     require(mintingActive, "minting is not active");
+    //     require(
+    //         block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
+    //         "sale has not started yet"
+    //     );
+    //     require(userLatestBlock[_msgSender()] < block.number);
+    //     userLatestBlock[_msgSender()] = block.number;
+
+    //     uint256 creatorID = tokenId / baseTokenDecimals;
+    //     uint256 price = getBuyPrice(tokenId);
+    //     require(price > 0 && price <= maxPrice, "invalid price");
+    //     TokenSupply[tokenId] += 1;
+
+    //     {
+    //         address[] memory path = new address[](3);
+    //         path[0] = asset;
+    //         path[1] = quick;
+    //         path[2] = address(gameToken);
+
+    //         uint256[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
+    //         iERC20(path[0]).transferFrom(msg.sender, address(this), amountsIn[0]);
+    //         iERC20(path[0]).approve(address(uniswapRouter), amountsIn[0]);
+
+    //         uint256[] memory amounts = uniswapRouter.swapTokensForExactTokens(
+    //             price,
+    //             amountsIn[0],
+    //             path,
+    //             msg.sender,
+    //             block.timestamp + 100);
+
+    //         // send ERC20 back
+    //         if (amounts[0] < amountsIn[0]) {
+    //             msg.sender.transfer(amountsIn[0].sub(amounts[0]));
+    //         }
+    //     }
+
+    //     uint256 gamefee = price.div(50);
+    //     uint256 creatorfee = (price.mul(8)).div(100);
+
+    //     _mint(_msgSender(), tokenId, 1, "");
+
+    //     //emit TokenBought(tokenId, msg.sender, TokenSupply[tokenId]);
+    //     emit TokenBought(
+    //         _msgSender(),
+    //         tokenId,
+    //         price,
+    //         getBuyPrice(tokenId),
+    //         getSellPrice(tokenId),
+    //         TokenSupply[tokenId],
+    //         creatorfee,
+    //         gameToken.balanceOf(address(this)),
+    //         address(creatorID)
+    //     );
+    //     gameToken.transferByContract(address(this), GAMEFEE_RECEIVER, gamefee);
+    //     gameToken.transferByContract(
+    //         address(this),
+    //         address(creatorID),
+    //         creatorfee
+    //     );
+    // }
 
     function burn(uint256 tokenId) public {
         require(burningActive, "burning is not active");
