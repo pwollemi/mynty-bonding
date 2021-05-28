@@ -1,10 +1,10 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/bondingSale.sol": {
-      "lastModificationDate": 1621617383000,
-      "contentHash": "b19cb161a8a1ceb91272b33e3dc583a5",
-      "sourceName": "contracts/bondingSale.sol",
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/cryptography/MerkleProof.sol": {
+      "lastModificationDate": 1620307102000,
+      "contentHash": "44bd823687d58263d3b1da555235f93e",
+      "sourceName": "contracts/openzeppelin/contracts/cryptography/MerkleProof.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -18,29 +18,29 @@
                 "abi",
                 "evm.bytecode",
                 "evm.deployedBytecode",
-                "evm.methodIdentifiers"
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
               ],
               "": [
                 "ast"
               ]
             }
+          },
+          "metadata": {
+            "useLiteralContent": true
           }
         }
       },
-      "imports": [
-        "./interfaces/iGAME_ERC20.sol",
-        "./interfaces/iGAME_Game.sol",
-        "./interfaces/iGAME_Master.sol",
-        "./interfaces/IUniswapV2Router02.sol",
-        "./NFTbase.sol",
-        "./WorkerMetaTransactions.sol",
-        "hardhat/console.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
         ">=0.6.0 <0.8.0"
       ],
       "artifacts": [
-        "bondingSale"
+        "MerkleProof"
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/Admin.sol": {
@@ -2891,7 +2891,7 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1621631064000,
+      "lastModificationDate": 1621748382000,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
@@ -2933,8 +2933,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/BondingSale.sol": {
-      "lastModificationDate": 1621620570000,
-      "contentHash": "2b20f76828150cfd9595558611bdc853",
+      "lastModificationDate": 1622194022000,
+      "contentHash": "5b0c6ca35869c8e0928b24c7efc464ec",
       "sourceName": "contracts/BondingSale.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -3372,8 +3372,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/mocks/mockToken.sol": {
-      "lastModificationDate": 1620848390000,
-      "contentHash": "ebb7ea69dcab633b9f2fc22102af6534",
+      "lastModificationDate": 1622082482000,
+      "contentHash": "eb6c94e2f3ad6a5d196f44eef8213c31",
       "sourceName": "contracts/mocks/mockToken.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -3457,48 +3457,6 @@
       ],
       "artifacts": [
         "ERC721Holder"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/Context.sol": {
-      "lastModificationDate": 1620952842000,
-      "contentHash": "9b848c8d3591d5c693539a4fd417750e",
-      "sourceName": "contracts/Context.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "Context"
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iChildToken.sol": {
@@ -3753,10 +3711,10 @@
         "mockAdmin"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/cryptography/MerkleProof.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "44bd823687d58263d3b1da555235f93e",
-      "sourceName": "contracts/openzeppelin/contracts/cryptography/MerkleProof.sol",
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/Context.sol": {
+      "lastModificationDate": 1620952842000,
+      "contentHash": "9b848c8d3591d5c693539a4fd417750e",
+      "sourceName": "contracts/Context.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -3789,10 +3747,10 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.6.0 <0.8.0"
+        "^0.7.0"
       ],
       "artifacts": [
-        "MerkleProof"
+        "Context"
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165Checker.sol": {
@@ -4131,6 +4089,48 @@
       ],
       "artifacts": [
         "SafeCast"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/mocks/mockMaster.sol": {
+      "lastModificationDate": 1622081080000,
+      "contentHash": "2c36ff43f86dc16e987be1afe4422659",
+      "sourceName": "contracts/mocks/mockMaster.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "mockMaster"
       ]
     }
   }

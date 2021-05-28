@@ -34,7 +34,7 @@ describe("bonding sales", () => {
     await sale.deployed();
     
     // add all accounts as operators
-    for (let i = 0;i < 5; i++){
+    for (let i = 0; i < 5; i++){
       await admin.addOperator(accounts[i])
     }
 
@@ -191,18 +191,6 @@ describe("bonding sales", () => {
       await expect(sale.connect(signers[2]).buyNFTwithGAME(tokenID, initPrice)).to.be.revertedWith("sale has not started yet")
     })
 
-    // it("I cannot buy a token if I already own a copy of that token", async () => {
-    //   let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-    //   let tokenID = await sale.getTokenID(creatorId, token)
-    //   await sale.CreateToken(creatorId, "json data", curve, multiplier)
-    //   await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-    //   await sale.toggleTokenMinting()
-    //   let initPrice = await sale.getPrintPrice(tokenID, 1)
-    //   let secondPrice = await sale.getPrintPrice(tokenID, 2)
-    //   sale.connect(signers[2]).buyNFTwithGAME(tokenID,initPrice)
-    //   await expect(sale.connect(signers[2]).buyNFTwithGAME(tokenID, secondPrice)).to.be.revertedWith("already own a copy of that token")
-    // })
-
     it("If I set maxPrice below the current price, it fails", async () => {
       let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
       let tokenID = await sale.getTokenID(creatorId, token)
@@ -210,7 +198,6 @@ describe("bonding sales", () => {
       await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
       await sale.toggleTokenMinting()
       let initPrice = await sale.getPrintPrice(tokenID, 1)
-      console.log(initPrice);
       await expect(sale.connect(signers[2]).buyNFTwithGAME(tokenID, initPrice.sub(1).toString())).to.be.revertedWith("invalid price")
     })
 
@@ -221,7 +208,7 @@ describe("bonding sales", () => {
       await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
       await sale.toggleTokenMinting()
       let initPrice = await sale.getPrintPrice(tokenID, 1)
-      console.log("Price of token:", initPrice)     
+      console.log("Price of token:", initPrice.toString())
 
       const creatorBalanceBefore = await game.balanceOf(creatorId)
       const feeReceiverBalanceBefore = await game.balanceOf(feeReceiver)

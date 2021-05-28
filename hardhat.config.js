@@ -27,6 +27,11 @@ module.exports = {
     ],
   },
   networks: {
+    localhost: {
+      chainId: 31337,
+      url: 'http://127.0.0.1:8545/',
+      timeout: 3000000,
+    },
     ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_API_KEY}`,
       accounts: [ROPSTEN_PRIVATE_KEY],

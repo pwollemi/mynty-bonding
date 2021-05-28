@@ -327,15 +327,11 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
             uint[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
             require(msg.value >= amountsIn[0], "buyNFTwithMatic: value is not enough");
 
-            uint256[] memory amounts = uniswapRouter.swapETHForExactTokens{value: amountsIn[0]}(
-                price,
-                path,
-                msg.sender,
-                block.timestamp + 100);
+            uint256[] memory amounts = uniswapRouter.swapETHForExactTokens{value: amountsIn[0]}(price, path, address(this), block.timestamp + 100);
 
             // send MATIC back
             if (amounts[0] < msg.value) {
-                msg.sender.transfer(msg.value.sub(amounts[0]));
+                msg.sender.call{value: msg.value.sub(amounts[0])}("");
             }
         }
 
@@ -364,67 +360,62 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         );
     }
 
-    // function buyNFTwithERC20(uint256 tokenId, uint256 maxPrice, address asset) public payable {
-    //     require(mintingActive, "minting is not active");
-    //     require(
-    //         block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
-    //         "sale has not started yet"
-    //     );
-    //     require(userLatestBlock[_msgSender()] < block.number);
-    //     userLatestBlock[_msgSender()] = block.number;
+    function buyNFTwithERC20(uint256 tokenId, uint256 maxPrice, address asset) public {
+        require(mintingActive, "minting is not active");
+        require(
+            block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
+            "sale has not started yet"
+        );
+        require(userLatestBlock[_msgSender()] < block.number);
+        userLatestBlock[_msgSender()] = block.number;
 
-    //     uint256 creatorID = tokenId / baseTokenDecimals;
-    //     uint256 price = getBuyPrice(tokenId);
-    //     require(price > 0 && price <= maxPrice, "invalid price");
-    //     TokenSupply[tokenId] += 1;
+        uint256 creatorID = tokenId / baseTokenDecimals;
+        uint256 price = getBuyPrice(tokenId);
+        require(price > 0 && price <= maxPrice, "invalid price");
+        TokenSupply[tokenId] += 1;
 
-    //     {
-    //         address[] memory path = new address[](3);
-    //         path[0] = asset;
-    //         path[1] = quick;
-    //         path[2] = address(gameToken);
+        {
+            address[] memory path = new address[](3);
+            path[0] = asset;
+            path[1] = quick;
+            path[2] = address(gameToken);
 
-    //         uint256[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
-    //         iERC20(path[0]).transferFrom(msg.sender, address(this), amountsIn[0]);
-    //         iERC20(path[0]).approve(address(uniswapRouter), amountsIn[0]);
+            uint256[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
+            iERC20(path[0]).transferFrom(msg.sender, address(this), amountsIn[0]);
+            iERC20(path[0]).approve(address(uniswapRouter), amountsIn[0]);
 
-    //         uint256[] memory amounts = uniswapRouter.swapTokensForExactTokens(
-    //             price,
-    //             amountsIn[0],
-    //             path,
-    //             msg.sender,
-    //             block.timestamp + 100);
+            uint256[] memory amounts = uniswapRouter.swapTokensForExactTokens(price, amountsIn[0], path, address(this), block.timestamp + 100);
 
-    //         // send ERC20 back
-    //         if (amounts[0] < amountsIn[0]) {
-    //             msg.sender.transfer(amountsIn[0].sub(amounts[0]));
-    //         }
-    //     }
+            // send ERC20 back
+            if (amounts[0] < amountsIn[0]) {
+                iERC20(path[0]).transferFrom(address(this), msg.sender, amountsIn[0].sub(amounts[0]));
+            }
+        }
 
-    //     uint256 gamefee = price.div(50);
-    //     uint256 creatorfee = (price.mul(8)).div(100);
+        uint256 gamefee = price.div(50);
+        uint256 creatorfee = (price.mul(8)).div(100);
 
-    //     _mint(_msgSender(), tokenId, 1, "");
+        _mint(_msgSender(), tokenId, 1, "");
 
-    //     //emit TokenBought(tokenId, msg.sender, TokenSupply[tokenId]);
-    //     emit TokenBought(
-    //         _msgSender(),
-    //         tokenId,
-    //         price,
-    //         getBuyPrice(tokenId),
-    //         getSellPrice(tokenId),
-    //         TokenSupply[tokenId],
-    //         creatorfee,
-    //         gameToken.balanceOf(address(this)),
-    //         address(creatorID)
-    //     );
-    //     gameToken.transferByContract(address(this), GAMEFEE_RECEIVER, gamefee);
-    //     gameToken.transferByContract(
-    //         address(this),
-    //         address(creatorID),
-    //         creatorfee
-    //     );
-    // }
+        //emit TokenBought(tokenId, msg.sender, TokenSupply[tokenId]);
+        emit TokenBought(
+            _msgSender(),
+            tokenId,
+            price,
+            getBuyPrice(tokenId),
+            getSellPrice(tokenId),
+            TokenSupply[tokenId],
+            creatorfee,
+            gameToken.balanceOf(address(this)),
+            address(creatorID)
+        );
+        gameToken.transferByContract(address(this), GAMEFEE_RECEIVER, gamefee);
+        gameToken.transferByContract(
+            address(this),
+            address(creatorID),
+            creatorfee
+        );
+    }
 
     function burn(uint256 tokenId) public {
         require(burningActive, "burning is not active");

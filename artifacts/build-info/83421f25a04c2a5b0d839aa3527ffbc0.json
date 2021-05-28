@@ -1,0 +1,622 @@
+{
+  "id": "83421f25a04c2a5b0d839aa3527ffbc0",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.7.3",
+  "solcLongVersion": "0.7.3+commit.9bfce1f6",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/mocks/mockMaster.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity >=0.6.0 <0.8.0;\r\n\r\ncontract mockMaster {\r\n  mapping(address => bool) public localContracts;\r\n  address public owner;\r\n\r\n  function updateLocalContract(address contract_, bool isLocal_)\r\n    external\r\n  {\r\n    _updateLocalContract(contract_, isLocal_);\r\n  }\r\n\r\n  function _updateLocalContract(address contract_, bool isLocal_)\r\n    internal\r\n  {\r\n    localContracts[contract_] = isLocal_;\r\n  }\r\n}\r\n"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata",
+            "devdoc",
+            "userdoc",
+            "storageLayout",
+            "evm.gasEstimates"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      },
+      "metadata": {
+        "useLiteralContent": true
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/mocks/mockMaster.sol": {
+        "mockMaster": {
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "name": "localContracts",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "owner",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "contract_",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isLocal_",
+                  "type": "bool"
+                }
+              ],
+              "name": "updateLocalContract",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ],
+          "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+          },
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "608060405234801561001057600080fd5b50610167806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80635958b3011461004657806372012a0b146100765780638da5cb5b146100b0575b600080fd5b6100746004803603604081101561005c57600080fd5b506001600160a01b03813516906020013515156100d4565b005b61009c6004803603602081101561008c57600080fd5b50356001600160a01b03166100e2565b604080519115158252519081900360200190f35b6100b86100f7565b604080516001600160a01b039092168252519081900360200190f35b6100de8282610106565b5050565b60006020819052908152604090205460ff1681565b6001546001600160a01b031681565b6001600160a01b03919091166000908152602081905260409020805460ff191691151591909117905556fea264697066735822122048c07472cc7a54881ec698f98b5432e4907cfd682a7e276d9e954a0aed03dc1164736f6c63430007030033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x167 DUP1 PUSH2 0x20 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x41 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x5958B301 EQ PUSH2 0x46 JUMPI DUP1 PUSH4 0x72012A0B EQ PUSH2 0x76 JUMPI DUP1 PUSH4 0x8DA5CB5B EQ PUSH2 0xB0 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x74 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x40 DUP2 LT ISZERO PUSH2 0x5C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 CALLDATALOAD AND SWAP1 PUSH1 0x20 ADD CALLDATALOAD ISZERO ISZERO PUSH2 0xD4 JUMP JUMPDEST STOP JUMPDEST PUSH2 0x9C PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH2 0x8C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH2 0xE2 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 ISZERO ISZERO DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH2 0xB8 PUSH2 0xF7 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP3 AND DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH2 0xDE DUP3 DUP3 PUSH2 0x106 JUMP JUMPDEST POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP2 SWAP1 MSTORE SWAP1 DUP2 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD PUSH1 0xFF AND DUP2 JUMP JUMPDEST PUSH1 0x1 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP2 SWAP1 SWAP2 AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x20 DUP2 SWAP1 MSTORE PUSH1 0x40 SWAP1 KECCAK256 DUP1 SLOAD PUSH1 0xFF NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x48 0xC0 PUSH21 0x72CC7A54881EC698F98B5432E4907CFD682A7E276D SWAP15 SWAP6 0x4A EXP 0xED SUB 0xDC GT PUSH5 0x736F6C6343 STOP SMOD SUB STOP CALLER ",
+              "sourceMap": "70:376:0:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "608060405234801561001057600080fd5b50600436106100415760003560e01c80635958b3011461004657806372012a0b146100765780638da5cb5b146100b0575b600080fd5b6100746004803603604081101561005c57600080fd5b506001600160a01b03813516906020013515156100d4565b005b61009c6004803603602081101561008c57600080fd5b50356001600160a01b03166100e2565b604080519115158252519081900360200190f35b6100b86100f7565b604080516001600160a01b039092168252519081900360200190f35b6100de8282610106565b5050565b60006020819052908152604090205460ff1681565b6001546001600160a01b031681565b6001600160a01b03919091166000908152602081905260409020805460ff191691151591909117905556fea264697066735822122048c07472cc7a54881ec698f98b5432e4907cfd682a7e276d9e954a0aed03dc1164736f6c63430007030033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x41 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x5958B301 EQ PUSH2 0x46 JUMPI DUP1 PUSH4 0x72012A0B EQ PUSH2 0x76 JUMPI DUP1 PUSH4 0x8DA5CB5B EQ PUSH2 0xB0 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x74 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x40 DUP2 LT ISZERO PUSH2 0x5C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 CALLDATALOAD AND SWAP1 PUSH1 0x20 ADD CALLDATALOAD ISZERO ISZERO PUSH2 0xD4 JUMP JUMPDEST STOP JUMPDEST PUSH2 0x9C PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH2 0x8C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH2 0xE2 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 ISZERO ISZERO DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH2 0xB8 PUSH2 0xF7 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP3 AND DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH2 0xDE DUP3 DUP3 PUSH2 0x106 JUMP JUMPDEST POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP2 SWAP1 MSTORE SWAP1 DUP2 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD PUSH1 0xFF AND DUP2 JUMP JUMPDEST PUSH1 0x1 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP2 SWAP1 SWAP2 AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x20 DUP2 SWAP1 MSTORE PUSH1 0x40 SWAP1 KECCAK256 DUP1 SLOAD PUSH1 0xFF NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x48 0xC0 PUSH21 0x72CC7A54881EC698F98B5432E4907CFD682A7E276D SWAP15 SWAP6 0x4A EXP 0xED SUB 0xDC GT PUSH5 0x736F6C6343 STOP SMOD SUB STOP CALLER ",
+              "sourceMap": "70:376:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;173:134;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;173:134:0;;;;;;;;;;:::i;:::-;;95:46;;;;;;;;;;;;;;;;-1:-1:-1;95:46:0;-1:-1:-1;;;;;95:46:0;;:::i;:::-;;;;;;;;;;;;;;;;;;146:20;;;:::i;:::-;;;;-1:-1:-1;;;;;146:20:0;;;;;;;;;;;;;;173:134;260:41;281:9;292:8;260:20;:41::i;:::-;173:134;;:::o;95:46::-;;;;;;;;;;;;;;;;:::o;146:20::-;;;-1:-1:-1;;;;;146:20:0;;:::o;313:130::-;-1:-1:-1;;;;;401:25:0;;;;:14;:25;;;;;;;;;;:36;;-1:-1:-1;;401:36:0;;;;;;;;;;313:130::o"
+            },
+            "gasEstimates": {
+              "creation": {
+                "codeDepositCost": "71800",
+                "executionCost": "123",
+                "totalCost": "71923"
+              },
+              "external": {
+                "localContracts(address)": "1139",
+                "owner()": "1059",
+                "updateLocalContract(address,bool)": "21172"
+              },
+              "internal": {
+                "_updateLocalContract(address,bool)": "20950"
+              }
+            },
+            "methodIdentifiers": {
+              "localContracts(address)": "72012a0b",
+              "owner()": "8da5cb5b",
+              "updateLocalContract(address,bool)": "5958b301"
+            }
+          },
+          "metadata": "{\"compiler\":{\"version\":\"0.7.3+commit.9bfce1f6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"localContracts\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isLocal_\",\"type\":\"bool\"}],\"name\":\"updateLocalContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/mocks/mockMaster.sol\":\"mockMaster\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/mocks/mockMaster.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity >=0.6.0 <0.8.0;\\r\\n\\r\\ncontract mockMaster {\\r\\n  mapping(address => bool) public localContracts;\\r\\n  address public owner;\\r\\n\\r\\n  function updateLocalContract(address contract_, bool isLocal_)\\r\\n    external\\r\\n  {\\r\\n    _updateLocalContract(contract_, isLocal_);\\r\\n  }\\r\\n\\r\\n  function _updateLocalContract(address contract_, bool isLocal_)\\r\\n    internal\\r\\n  {\\r\\n    localContracts[contract_] = isLocal_;\\r\\n  }\\r\\n}\\r\\n\",\"keccak256\":\"0xb68cdf91693f594610b8bcd1fc90730adcb638bceeeee5c783ffcf7e3b11ecf3\",\"license\":\"MIT\"}},\"version\":1}",
+          "storageLayout": {
+            "storage": [
+              {
+                "astId": 5,
+                "contract": "contracts/mocks/mockMaster.sol:mockMaster",
+                "label": "localContracts",
+                "offset": 0,
+                "slot": "0",
+                "type": "t_mapping(t_address,t_bool)"
+              },
+              {
+                "astId": 7,
+                "contract": "contracts/mocks/mockMaster.sol:mockMaster",
+                "label": "owner",
+                "offset": 0,
+                "slot": "1",
+                "type": "t_address"
+              }
+            ],
+            "types": {
+              "t_address": {
+                "encoding": "inplace",
+                "label": "address",
+                "numberOfBytes": "20"
+              },
+              "t_bool": {
+                "encoding": "inplace",
+                "label": "bool",
+                "numberOfBytes": "1"
+              },
+              "t_mapping(t_address,t_bool)": {
+                "encoding": "mapping",
+                "key": "t_address",
+                "label": "mapping(address => bool)",
+                "numberOfBytes": "32",
+                "value": "t_bool"
+              }
+            }
+          },
+          "userdoc": {
+            "kind": "user",
+            "methods": {},
+            "version": 1
+          }
+        }
+      }
+    },
+    "sources": {
+      "contracts/mocks/mockMaster.sol": {
+        "ast": {
+          "absolutePath": "contracts/mocks/mockMaster.sol",
+          "exportedSymbols": {
+            "mockMaster": [
+              35
+            ]
+          },
+          "id": 36,
+          "license": "MIT",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                ">=",
+                "0.6",
+                ".0",
+                "<",
+                "0.8",
+                ".0"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "35:31:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "contract",
+              "fullyImplemented": true,
+              "id": 35,
+              "linearizedBaseContracts": [
+                35
+              ],
+              "name": "mockMaster",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "constant": false,
+                  "functionSelector": "72012a0b",
+                  "id": 5,
+                  "mutability": "mutable",
+                  "name": "localContracts",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "95:46:0",
+                  "stateVariable": true,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                    "typeString": "mapping(address => bool)"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "keyType": {
+                      "id": 2,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "103:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Mapping",
+                    "src": "95:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                      "typeString": "mapping(address => bool)"
+                    },
+                    "valueType": {
+                      "id": 3,
+                      "name": "bool",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "114:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    }
+                  },
+                  "visibility": "public"
+                },
+                {
+                  "constant": false,
+                  "functionSelector": "8da5cb5b",
+                  "id": 7,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "146:20:0",
+                  "stateVariable": true,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "146:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "public"
+                },
+                {
+                  "body": {
+                    "id": 19,
+                    "nodeType": "Block",
+                    "src": "253:54:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 15,
+                              "name": "contract_",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 9,
+                              "src": "281:9:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            {
+                              "id": 16,
+                              "name": "isLocal_",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 11,
+                              "src": "292:8:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            ],
+                            "id": 14,
+                            "name": "_updateLocalContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 34,
+                            "src": "260:20:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bool_$returns$__$",
+                              "typeString": "function (address,bool)"
+                            }
+                          },
+                          "id": 17,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "260:41:0",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 18,
+                        "nodeType": "ExpressionStatement",
+                        "src": "260:41:0"
+                      }
+                    ]
+                  },
+                  "functionSelector": "5958b301",
+                  "id": 20,
+                  "implemented": true,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "updateLocalContract",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 12,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 9,
+                        "mutability": "mutable",
+                        "name": "contract_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 20,
+                        "src": "202:17:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 8,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "202:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 11,
+                        "mutability": "mutable",
+                        "name": "isLocal_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 20,
+                        "src": "221:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "typeName": {
+                          "id": 10,
+                          "name": "bool",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "221:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "201:34:0"
+                  },
+                  "returnParameters": {
+                    "id": 13,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "253:0:0"
+                  },
+                  "scope": 35,
+                  "src": "173:134:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": false,
+                  "visibility": "external"
+                },
+                {
+                  "body": {
+                    "id": 33,
+                    "nodeType": "Block",
+                    "src": "394:49:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 31,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "baseExpression": {
+                              "id": 27,
+                              "name": "localContracts",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5,
+                              "src": "401:14:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                                "typeString": "mapping(address => bool)"
+                              }
+                            },
+                            "id": 29,
+                            "indexExpression": {
+                              "id": 28,
+                              "name": "contract_",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 22,
+                              "src": "416:9:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "401:25:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "id": 30,
+                            "name": "isLocal_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24,
+                            "src": "429:8:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "src": "401:36:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 32,
+                        "nodeType": "ExpressionStatement",
+                        "src": "401:36:0"
+                      }
+                    ]
+                  },
+                  "id": 34,
+                  "implemented": true,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "_updateLocalContract",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 25,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 22,
+                        "mutability": "mutable",
+                        "name": "contract_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 34,
+                        "src": "343:17:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 21,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "343:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 24,
+                        "mutability": "mutable",
+                        "name": "isLocal_",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 34,
+                        "src": "362:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "typeName": {
+                          "id": 23,
+                          "name": "bool",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "362:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "342:34:0"
+                  },
+                  "returnParameters": {
+                    "id": 26,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "394:0:0"
+                  },
+                  "scope": 35,
+                  "src": "313:130:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": false,
+                  "visibility": "internal"
+                }
+              ],
+              "scope": 36,
+              "src": "70:376:0"
+            }
+          ],
+          "src": "35:413:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}
