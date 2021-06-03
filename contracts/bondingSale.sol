@@ -2,31 +2,38 @@
 pragma solidity >=0.6.0 <0.8.0;
 
 import "./interfaces/iGAME_ERC20.sol";
-//import "./openzeppelin/contracts/math/SafeMath.sol";
 import "./interfaces/iGAME_Game.sol";
 import "./interfaces/iGAME_Master.sol";
 import "./interfaces/IUniswapV2Router02.sol";
 import "./NFTbase.sol";
 import "./WorkerMetaTransactions.sol";
+import "./openzeppelin/contracts/math/SafeMath.sol";
 import "hardhat/console.sol";
 
-/// name GameCreditsBondedNFTS
-//"1"//
+/// @title GameCreditsBondedNFTS
+/// @author Paul Barclay, Daniel Lee
+/// @notice You can use this contract for bonded NFT sales
+/// @dev All function calls are currently implemented without side effects
 contract BondingSale is NFTbase, WorkerMetaTransactions {
     using SafeMath for uint256;
-    bool public mintingActive;
-    bool public burningActive;
-
-    uint256 SIG_DIGITS = 3;
 
     uint256 baseTokenDecimals = 10**18;
+    uint256 SIG_DIGITS = 3;
 
+    address public wMatic = 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270;
+    address public quick = 0x831753DD7087CaC61aB5644b308642cc1c33Dc13;
+
+    bool public burningActive;
+    bool public mintingActive;
     uint256 public MAX_PRICE = 10**18 * 10**18;
+    uint256 public multiple = 10**7;
 
     address GAMEFEE_RECEIVER;
     iGAME_ERC20 public gameToken;
     iGAME_Game public gameAdmin;
     iGAME_Master public masterContract;
+    IUniswapV2Router02 public uniswapRouter;
+
     mapping(uint256 => uint256) public curves;
     mapping(uint256 => uint256) public saleStarts;
     mapping(uint256 => uint256) public TokenSupply;
@@ -34,22 +41,13 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
     mapping(uint256 => uint256) public nextTokenIDs;
     mapping(address => uint256) internal userLatestBlock;
 
-    uint256 public multiple = 10**7;
-
-    IUniswapV2Router02 public uniswapRouter;
-
-    address public wMatic = 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270;
-    address public quick = 0x831753DD7087CaC61aB5644b308642cc1c33Dc13;
-
     event TokenData(
         uint256 tokenId,
         string json,
         uint256 curve,
         uint256 multiplier
     );
-    //event TokensBought();
     event TokenOnSale(uint256 id, uint256 date);
-    //event TokenBought(uint256 id, address account, uint256 supply);
     event TokenBought(
         address indexed to,
         uint256 id,
@@ -61,10 +59,6 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         uint256 reserve,
         address indexed royaltyRecipient
     );
-
-    /**
-     * @dev Emitted when an print is burned
-     */
     event TokenBurned(
         address indexed to,
         uint256 id,
@@ -75,15 +69,21 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         uint256 reserve
     );
 
-    constructor(
-        address _gameToken,
-        address _gameAdmin,
-        address _gameMaster
-    ) NFTbase("test") NetworkAgnostic("GAME Bonding Curves", "1") {
+    constructor(address _gameToken, address _gameAdmin, address _gameMaster)
+        NFTbase("test")
+        NetworkAgnostic("GAME Bonding Curves", "1")
+    {
         gameToken = iGAME_ERC20(_gameToken);
         gameAdmin = iGAME_Game(_gameAdmin);
         masterContract = iGAME_Master(_gameMaster);
     }
+
+    function updateLocalContract(address contract_, bool isLocal_) external override {
+        //require(contract_ != address(masterContract), "can't reset the master contract");
+        //require(contract_ != address(erc721Contract), "can't reset the erc721 contract");
+        // require(contract_ != address(0), "can't be the zero address");
+        //localContracts[contract_] = isLocal_;
+    }    
 
     function setUniswapRouter(address uniswapRouter_) public isGlobalAdmin() {
         uniswapRouter = IUniswapV2Router02(uniswapRouter_);
@@ -101,56 +101,11 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         burningActive = !burningActive;
     }
 
-    /**
-        Checks to see if call is worker or minion and if they have enough gas to make call
-    **/
-    function metaTxSenderIsWorkerOrMinion() internal override returns (bool) {
-        return masterContract.makeFundedCall(msg.sender);
-    }
-
-    function _beforeTokenTransfer(
-        address operator,
-        address from,
-        address to,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
-    ) internal override {
-        if (to != address(0)) {
-            for (uint256 i = 0; i < amounts.length; ++i) {
-                require(amounts[i] == 1, "Amount should be 1");
-            }
-            if (from != address(0)) {
-                for (uint256 i = 0; i < ids.length; ++i) {
-                    require(
-                        balanceOf(to, ids[i]) == 0,
-                        "to_address should own 0 of each"
-                    );
-                }
-            }
-        }
-        super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
-    }
-
-    function updateLocalContract(address contract_, bool isLocal_)
-        external
-        override
-    {
-        //require(contract_ != address(masterContract), "can't reset the master contract");
-        //require(contract_ != address(erc721Contract), "can't reset the erc721 contract");
-        // require(contract_ != address(0), "can't be the zero address");
-        //localContracts[contract_] = isLocal_;
-    }
-
     function getNextTokenID(uint256 creator) public view returns (uint256) {
         return nextTokenIDs[creator];
     }
 
-    function getTokenID(uint256 _creatorID, uint256 token)
-        public
-        view
-        returns (uint256)
-    {
+    function getTokenID(uint256 _creatorID, uint256 token) public view returns (uint256) {
         return baseTokenDecimals * _creatorID + token;
     }
 
@@ -164,11 +119,7 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         return getPrintPrice(tokenId, supply).mul(90).div(100);
     }
 
-    function getPrintPrice(uint256 tokenId, uint256 printNumber)
-        public
-        view
-        returns (uint256)
-    {
+    function getPrintPrice(uint256 tokenId, uint256 printNumber) public view returns (uint256) {
         uint256 C = curves[tokenId];
         // C must be set at between 1 to 16;
         // 0 will throw, and above 16 will cause errors
@@ -437,4 +388,35 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         );
         gameToken.transferByContract(address(this), _msgSender(), price);
     }
+
+    /**
+        Checks to see if call is worker or minion and if they have enough gas to make call
+    **/
+    function metaTxSenderIsWorkerOrMinion() internal override returns (bool) {
+        return masterContract.makeFundedCall(msg.sender);
+    }
+
+    function _beforeTokenTransfer(
+        address operator,
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory amounts,
+        bytes memory data
+    ) internal override {
+        if (to != address(0)) {
+            for (uint256 i = 0; i < amounts.length; ++i) {
+                require(amounts[i] == 1, "Amount should be 1");
+            }
+            if (from != address(0)) {
+                for (uint256 i = 0; i < ids.length; ++i) {
+                    require(
+                        balanceOf(to, ids[i]) == 0,
+                        "to_address should own 0 of each"
+                    );
+                }
+            }
+        }
+        super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
+    }    
 }
