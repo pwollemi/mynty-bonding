@@ -152,204 +152,203 @@ describe("bonding sales", () => {
     await sale.setFEERECEIVER(feeReceiver)
   })
 
-  // describe("buyNFTwithMatic", async () =>  {
-  //   let token = 1
-  //   let curve = 5
-  //   let multiplier = 9
+  describe("buyNFTwithMatic", async () =>  {
+    let token = 1
+    let curve = 5
+    let multiplier = 9
 
-  //   it("If I set maxPrice below the current price, it fails", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     await expect(sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice.sub(1).toString())).to.be.revertedWith("invalid price")
-  //   })
+    it("If I set maxPrice below the current price, it fails", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      await expect(sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice.sub(1).toString())).to.be.revertedWith("invalid price")
+    })
 
-  //   it("Fees go to the correct user accounts (90% into the contract for bonding lockup, 8% into the creator’s account, 2% into our fee receiver), and each amount is correct", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+    it("Fees go to the correct user accounts (90% into the contract for bonding lockup, 8% into the creator’s account, 2% into our fee receiver), and each amount is correct", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
 
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     const maticBalanceBefore = await signers[2].getBalance()
-  //     const creatorBalanceBefore = await game.balanceOf(creatorId)
-  //     const feeReceiverBalanceBefore = await game.balanceOf(feeReceiver)
-  //     const lockedUpBefore = await game.balanceOf(sale.address)
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      const maticBalanceBefore = await signers[2].getBalance()
+      const creatorBalanceBefore = await game.balanceOf(creatorId)
+      const feeReceiverBalanceBefore = await game.balanceOf(feeReceiver)
+      const lockedUpBefore = await game.balanceOf(sale.address)
 
-  //     await sale.toggleTokenMinting()
-  //     await sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") });
+      await sale.toggleTokenMinting()
+      await sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") });
 
-  //     const maticBalanceAfter = await signers[2].getBalance()
-  //     const creatorBalanceAfter = await game.balanceOf(creatorId)
-  //     const feeReceiverBalanceAfter = await game.balanceOf(feeReceiver)
-  //     const lockedUpAfter = await game.balanceOf(sale.address)
-  //     console.log("Mint cost(Matic)", maticBalanceAfter - maticBalanceBefore)
-  //     console.log("Creator Balance increase:", creatorBalanceAfter - creatorBalanceBefore)     
-  //     console.log("Fee Receiver Balance increase:", feeReceiverBalanceAfter - feeReceiverBalanceBefore)     
-  //     console.log("Bonding Lockedup Balance increase:", lockedUpAfter - lockedUpBefore)
+      const maticBalanceAfter = await signers[2].getBalance()
+      const creatorBalanceAfter = await game.balanceOf(creatorId)
+      const feeReceiverBalanceAfter = await game.balanceOf(feeReceiver)
+      const lockedUpAfter = await game.balanceOf(sale.address)
+      console.log("Mint cost(Matic)", maticBalanceAfter - maticBalanceBefore)
+      console.log("Creator Balance increase:", creatorBalanceAfter - creatorBalanceBefore)     
+      console.log("Fee Receiver Balance increase:", feeReceiverBalanceAfter - feeReceiverBalanceBefore)     
+      console.log("Bonding Lockedup Balance increase:", lockedUpAfter - lockedUpBefore)
 
-  //     assert.equal(initPrice * 0.9, lockedUpAfter - lockedUpBefore, "90% should go into the contract for bonding lockup")
-  //     assert.equal(initPrice * 0.08, creatorBalanceAfter - creatorBalanceBefore, "8% should go into the creator’s account")
-  //     assert.equal(initPrice * 0.02, feeReceiverBalanceAfter - feeReceiverBalanceBefore, "2% should go into our fee receiver")
+      assert.equal(initPrice * 0.9, lockedUpAfter - lockedUpBefore, "90% should go into the contract for bonding lockup")
+      assert.equal(initPrice * 0.08, creatorBalanceAfter - creatorBalanceBefore, "8% should go into the creator’s account")
+      assert.equal(initPrice * 0.02, feeReceiverBalanceAfter - feeReceiverBalanceBefore, "2% should go into our fee receiver")
 
-  //     const sellPrice = await sale.getSellPrice(tokenID)
-  //     assert.equal(initPrice * 0.9, sellPrice, "must equal to getSellPrice")
-  //   })
+      const sellPrice = await sale.getSellPrice(tokenID)
+      assert.equal(initPrice * 0.9, sellPrice, "must equal to getSellPrice")
+    })
 
-  //   it("I now own one token", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     await sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") })
-  //     const tokenCount = await sale.balanceOf(accounts[2], tokenID)
-  //     assert.equal(tokenCount, 1, "should own one token")
-  //   })
+    it("I now own one token", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      await sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") })
+      const tokenCount = await sale.balanceOf(accounts[2], tokenID)
+      assert.equal(tokenCount, 1, "should own one token")
+    })
 
-  //   it("I can transfer my token to another address, and then buy a new one", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     let secondPrice = await sale.getPrintPrice(tokenID, 2)
-  //     await sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") })
+    it("I can transfer my token to another address, and then buy a new one", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      let secondPrice = await sale.getPrintPrice(tokenID, 2)
+      await sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") })
 
-  //     await sale.connect(signers[2]).safeTransferFrom(accounts[2], accounts[3], tokenID, 1, [])
-  //     const tokenCount = await sale.balanceOf(accounts[3], tokenID)
-  //     assert.equal(tokenCount, 1, "should own one token")
+      await sale.connect(signers[2]).safeTransferFrom(accounts[2], accounts[3], tokenID, 1, [])
+      const tokenCount = await sale.balanceOf(accounts[3], tokenID)
+      assert.equal(tokenCount, 1, "should own one token")
 
-  //     await sale.connect(signers[2]).buyNFTwithMatic(tokenID, secondPrice, { value: ethers.utils.parseEther("1") })
-  //   })
+      await sale.connect(signers[2]).buyNFTwithMatic(tokenID, secondPrice, { value: ethers.utils.parseEther("1") })
+    })
 
-  //   it("Emits TokenBought, and all data is correct", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
+    it("Emits TokenBought, and all data is correct", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
 
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     await expect(sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") }))
-  //       .to.emit(sale, "TokenBought")
-  //       .withArgs(
-  //         accounts[2],
-  //         tokenID,
-  //         initPrice,
-  //         await sale.getBuyPrice(tokenID),
-  //         await sale.getSellPrice(tokenID),
-  //         1,
-  //         new BN(initPrice * 0.08),
-  //         initPrice,
-  //         creatorId)
-  //   })
-  // })
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      await expect(sale.connect(signers[2]).buyNFTwithMatic(tokenID, initPrice, { value: ethers.utils.parseEther("1") }))
+        .to.emit(sale, "TokenBought")
+        .withArgs(
+          accounts[2],
+          tokenID,
+          initPrice,
+          await sale.getBuyPrice(tokenID),
+          await sale.getSellPrice(tokenID),
+          1,
+          new BN(initPrice * 0.08),
+          initPrice,
+          creatorId)
+    })
+  })
 
-  // describe("buyNFTwithERC20", async () =>  {
-  //   let token = 1
-  //   let curve = 5
-  //   let multiplier = 9
+  describe("buyNFTwithERC20", async () =>  {
+    let token = 1
+    let curve = 5
+    let multiplier = 9
 
-  //   it("If I set maxPrice below the current price, it fails", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     await expect(sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice.sub(1).toString(), chainLink)).to.be.revertedWith("invalid price")
-  //   })
+    it("If I set maxPrice below the current price, it fails", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      await expect(sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice.sub(1).toString(), chainLink)).to.be.revertedWith("invalid price")
+    })
 
-  //   it("Fees go to the correct user accounts (90% into the contract for bonding lockup, 8% into the creator’s account, 2% into our fee receiver), and each amount is correct", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+    it("Fees go to the correct user accounts (90% into the contract for bonding lockup, 8% into the creator’s account, 2% into our fee receiver), and each amount is correct", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
 
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     const maticBalanceBefore = await signers[2].getBalance()
-  //     const creatorBalanceBefore = await game.balanceOf(creatorId)
-  //     const feeReceiverBalanceBefore = await game.balanceOf(feeReceiver)
-  //     const lockedUpBefore = await game.balanceOf(sale.address)
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      const maticBalanceBefore = await signers[2].getBalance()
+      const creatorBalanceBefore = await game.balanceOf(creatorId)
+      const feeReceiverBalanceBefore = await game.balanceOf(feeReceiver)
+      const lockedUpBefore = await game.balanceOf(sale.address)
 
-  //     await sale.toggleTokenMinting()
-  //     await sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink);
+      await sale.toggleTokenMinting()
+      await sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink);
 
-  //     const maticBalanceAfter = await signers[2].getBalance()
-  //     const creatorBalanceAfter = await game.balanceOf(creatorId)
-  //     const feeReceiverBalanceAfter = await game.balanceOf(feeReceiver)
-  //     const lockedUpAfter = await game.balanceOf(sale.address)
-  //     console.log("Mint cost(Matic)", maticBalanceBefore - maticBalanceAfter)
-  //     console.log("Creator Balance increase:", creatorBalanceAfter - creatorBalanceBefore)     
-  //     console.log("Fee Receiver Balance increase:", feeReceiverBalanceAfter - feeReceiverBalanceBefore)     
-  //     console.log("Bonding Lockedup Balance increase:", lockedUpAfter - lockedUpBefore)
+      const maticBalanceAfter = await signers[2].getBalance()
+      const creatorBalanceAfter = await game.balanceOf(creatorId)
+      const feeReceiverBalanceAfter = await game.balanceOf(feeReceiver)
+      const lockedUpAfter = await game.balanceOf(sale.address)
+      console.log("Mint cost(Matic)", maticBalanceBefore - maticBalanceAfter)
+      console.log("Creator Balance increase:", creatorBalanceAfter - creatorBalanceBefore)     
+      console.log("Fee Receiver Balance increase:", feeReceiverBalanceAfter - feeReceiverBalanceBefore)     
+      console.log("Bonding Lockedup Balance increase:", lockedUpAfter - lockedUpBefore)
 
-  //     assert.equal(initPrice * 0.9, lockedUpAfter - lockedUpBefore, "90% should go into the contract for bonding lockup")
-  //     assert.equal(initPrice * 0.08, creatorBalanceAfter - creatorBalanceBefore, "8% should go into the creator’s account")
-  //     assert.equal(initPrice * 0.02, feeReceiverBalanceAfter - feeReceiverBalanceBefore, "2% should go into our fee receiver")
+      assert.equal(initPrice * 0.9, lockedUpAfter - lockedUpBefore, "90% should go into the contract for bonding lockup")
+      assert.equal(initPrice * 0.08, creatorBalanceAfter - creatorBalanceBefore, "8% should go into the creator’s account")
+      assert.equal(initPrice * 0.02, feeReceiverBalanceAfter - feeReceiverBalanceBefore, "2% should go into our fee receiver")
 
-  //     const sellPrice = await sale.getSellPrice(tokenID)
-  //     assert.equal(initPrice * 0.9, sellPrice, "must equal to getSellPrice")
-  //   })
+      const sellPrice = await sale.getSellPrice(tokenID)
+      assert.equal(initPrice * 0.9, sellPrice, "must equal to getSellPrice")
+    })
 
-  //   it("I now own one token", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     await sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink)
-  //     const tokenCount = await sale.balanceOf(accounts[2], tokenID)
-  //     assert.equal(tokenCount, 1, "should own one token")
-  //   })
+    it("I now own one token", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      await sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink)
+      const tokenCount = await sale.balanceOf(accounts[2], tokenID)
+      assert.equal(tokenCount, 1, "should own one token")
+    })
 
-  //   it("I can transfer my token to another address, and then buy a new one", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     let secondPrice = await sale.getPrintPrice(tokenID, 2)
-  //     await sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink)
+    it("I can transfer my token to another address, and then buy a new one", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      let secondPrice = await sale.getPrintPrice(tokenID, 2)
+      await sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink)
 
-  //     await sale.connect(signers[2]).safeTransferFrom(accounts[2], accounts[3], tokenID, 1, [])
-  //     const tokenCount = await sale.balanceOf(accounts[3], tokenID)
-  //     assert.equal(tokenCount, 1, "should own one token")
+      await sale.connect(signers[2]).safeTransferFrom(accounts[2], accounts[3], tokenID, 1, [])
+      const tokenCount = await sale.balanceOf(accounts[3], tokenID)
+      assert.equal(tokenCount, 1, "should own one token")
 
-  //     await sale.connect(signers[2]).buyNFTwithERC20(tokenID, secondPrice, chainLink)
-  //   })
+      await sale.connect(signers[2]).buyNFTwithERC20(tokenID, secondPrice, chainLink)
+    })
 
-  //   it("Emits TokenBought, and all data is correct", async () => {
-  //     let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
-  //     let tokenID = await sale.getTokenID(creatorId, token)
-  //     await sale.CreateToken(creatorId, "json data", curve, multiplier)
-  //     await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
-  //     await sale.toggleTokenMinting()
+    it("Emits TokenBought, and all data is correct", async () => {
+      let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
+      let tokenID = await sale.getTokenID(creatorId, token)
+      await sale.CreateToken(creatorId, "json data", curve, multiplier)
+      await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+      await sale.toggleTokenMinting()
 
-  //     let initPrice = await sale.getPrintPrice(tokenID, 1)
-  //     await expect(sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink))
-  //       .to.emit(sale, "TokenBought")
-  //       .withArgs(
-  //         accounts[2],
-  //         tokenID,
-  //         initPrice,
-  //         await sale.getBuyPrice(tokenID),
-  //         await sale.getSellPrice(tokenID),
-  //         1,
-  //         new BN(initPrice * 0.08),
-  //         initPrice,
-  //         creatorId)
-  //   })
-  // })
-
+      let initPrice = await sale.getPrintPrice(tokenID, 1)
+      await expect(sale.connect(signers[2]).buyNFTwithERC20(tokenID, initPrice, chainLink))
+        .to.emit(sale, "TokenBought")
+        .withArgs(
+          accounts[2],
+          tokenID,
+          initPrice,
+          await sale.getBuyPrice(tokenID),
+          await sale.getSellPrice(tokenID),
+          1,
+          new BN(initPrice * 0.08),
+          initPrice,
+          creatorId)
+    })
+  })
 
   describe("Meta Tx", async () => {
     let token = 1
