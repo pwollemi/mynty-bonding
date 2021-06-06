@@ -17,4 +17,9 @@ contract mockMaster {
   {
     localContracts[contract_] = isLocal_;
   }
+
+  function assignWorker(address worker_, bool isWorker_)
+    external
+  {
+  }
 }

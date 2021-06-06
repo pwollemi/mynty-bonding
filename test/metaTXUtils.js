@@ -1,9 +1,10 @@
+const { ethers } = require("hardhat");
 const sigUtil = require('eth-sig-util');
 const Web3 = require('web3');
 const utilWeb3 = new Web3();
 const bip39 = require('bip39');
 
-const {wallet,hdkey} = require('ethereumjs-wallet');
+const { wallet, hdkey } = require('ethereumjs-wallet');
 var ethUtil = require("ethereumjs-util");
 const mnemonic = "test test test test test test test test test test test junk"; // 12 word mnemonic
 
@@ -27,14 +28,14 @@ const workerMetaTransactionType = [
 ];
 
 const getDomainData = async (contract) => {
-  const contractName = await contract.methods.CONTRACT_ERC712_NAME().call();
-  const contractVersion = await contract.methods.CONTRACT_ERC712_VERSION().call();
-  const chainId = await contract.methods.getChainId().call();
+  const contractName = await contract.CONTRACT_ERC712_NAME();
+  const contractVersion = await contract.CONTRACT_ERC712_VERSION();
+  const chainId = (await contract.getChainId()).toString();
   let domainData = {
     name: contractName,
     version: contractVersion,
     chainId: chainId,
-    verifyingContract: contract.options.address,
+    verifyingContract: contract.address,
   };
   return domainData;
 };
@@ -80,7 +81,7 @@ const generateDataToSign = async (
     };
   } else {
     let message = {};
-    let nonce = await contract.methods.getNonce(userAddress).call();
+    let nonce = await contract.getNonce(userAddress);
     message['nonce'] = parseInt(nonce);
     message['from'] = userAddress;
     message['functionSignature'] = functionSignature;
@@ -201,28 +202,25 @@ const sendWorkerOrNormalTx = async (
 }
 
 const sendWorkerMetaTx = async (contract, from, functionSignature, r, s, v, relayerAccountIndex, replayProtection) => {
-  const { address } = await getKeys(relayerAccountIndex);
-  const relayer = address;
-  //console.log(`sendworker: ${relayer} (from: ${from}), protection: ${replayProtection}`);
-  //console.log(`send:   ${r} / ${s} / ${v}`);
-  const gas = await contract.methods
-    .workerExecuteMetaTransaction(from, replayProtection, functionSignature, r, s, v)
-    .estimateGas({ from: relayer });
-  console.log(gas);
-  let tx = await contract.methods
-    .workerExecuteMetaTransaction(from, replayProtection, functionSignature, r, s, v)
-    .send({ from: relayer, gasLimit: gas });
+  const relayer = (await ethers.getSigners())[relayerAccountIndex];
+  const gas = await contract
+    .connect(relayer)
+    .estimateGas
+    .workerExecuteMetaTransaction(from, replayProtection, functionSignature, r, s, v);
+  let tx = await contract
+    .connect(relayer)
+    .workerExecuteMetaTransaction(from, replayProtection, functionSignature, r, s, v, { gasLimit: gas })
 }
 
 const sendMetaTx = async (contract, from, functionSignature, r, s, v, relayerAccountIndex) => {
-  const { address } = await getKeys(relayerAccountIndex);
-  const relayer = address;
-  const gas = await contract.methods
-    .executeMetaTransaction(from, functionSignature, r, s, v)
-    .estimateGas({ from: relayer });
-  let tx = await contract.methods
-    .executeMetaTransaction(from, functionSignature, r, s, v)
-    .send({ from: relayer, gasLimit: gas });
+  const relayer = (await ethers.getSigners())[relayerAccountIndex];
+  const gas = await contract
+    .connect(relayer)
+    .estimateGas
+    .executeMetaTransaction(from, functionSignature, r, s, v, { from: relayer })
+  let tx = await contract
+    .connect(relayer)
+    .executeMetaTransaction(from, functionSignature, r, s, v, { gasLimit: gas })
 }
 
 // this is solid

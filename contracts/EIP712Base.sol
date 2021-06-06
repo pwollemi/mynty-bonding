@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 // Matic Contract
-
 pragma solidity ^0.7.0;
+
+import "./libraries/LibDiamond.sol";
 
 abstract contract EIP712Base {
     struct EIP712Domain {
@@ -17,13 +18,6 @@ abstract contract EIP712Base {
                 "EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"
             )
         );
-    bytes32 internal domainSeperator;
-    bytes32 internal workerDomainSeperator;
-
-    constructor(string memory name, string memory version) {
-        domainSeperator = encodeDomainSeperator(name, version);
-        workerDomainSeperator = encodeWorkerDomainSeperator(name, version);
-    }
 
     function getChainId() public pure returns (uint256) {
         uint256 id;
@@ -34,11 +28,13 @@ abstract contract EIP712Base {
     }
 
     function getDomainSeperator() public view returns (bytes32) {
-        return domainSeperator;
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+        return encodeDomainSeperator(ds.CONTRACT_ERC712_NAME, ds.CONTRACT_ERC712_VERSION);
     }
 
     function getWorkerDomainSeperator() public view returns (bytes32) {
-        return workerDomainSeperator;
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+        return encodeWorkerDomainSeperator(ds.CONTRACT_ERC712_NAME, ds.CONTRACT_ERC712_VERSION);
     }
 
     function encodeDomainSeperator(string memory name, string memory version)

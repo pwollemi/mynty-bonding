@@ -1,20 +1,25 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.0 <0.8.0;
+pragma experimental ABIEncoderV2;
 
 import "./interfaces/iGAME_ERC20.sol";
 import "./interfaces/iGAME_Game.sol";
 import "./interfaces/iGAME_Master.sol";
 import "./interfaces/IUniswapV2Router02.sol";
+import "./interfaces/IDiamondCut.sol";
+import "./interfaces/IDiamondLoupe.sol";
+import "./interfaces/IERC173.sol";
+import "./libraries/LibDiamond.sol";
 import "./NFTbase.sol";
-import "./WorkerMetaTransactions.sol";
 import "./openzeppelin/contracts/math/SafeMath.sol";
+
 import "hardhat/console.sol";
 
 /// @title GameCreditsBondedNFTS
 /// @author Paul Barclay, Daniel Lee
 /// @notice You can use this contract for bonded NFT sales
 /// @dev All function calls are currently implemented without side effects
-contract BondingSale is NFTbase, WorkerMetaTransactions {
+contract BondingSale is NFTbase {
     using SafeMath for uint256;
 
     uint256 baseTokenDecimals = 10**18;
@@ -31,7 +36,6 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
     address GAMEFEE_RECEIVER;
     iGAME_ERC20 public gameToken;
     iGAME_Game public gameAdmin;
-    iGAME_Master public masterContract;
     IUniswapV2Router02 public uniswapRouter;
 
     mapping(uint256 => uint256) public curves;
@@ -69,21 +73,62 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         uint256 reserve
     );
 
-    constructor(address _gameToken, address _gameAdmin, address _gameMaster)
-        NFTbase("test")
-        NetworkAgnostic("GAME Bonding Curves", "1")
-    {
-        gameToken = iGAME_ERC20(_gameToken);
-        gameAdmin = iGAME_Game(_gameAdmin);
-        masterContract = iGAME_Master(_gameMaster);
+    // more arguments are added to this struct
+    // this avoids stack too deep errors
+    struct DiamondArgs {
+        address gameToken;
+        address gameAdmin;
+        address gameMaster;
     }
 
-    function updateLocalContract(address contract_, bool isLocal_) external override {
-        //require(contract_ != address(masterContract), "can't reset the master contract");
-        //require(contract_ != address(erc721Contract), "can't reset the erc721 contract");
-        // require(contract_ != address(0), "can't be the zero address");
-        //localContracts[contract_] = isLocal_;
-    }    
+    constructor(IDiamondCut.FacetCut[] memory _diamondCut, DiamondArgs memory _args)
+        NFTbase("test")
+        payable 
+     {
+        LibDiamond.diamondCut(_diamondCut, address(0), new bytes(0));
+
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+
+        // constructor arguments
+        gameToken = iGAME_ERC20(_args.gameToken);
+        gameAdmin = iGAME_Game(_args.gameAdmin);
+        ds.masterContract = iGAME_Master(_args.gameMaster);
+
+        ds.CONTRACT_ERC712_VERSION = "1";
+        ds.CONTRACT_ERC712_NAME = "GAME Bonding Curves";
+
+        // adding ERC165 data
+        ds.supportedInterfaces[type(IERC165).interfaceId] = true;
+        ds.supportedInterfaces[type(IDiamondCut).interfaceId] = true;
+        ds.supportedInterfaces[type(IDiamondLoupe).interfaceId] = true;
+        ds.supportedInterfaces[type(IERC173).interfaceId] = true;
+    }
+
+    // Find facet for function that is called and execute the
+    // function if a facet is found and return any value.
+    fallback() external payable {
+        LibDiamond.DiamondStorage storage ds;
+        bytes32 position = LibDiamond.DIAMOND_STORAGE_POSITION;
+        assembly {
+            ds.slot := position
+        }
+        address facet = ds.selectorToFacetAndPosition[msg.sig].facetAddress;
+        require(facet != address(0), "Diamond: Function does not exist");
+        assembly {
+            calldatacopy(0, 0, calldatasize())
+            let result := delegatecall(gas(), facet, 0, calldatasize(), 0, 0)
+            returndatacopy(0, 0, returndatasize())
+            switch result
+                case 0 {
+                    revert(0, returndatasize())
+                }
+                default {
+                    return(0, returndatasize())
+                }
+        }
+    }
+
+    receive() external payable {}
 
     function setUniswapRouter(address uniswapRouter_) public isGlobalAdmin() {
         uniswapRouter = IUniswapV2Router02(uniswapRouter_);
@@ -389,13 +434,6 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
         gameToken.transferByContract(address(this), _msgSender(), price);
     }
 
-    /**
-        Checks to see if call is worker or minion and if they have enough gas to make call
-    **/
-    function metaTxSenderIsWorkerOrMinion() internal override returns (bool) {
-        return masterContract.makeFundedCall(msg.sender);
-    }
-
     function _beforeTokenTransfer(
         address operator,
         address from,
@@ -418,5 +456,6 @@ contract BondingSale is NFTbase, WorkerMetaTransactions {
             }
         }
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
-    }    
+    }
 }
+

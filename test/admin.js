@@ -7,6 +7,17 @@ const { assert, expect } = chai;
 
 const baseURI = "https://test.com/"
 
+const FacetCutAction = {
+  Add: 0,
+  Replace: 1,
+  Remove: 2
+}
+
+function getSelectors (contract) {
+  const selectors = Object.keys(contract.interface.functions).map(v => ethers.utils.id(v).slice(0, 10));
+  return selectors
+}
+
 describe("Admin function test", () => {
   let base;
   let sale;
@@ -32,9 +43,18 @@ describe("Admin function test", () => {
     admin = await mockAdmin.deploy();
     await admin.deployed();
 
+    const WorkerMetaTransactions = await ethers.getContractFactory("WorkerMetaTransactions");
+    const workerMetaTransactions = await WorkerMetaTransactions.deploy();
+    await workerMetaTransactions.deployed();
+  
+    const diamondCut = [
+      [workerMetaTransactions.address, FacetCutAction.Add, getSelectors(workerMetaTransactions)]
+    ]
     const BondingSale = await ethers.getContractFactory("BondingSale");
-    sale = await BondingSale.deploy(game.address, admin.address, accounts[9]);
+    sale = await BondingSale.deploy(diamondCut, [game.address, admin.address, accounts[9]]);
     await sale.deployed();
+  
+    metaTxWithSaleAddress = new ethers.Contract(sale.address, WorkerMetaTransactions.interface, ethers.provider)
 
     // add all accounts as operators
     for (let i = 0;i < 9; i++){

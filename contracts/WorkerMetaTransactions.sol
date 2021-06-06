@@ -4,8 +4,9 @@ pragma solidity ^0.7.0;
 //import "./SafeMath.sol";
 import "./NetworkAgnostic.sol";
 import "./interfaces/iLocalContract.sol";
+import "./libraries/LibDiamond.sol";
 
-abstract contract WorkerMetaTransactions is NetworkAgnostic, iLocalContract {
+contract WorkerMetaTransactions is NetworkAgnostic, iLocalContract {
     using SafeMath for uint256;
     bytes32 private constant WORKER_META_TRANSACTION_TYPEHASH =
         keccak256(
@@ -13,10 +14,6 @@ abstract contract WorkerMetaTransactions is NetworkAgnostic, iLocalContract {
                 "WorkerMetaTransaction(bytes32 replayPrevention,address from,bytes functionSignature)"
             )
         );
-
-    // This mapping records all meta-transactions that have been played.
-    // It costs more than the nonce method, but this is permissioned, so it's more reliable.
-    mapping(address => mapping(bytes32 => bool)) playedTransactions;
 
     /*
      * Meta transaction structure.
@@ -29,6 +26,19 @@ abstract contract WorkerMetaTransactions is NetworkAgnostic, iLocalContract {
         bytes functionSignature;
     }
 
+    function metaTxSenderIsWorkerOrMinion() internal override returns (bool) {
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+
+        return ds.masterContract.makeFundedCall(msg.sender);
+    }
+
+    function updateLocalContract(address contract_, bool isLocal_) external override {
+        //require(contract_ != address(masterContract), "can't reset the master contract");
+        //require(contract_ != address(erc721Contract), "can't reset the erc721 contract");
+        // require(contract_ != address(0), "can't be the zero address");
+        //localContracts[contract_] = isLocal_;
+    }
+
     function workerExecuteMetaTransaction(
         address userAddress_,
         bytes32 replayPrevention_,
@@ -37,6 +47,8 @@ abstract contract WorkerMetaTransactions is NetworkAgnostic, iLocalContract {
         bytes32 sigS_,
         uint8 sigV_
     ) public payable returns (bytes memory) {
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+
         require(
             metaTxSenderIsWorkerOrMinion(),
             "Worker Meta-Transaction sent by account other than a worker/minion"
@@ -54,10 +66,10 @@ abstract contract WorkerMetaTransactions is NetworkAgnostic, iLocalContract {
         );
 
         require(
-            playedTransactions[userAddress_][replayPrevention_] == false,
+            ds.playedTransactions[userAddress_][replayPrevention_] == false,
             "REPLAY of a previous transaction"
         );
-        playedTransactions[userAddress_][replayPrevention_] = true;
+        ds.playedTransactions[userAddress_][replayPrevention_] = true;
 
         emit MetaTransactionExecuted(
             userAddress_,

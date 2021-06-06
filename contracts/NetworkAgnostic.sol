@@ -1,30 +1,29 @@
 // SPDX-License-Identifier: MIT
-// Matic Contract
-
 pragma solidity ^0.7.0;
 
 import "./openzeppelin/contracts/math/SafeMath.sol";
 import "./EIP712Base.sol";
+import "./libraries/LibDiamond.sol";
 import "hardhat/console.sol";
 
 //import "./Context.sol";
 
 abstract contract NetworkAgnostic is EIP712Base {
     using SafeMath for uint256;
+
     bytes32 internal constant META_TRANSACTION_TYPEHASH =
         keccak256(
             bytes(
                 "MetaTransaction(uint256 nonce,address from,bytes functionSignature)"
             )
         );
+
     event MetaTransactionExecuted(
         address userAddress,
         address payable relayerAddress,
         bytes functionSignature
     );
-    mapping(address => uint256) nonces;
-    string public CONTRACT_ERC712_VERSION;
-    string public CONTRACT_ERC712_NAME;
+
     /*
      * Meta transaction structure.
      * No point of including value field here as if user is doing value transfer then he has the funds to pay for gas
@@ -36,11 +35,14 @@ abstract contract NetworkAgnostic is EIP712Base {
         bytes functionSignature;
     }
 
-    constructor(string memory name, string memory version)
-        EIP712Base(name, version)
-    {
-        CONTRACT_ERC712_VERSION = version;
-        CONTRACT_ERC712_NAME = name;
+    function CONTRACT_ERC712_VERSION() public view returns (string memory) {
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+        return ds.CONTRACT_ERC712_VERSION;
+    }
+
+    function CONTRACT_ERC712_NAME() public view returns (string memory) {
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+        return ds.CONTRACT_ERC712_NAME;
     }
 
     function executeMetaTransaction(
@@ -50,9 +52,11 @@ abstract contract NetworkAgnostic is EIP712Base {
         bytes32 sigS,
         uint8 sigV
     ) public payable returns (bytes memory) {
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+
         MetaTransaction memory metaTx =
             MetaTransaction({
-                nonce: nonces[userAddress],
+                nonce: ds.nonces[userAddress],
                 from: userAddress,
                 functionSignature: functionSignature
             });
@@ -63,7 +67,7 @@ abstract contract NetworkAgnostic is EIP712Base {
         );
 
         // increase nonce for user (to avoid re-use)
-        nonces[userAddress] = nonces[userAddress].add(1);
+        ds.nonces[userAddress] = ds.nonces[userAddress].add(1);
 
         emit MetaTransactionExecuted(
             userAddress,
@@ -98,7 +102,8 @@ abstract contract NetworkAgnostic is EIP712Base {
     }
 
     function getNonce(address user) public view returns (uint256 nonce) {
-        nonce = nonces[user];
+        LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
+        nonce = ds.nonces[user];
     }
 
     function verify(

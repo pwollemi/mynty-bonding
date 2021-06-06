@@ -2803,8 +2803,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/NetworkAgnostic.sol": {
-      "lastModificationDate": 1621013533000,
-      "contentHash": "89eacbd70a6b8fe08699e78a69c46f5d",
+      "lastModificationDate": 1622843492000,
+      "contentHash": "7ec40ce7aac9a9b17d1c2cee53130a9f",
       "sourceName": "contracts/NetworkAgnostic.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2839,6 +2839,7 @@
       "imports": [
         "./openzeppelin/contracts/math/SafeMath.sol",
         "./EIP712Base.sol",
+        "./libraries/LibDiamond.sol",
         "hardhat/console.sol"
       ],
       "versionPragmas": [
@@ -2849,8 +2850,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/EIP712Base.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "f778567159858f84470cc12aa18ba071",
+      "lastModificationDate": 1622842258000,
+      "contentHash": "b4bff1264368a7627b6bfefe09c4b50b",
       "sourceName": "contracts/EIP712Base.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2882,7 +2883,9 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "./libraries/LibDiamond.sol"
+      ],
       "versionPragmas": [
         "^0.7.0"
       ],
@@ -2891,7 +2894,7 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1621748382000,
+      "lastModificationDate": 1622812714000,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
@@ -2933,8 +2936,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/BondingSale.sol": {
-      "lastModificationDate": 1622194022000,
-      "contentHash": "5b0c6ca35869c8e0928b24c7efc464ec",
+      "lastModificationDate": 1623000122000,
+      "contentHash": "522d0a093f1aeded3b5c8fb550c52286",
       "sourceName": "contracts/BondingSale.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2971,8 +2974,12 @@
         "./interfaces/iGAME_Game.sol",
         "./interfaces/iGAME_Master.sol",
         "./interfaces/IUniswapV2Router02.sol",
+        "./interfaces/IDiamondCut.sol",
+        "./interfaces/IDiamondLoupe.sol",
+        "./interfaces/IERC173.sol",
+        "./libraries/LibDiamond.sol",
         "./NFTbase.sol",
-        "./WorkerMetaTransactions.sol",
+        "./openzeppelin/contracts/math/SafeMath.sol",
         "hardhat/console.sol"
       ],
       "versionPragmas": [
@@ -3155,8 +3162,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/WorkerMetaTransactions.sol": {
-      "lastModificationDate": 1620760416000,
-      "contentHash": "5ff72dd1ee5c9efa1327f9466ef09e74",
+      "lastModificationDate": 1622996430000,
+      "contentHash": "161d3d89b8e093eb06b4451bbfe8c3a2",
       "sourceName": "contracts/WorkerMetaTransactions.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -3190,7 +3197,8 @@
       },
       "imports": [
         "./NetworkAgnostic.sol",
-        "./interfaces/iLocalContract.sol"
+        "./interfaces/iLocalContract.sol",
+        "./libraries/LibDiamond.sol"
       ],
       "versionPragmas": [
         "^0.7.0"
@@ -3200,7 +3208,7 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iERC20.sol": {
-      "lastModificationDate": 1620307102000,
+      "lastModificationDate": 1622682679000,
       "contentHash": "3958a5e4aa8d8e2246b4e3aebb850caa",
       "sourceName": "contracts/interfaces/iERC20.sol",
       "solcConfig": {
@@ -3712,7 +3720,7 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/Context.sol": {
-      "lastModificationDate": 1620952842000,
+      "lastModificationDate": 1622746369000,
       "contentHash": "9b848c8d3591d5c693539a4fd417750e",
       "sourceName": "contracts/Context.sol",
       "solcConfig": {
@@ -4092,8 +4100,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/mocks/mockMaster.sol": {
-      "lastModificationDate": 1622081080000,
-      "contentHash": "2c36ff43f86dc16e987be1afe4422659",
+      "lastModificationDate": 1622996979000,
+      "contentHash": "1b397872ff254aefecd1eea84bae50a8",
       "sourceName": "contracts/mocks/mockMaster.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -4131,6 +4139,266 @@
       ],
       "artifacts": [
         "mockMaster"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/libraries/LibDiamond.sol": {
+      "lastModificationDate": 1622689046000,
+      "contentHash": "1bd7f3cf322e91a9f86026b553d4cb39",
+      "sourceName": "contracts/libraries/LibDiamond.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/iGAME_Master.sol",
+        "../interfaces/IDiamondCut.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "LibDiamond"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IDiamondCut.sol": {
+      "lastModificationDate": 1622682679000,
+      "contentHash": "6abb374afdef119cf70d35326f811daa",
+      "sourceName": "contracts/interfaces/IDiamondCut.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IDiamondCut"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IDiamondLoupe.sol": {
+      "lastModificationDate": 1622682679000,
+      "contentHash": "60652a58a25f2e97eabb1b1ef2c02fb4",
+      "sourceName": "contracts/interfaces/IDiamondLoupe.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IDiamondLoupe"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IERC173.sol": {
+      "lastModificationDate": 1622682679000,
+      "contentHash": "7a33389b8beaab6763d3762fc4127e36",
+      "sourceName": "contracts/interfaces/IERC173.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC173"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IERC165.sol": {
+      "lastModificationDate": 1622682679000,
+      "contentHash": "0071d6b2a3fe441ab722ebbf33b0faf6",
+      "sourceName": "contracts/interfaces/IERC165.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/AccessControl.sol": {
+      "lastModificationDate": 1622746356000,
+      "contentHash": "292a0c37041912398187ec5a17c55dbd",
+      "sourceName": "contracts/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/contracts/utils/EnumerableSet.sol",
+        "./openzeppelin/contracts/utils/Address.sol",
+        "./Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "AccessControl"
       ]
     }
   }
