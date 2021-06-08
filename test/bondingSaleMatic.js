@@ -356,27 +356,30 @@ describe("bonding sales", () => {
     let multiplier = 9
 
     it("makes meta tx calls", async function () {
-      const sender = 1;
-      const relayer = 2;
+      const sender = 0;
+      const relayer = 1;
       const isWorker = true;
 
       let currentTimeStamp = (await ethers.provider.getBlock("latest")).timestamp
       let tokenID = await sale.getTokenID(creatorId, token)
       const create = sale.interface.encodeFunctionData("CreateToken", [creatorId, "json data", curve, multiplier])
       const setDate = sale.interface.encodeFunctionData("SetTokenOnSaleDate", [tokenID, currentTimeStamp])
-      const toggleTokenMinting = sale.interface.encodeFunctionData("toggleTokenMinting")
+      const toggleTokenMinting = sale.interface.encodeFunctionData("toggleTokenMinting", [])
       const buy = sale.interface.encodeFunctionData("buyNFTwithGAME", [tokenID, ethers.utils.parseUnits("10", 18)])
 
-      let funcs = [create, setDate, toggleTokenMinting, buy]
+      let funcs = [create, setDate, toggleTokenMinting]
 
-      for(let i = 0; i < funcs.length; i++){
+      for(let i = 0; i < funcs.length; i++) {
           console.log(`making call ${i}`)
-          console.log(funcs[i])
-          await sale.connect(signers[1]).callFunc(funcs[i], accounts[1])
-          // const { from, r, s, v, replayProtection } = await nativeMetaTx.getMetaTxSignature(metaTxWithSaleAddress, funcs[i], sender, isWorker);
-          // console.log(`call is from ${from}`)
-          // await nativeMetaTx.sendWorkerOrNormalTx(metaTxWithSaleAddress, funcs[i], from, r, s, v, relayer, isWorker, replayProtection);
+          const { from, r, s, v, replayProtection } = await nativeMetaTx.getMetaTxSignature(metaTxWithSaleAddress, funcs[i], sender, isWorker);
+          console.log(`call is from ${from}`)
+          await nativeMetaTx.sendWorkerOrNormalTx(metaTxWithSaleAddress, funcs[i], from, r, s, v, relayer, isWorker, replayProtection);
       }
+
+      console.log(`making call ${3}`)
+      const { from, r, s, v, replayProtection } = await nativeMetaTx.getMetaTxSignature(metaTxWithSaleAddress, buy, 2, isWorker);
+      console.log(`call is from ${from}`)
+      await nativeMetaTx.sendWorkerOrNormalTx(metaTxWithSaleAddress, buy, from, r, s, v, relayer, isWorker, replayProtection);
     });
   })  
 })

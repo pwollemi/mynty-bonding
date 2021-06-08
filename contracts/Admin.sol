@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.0 <0.8.0;
 
-import "./openzeppelin/contracts/access/AccessControl.sol";
+import "./AccessControl.sol";
 
 contract Admin is AccessControl {
     bytes32 public constant METADATA_ADMIN = keccak256("METADATA_ADMIN");
@@ -9,11 +9,11 @@ contract Admin is AccessControl {
     bytes32 public constant BURNER = keccak256("BURNER");
 
     modifier isMetadataAdmin() {
-        require(hasRole(METADATA_ADMIN, msg.sender));
+        require(hasRole(METADATA_ADMIN, _msgSender()));
         _;
     }
     modifier isGlobalAdmin() {
-        require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender));
+        require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()));
         _;
     }
 
