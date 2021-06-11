@@ -12,6 +12,7 @@ import "./interfaces/IERC173.sol";
 import "./libraries/LibDiamond.sol";
 import "./NFTbase.sol";
 import "./openzeppelin/contracts/math/SafeMath.sol";
+import "./openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 import "hardhat/console.sol";
 
@@ -19,28 +20,24 @@ import "hardhat/console.sol";
 /// @author Paul Barclay, Daniel Lee
 /// @notice You can use this contract for bonded NFT sales
 /// @dev All function calls are currently implemented without side effects
-contract BondingSale is NFTbase {
+contract BondingSale is NFTbase, ReentrancyGuard {
     using SafeMath for uint256;
 
     uint256 baseTokenDecimals = 10**18;
     uint256 SIG_DIGITS = 3;
 
-    address public wMatic = 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270;
-    address public quick = 0x831753DD7087CaC61aB5644b308642cc1c33Dc13;
-
     bool public burningActive;
     bool public mintingActive;
     uint256 public MAX_PRICE = 10**18 * 10**18;
-    uint256 public multiple = 10**7;
 
-    address GAMEFEE_RECEIVER;
+    address feeReceiver;
     iGAME_ERC20 public gameToken;
     iGAME_Game public gameAdmin;
     IUniswapV2Router02 public uniswapRouter;
 
     mapping(uint256 => uint256) public curves;
     mapping(uint256 => uint256) public saleStarts;
-    mapping(uint256 => uint256) public TokenSupply;
+    mapping(uint256 => uint256) public tokenSupply;
     mapping(uint256 => uint256) public multipliers;
     mapping(uint256 => uint256) public nextTokenIDs;
     mapping(address => uint256) internal userLatestBlock;
@@ -79,6 +76,18 @@ contract BondingSale is NFTbase {
         address gameToken;
         address gameAdmin;
         address gameMaster;
+        address feeReceiver;
+    }
+
+    modifier beforeBuy(uint256 tokenId) {
+        require(mintingActive, "minting is not active");
+        require(
+            block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
+            "sale has not started yet"
+        );
+        require(userLatestBlock[_msgSender()] < block.number);
+        userLatestBlock[_msgSender()] = block.number;
+        _;
     }
 
     constructor(IDiamondCut.FacetCut[] memory _diamondCut, DiamondArgs memory _args)
@@ -93,9 +102,10 @@ contract BondingSale is NFTbase {
         gameToken = iGAME_ERC20(_args.gameToken);
         gameAdmin = iGAME_Game(_args.gameAdmin);
         ds.masterContract = iGAME_Master(_args.gameMaster);
+        feeReceiver = _args.feeReceiver;
 
         ds.CONTRACT_ERC712_VERSION = "1";
-        ds.CONTRACT_ERC712_NAME = "GAME Bonding Curves";
+        ds.CONTRACT_ERC712_NAME = "GAME Bonded NFTs";
 
         // adding ERC165 data
         ds.supportedInterfaces[type(IERC165).interfaceId] = true;
@@ -128,14 +138,12 @@ contract BondingSale is NFTbase {
         }
     }
 
-    receive() external payable {}
-
     function setUniswapRouter(address uniswapRouter_) public isGlobalAdmin() {
         uniswapRouter = IUniswapV2Router02(uniswapRouter_);
     }
 
     function setFEERECEIVER(address a) public isGlobalAdmin() {
-        GAMEFEE_RECEIVER = a;
+        feeReceiver = a;
     }
 
     function toggleTokenMinting() public isGlobalAdmin() {
@@ -146,21 +154,17 @@ contract BondingSale is NFTbase {
         burningActive = !burningActive;
     }
 
-    function getNextTokenID(uint256 creator) public view returns (uint256) {
-        return nextTokenIDs[creator];
-    }
-
     function getTokenID(uint256 _creatorID, uint256 token) public view returns (uint256) {
         return baseTokenDecimals * _creatorID + token;
     }
 
     function getBuyPrice(uint256 tokenId) public view returns (uint256) {
-        uint256 supply = TokenSupply[tokenId];
+        uint256 supply = tokenSupply[tokenId];
         return getPrintPrice(tokenId, supply + 1);
     }
 
     function getSellPrice(uint256 tokenId) public view returns (uint256) {
-        uint256 supply = TokenSupply[tokenId];
+        uint256 supply = tokenSupply[tokenId];
         return getPrintPrice(tokenId, supply).mul(90).div(100);
     }
 
@@ -176,22 +180,16 @@ contract BondingSale is NFTbase {
         // and accurate numbers
         uint256 n = 50;
         uint256 price = (printNumber**3).mul(decimals).div(9**C);
-        //console.log(price);
         price = price.add(printNumber.mul(decimals).div(C));
-        //console.log(price);
         price = price.add(n.mul(decimals));
-        //console.log(price);
         price = price.div(C).mul(multiplier).div(1000);
-        //console.log(price);
 
         // with a multiplier between 1 and 1000000
         price = (price.mul(1 ether)).div(decimals);
         return price;
-        //console.log(price);
     }
 
-    // switch isWorkerOrMinion to isOperatorOrMinion
-    function CreateToken(
+    function createToken(
         uint256 creatorId,
         string memory json,
         uint256 curve,
@@ -208,7 +206,7 @@ contract BondingSale is NFTbase {
         require(bytes(json).length > 1, "json must non null");
         require(
             gameAdmin.isOperatorOrMinion(creatorId, _msgSender()) == true,
-            "sender must be minion or worker"
+            "sender must be operator or minion"
         );
 
         uint256 tokenId = getTokenID(creatorId, nextTokenId);
@@ -218,7 +216,7 @@ contract BondingSale is NFTbase {
         emit TokenData(tokenId, json, curve, multiplier);
     }
 
-    function UpdateTokenData(
+    function updateTokenData(
         uint256 tokenId,
         string memory json,
         uint256 curve,
@@ -230,7 +228,7 @@ contract BondingSale is NFTbase {
         //
         require(
             gameAdmin.isOperatorOrMinion(creator, _msgSender()) == true,
-            "sender must be operator or worker"
+            "sender must be operator or minion"
         );
         require(
             curve > 0 && curve <= 20 && multiplier > 0 && multiplier <= 1000000,
@@ -243,14 +241,14 @@ contract BondingSale is NFTbase {
         emit TokenData(tokenId, json, curve, multiplier);
     }
 
-    function SetTokenOnSaleDate(uint256 tokenId, uint256 onSaleDate) public {
+    function setTokenOnSaleDate(uint256 tokenId, uint256 onSaleDate) public {
         require(hasMinted(tokenId) == false, "token has not been minted");
         require(curves[tokenId] > 0, "curve must be set");
         //require(onSaleDate > 0, "sale date must be nonzero");
         uint256 creator = tokenId / baseTokenDecimals;
         require(
             gameAdmin.isOperatorOrMinion(creator, _msgSender()) == true,
-            "sender must be operator or worker"
+            "sender must be operator or minion"
         );
         if (onSaleDate < block.timestamp && onSaleDate > 0) {
             onSaleDate = block.timestamp;
@@ -259,168 +257,67 @@ contract BondingSale is NFTbase {
         emit TokenOnSale(tokenId, onSaleDate);
     }
 
-    function buyNFTwithGAME(uint256 tokenId, uint256 maxPrice) public {
-        require(mintingActive, "minting is not active");
-        require(
-            block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
-            "sale has not started yet"
-        );
-        require(userLatestBlock[_msgSender()] < block.number);
-        userLatestBlock[_msgSender()] = block.number;
-
-        uint256 creatorID = tokenId / baseTokenDecimals;
+    function buyNFTwithGAME(uint256 tokenId, uint256 maxPrice) public beforeBuy(tokenId) {
+        address sender = _msgSender();
         uint256 price = getBuyPrice(tokenId);
         require(price > 0 && price <= maxPrice, "invalid price");
-        TokenSupply[tokenId] += 1;
 
-        gameToken.transferByContract(_msgSender(), address(this), price);
-        // console.log(price);
-        uint256 gamefee = price.div(50);
-        uint256 creatorfee = (price.mul(8)).div(100);
+        gameToken.transferByContract(sender, address(this), price);
 
-        _mint(_msgSender(), tokenId, 1, "");
-
-        //emit TokenBought(tokenId, msg.sender, TokenSupply[tokenId]);
-        emit TokenBought(
-            _msgSender(),
-            tokenId,
-            price,
-            getBuyPrice(tokenId),
-            getSellPrice(tokenId),
-            TokenSupply[tokenId],
-            creatorfee,
-            gameToken.balanceOf(address(this)),
-            address(creatorID)
-        );
-        gameToken.transferByContract(address(this), GAMEFEE_RECEIVER, gamefee);
-        gameToken.transferByContract(
-            address(this),
-            address(creatorID),
-            creatorfee
-        );
+        _buyNFT(tokenId, price, sender);
     }
 
-    function buyNFTwithMatic(uint256 tokenId, uint256 maxPrice) public payable {
-        require(mintingActive, "minting is not active");
-        require(
-            block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
-            "sale has not started yet"
-        );
-        require(userLatestBlock[_msgSender()] < block.number);
-        userLatestBlock[_msgSender()] = block.number;
+    function buyNFTwithMatic(uint256 tokenId, uint256 maxPrice, address[] calldata path) public payable nonReentrant() beforeBuy(tokenId) {
+        require(path.length > 1 && path[path.length - 1] == address(gameToken), "invalid path");
 
-        uint256 creatorID = tokenId / baseTokenDecimals;
+        address sender = _msgSender();
         uint256 price = getBuyPrice(tokenId);
-        require(price > 0 && price <= maxPrice, "invalid price");
-        TokenSupply[tokenId] += 1;
 
-        {
-            address[] memory path = new address[](3);
-            path[0] = wMatic;
-            path[1] = quick;
-            path[2] = address(gameToken);
+        uint[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
+        require(amountsIn[0] > 0 && amountsIn[0] <= maxPrice, "invalid price");
+        require(msg.value >= amountsIn[0], "buyNFTwithMatic: value is not enough");
 
-            uint[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
-            require(msg.value >= amountsIn[0], "buyNFTwithMatic: value is not enough");
+        uint256[] memory amounts = uniswapRouter.swapETHForExactTokens{value: amountsIn[0]}(price, path, address(this), block.timestamp + 100);
 
-            uint256[] memory amounts = uniswapRouter.swapETHForExactTokens{value: amountsIn[0]}(price, path, address(this), block.timestamp + 100);
-
-            // send MATIC back
-            if (amounts[0] < msg.value) {
-                msg.sender.call{value: msg.value.sub(amounts[0])}("");
-            }
+        // send MATIC back
+        if (amounts[0] < msg.value) {
+            console.log(msg.value.sub(amounts[0]));
+            (bool success,) = sender.call{value: msg.value.sub(amounts[0])}("");
+            require(success);
         }
 
-        uint256 gamefee = price.div(50);
-        uint256 creatorfee = (price.mul(8)).div(100);
-
-        _mint(_msgSender(), tokenId, 1, "");
-
-        //emit TokenBought(tokenId, msg.sender, TokenSupply[tokenId]);
-        emit TokenBought(
-            _msgSender(),
-            tokenId,
-            price,
-            getBuyPrice(tokenId),
-            getSellPrice(tokenId),
-            TokenSupply[tokenId],
-            creatorfee,
-            gameToken.balanceOf(address(this)),
-            address(creatorID)
-        );
-        gameToken.transferByContract(address(this), GAMEFEE_RECEIVER, gamefee);
-        gameToken.transferByContract(
-            address(this),
-            address(creatorID),
-            creatorfee
-        );
+        _buyNFT(tokenId, price, sender);
     }
 
-    function buyNFTwithERC20(uint256 tokenId, uint256 maxPrice, address asset) public {
-        require(mintingActive, "minting is not active");
-        require(
-            block.timestamp > saleStarts[tokenId] && saleStarts[tokenId] > 0,
-            "sale has not started yet"
-        );
-        require(userLatestBlock[_msgSender()] < block.number);
-        userLatestBlock[_msgSender()] = block.number;
+    function buyNFTwithERC20(uint256 tokenId, uint256 maxPrice, address[] calldata path) public nonReentrant() beforeBuy(tokenId) {
+        require(path.length > 1 && path[path.length - 1] == address(gameToken), "invalid path");
 
-        uint256 creatorID = tokenId / baseTokenDecimals;
+        address sender = _msgSender();
         uint256 price = getBuyPrice(tokenId);
-        require(price > 0 && price <= maxPrice, "invalid price");
-        TokenSupply[tokenId] += 1;
 
-        {
-            address[] memory path = new address[](3);
-            path[0] = asset;
-            path[1] = quick;
-            path[2] = address(gameToken);
+        uint256[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
+        require(amountsIn[0] > 0 && amountsIn[0] <= maxPrice, "invalid price");
+        require(iERC20(path[0]).transferFrom(sender, address(this), amountsIn[0]));
+        require(iERC20(path[0]).approve(address(uniswapRouter), amountsIn[0]));
 
-            uint256[] memory amountsIn = uniswapRouter.getAmountsIn(price, path);
-            iERC20(path[0]).transferFrom(msg.sender, address(this), amountsIn[0]);
-            iERC20(path[0]).approve(address(uniswapRouter), amountsIn[0]);
+        uint256[] memory amounts = uniswapRouter.swapTokensForExactTokens(price, amountsIn[0], path, address(this), block.timestamp + 100);
 
-            uint256[] memory amounts = uniswapRouter.swapTokensForExactTokens(price, amountsIn[0], path, address(this), block.timestamp + 100);
-
-            // send ERC20 back
-            if (amounts[0] < amountsIn[0]) {
-                iERC20(path[0]).transferFrom(address(this), msg.sender, amountsIn[0].sub(amounts[0]));
-            }
+        // send ERC20 back
+        if (amounts[0] < amountsIn[0]) {
+            require(iERC20(path[0]).transferFrom(address(this), sender, amountsIn[0].sub(amounts[0])));
         }
 
-        uint256 gamefee = price.div(50);
-        uint256 creatorfee = (price.mul(8)).div(100);
-
-        _mint(_msgSender(), tokenId, 1, "");
-
-        //emit TokenBought(tokenId, msg.sender, TokenSupply[tokenId]);
-        emit TokenBought(
-            _msgSender(),
-            tokenId,
-            price,
-            getBuyPrice(tokenId),
-            getSellPrice(tokenId),
-            TokenSupply[tokenId],
-            creatorfee,
-            gameToken.balanceOf(address(this)),
-            address(creatorID)
-        );
-        gameToken.transferByContract(address(this), GAMEFEE_RECEIVER, gamefee);
-        gameToken.transferByContract(
-            address(this),
-            address(creatorID),
-            creatorfee
-        );
+        _buyNFT(tokenId, price, sender);
     }
 
     function burn(uint256 tokenId) public {
         require(burningActive, "burning is not active");
         require(
-            balanceOf(msg.sender, tokenId) >= 1,
+            balanceOf(_msgSender(), tokenId) >= 1,
             "sender must have at least one token"
         );
         uint256 price = getSellPrice(tokenId);
-        TokenSupply[tokenId] -= 1;
+        tokenSupply[tokenId] -= 1;
         _burn(_msgSender(), tokenId, 1);
         emit TokenBurned(
             _msgSender(),
@@ -428,34 +325,37 @@ contract BondingSale is NFTbase {
             price,
             getBuyPrice(tokenId),
             getSellPrice(tokenId),
-            TokenSupply[tokenId],
+            tokenSupply[tokenId],
             gameToken.balanceOf(address(this))
         );
         gameToken.transferByContract(address(this), _msgSender(), price);
     }
 
-    function _beforeTokenTransfer(
-        address operator,
-        address from,
-        address to,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
-    ) internal override {
-        if (to != address(0)) {
-            for (uint256 i = 0; i < amounts.length; ++i) {
-                require(amounts[i] == 1, "Amount should be 1");
-            }
-            if (from != address(0)) {
-                for (uint256 i = 0; i < ids.length; ++i) {
-                    require(
-                        balanceOf(to, ids[i]) == 0,
-                        "to_address should own 0 of each"
-                    );
-                }
-            }
-        }
-        super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
+    function _buyNFT(uint256 tokenId, uint256 price, address sender) internal {
+        uint256 creatorID = tokenId / baseTokenDecimals;
+        uint256 gamefee = price.div(50);
+        uint256 creatorfee = gamefee.mul(4);
+
+        tokenSupply[tokenId] += 1;
+        _mint(sender, tokenId, 1, "");
+
+        emit TokenBought(
+            sender,
+            tokenId,
+            price,
+            getBuyPrice(tokenId),
+            getSellPrice(tokenId),
+            tokenSupply[tokenId],
+            creatorfee,
+            gameToken.balanceOf(address(this)),
+            address(creatorID)
+        );
+        gameToken.transferByContract(address(this), feeReceiver, gamefee);
+        gameToken.transferByContract(
+            address(this),
+            address(creatorID),
+            creatorfee
+        );
     }
 }
 

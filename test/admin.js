@@ -51,7 +51,7 @@ describe("Admin function test", () => {
       [workerMetaTransactions.address, FacetCutAction.Add, getSelectors(workerMetaTransactions)]
     ]
     const BondingSale = await ethers.getContractFactory("BondingSale");
-    sale = await BondingSale.deploy(diamondCut, [game.address, admin.address, accounts[9]]);
+    sale = await BondingSale.deploy(diamondCut, [game.address, admin.address, accounts[9], feeReceiver]);
     await sale.deployed();
   
     metaTxWithSaleAddress = new ethers.Contract(sale.address, WorkerMetaTransactions.interface, ethers.provider)
@@ -73,12 +73,16 @@ describe("Admin function test", () => {
 
   it("MetadataAdmin can change uri (and someone with no roles cannot)", async function(){
     let tokenID = 1
+    let tokenUri = "tokenUri"
+    let baseUri = "https://test.com/"
 
-    await base.setURI("new uri", tokenID)
-    await base.setBaseURI("new uri")
+    await base.setURI(tokenUri, tokenID)
+    await base.setBaseURI(baseUri)
 
-    await expect(base.connect(signers[1]).setURI("new uri", tokenID)).to.be.reverted
-    await expect(base.connect(signers[1]).setBaseURI("new uri")).to.be.reverted
+    expect(await base.uri(tokenID)).to.be.equal(baseUri + tokenUri)
+
+    await expect(base.connect(signers[1]).setURI(tokenUri, tokenID)).to.be.reverted
+    await expect(base.connect(signers[1]).setBaseURI(baseUri)).to.be.reverted
   })
 
   it("GlobalAdmin can change metadata admin (and other roles cannot)", async function(){
@@ -117,8 +121,8 @@ describe("Admin function test", () => {
 
     let tokenID = await sale.getTokenID(creatorId, token)
 
-    await sale.CreateToken(creatorId, "json data", curve, multiplier)
-    await sale.SetTokenOnSaleDate(tokenID, currentTimeStamp)
+    await sale.createToken(creatorId, "json data", curve, multiplier)
+    await sale.setTokenOnSaleDate(tokenID, currentTimeStamp)
 
     let initPrice = await sale.getPrintPrice(tokenID, 1)
 

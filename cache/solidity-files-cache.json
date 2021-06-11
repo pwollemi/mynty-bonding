@@ -44,8 +44,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/Admin.sol": {
-      "lastModificationDate": 1623122597000,
-      "contentHash": "e8c73e353c1e1a06d0485ec4d023b678",
+      "lastModificationDate": 1623351941000,
+      "contentHash": "b83912b95beb86722fa8ecc0cb2a8670",
       "sourceName": "contracts/Admin.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -78,8 +78,7 @@
         }
       },
       "imports": [
-        "./AccessControl.sol",
-        "hardhat/console.sol"
+        "./AccessControl.sol"
       ],
       "versionPragmas": [
         ">=0.6.0 <0.8.0"
@@ -2936,60 +2935,6 @@
         "console"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/BondingSale.sol": {
-      "lastModificationDate": 1623121073000,
-      "contentHash": "a11dfbf4d4ec42fa03bcc824d7e03a8b",
-      "sourceName": "contracts/BondingSale.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/iGAME_ERC20.sol",
-        "./interfaces/iGAME_Game.sol",
-        "./interfaces/iGAME_Master.sol",
-        "./interfaces/IUniswapV2Router02.sol",
-        "./interfaces/IDiamondCut.sol",
-        "./interfaces/IDiamondLoupe.sol",
-        "./interfaces/IERC173.sol",
-        "./libraries/LibDiamond.sol",
-        "./NFTbase.sol",
-        "./openzeppelin/contracts/math/SafeMath.sol",
-        "hardhat/console.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "BondingSale"
-      ]
-    },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol": {
       "lastModificationDate": 1620848051000,
       "contentHash": "ad7bc13ea82f3f9dca31d215410467c2",
@@ -3163,8 +3108,8 @@
       ]
     },
     "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/WorkerMetaTransactions.sol": {
-      "lastModificationDate": 1623120781000,
-      "contentHash": "472dcbc4cc09df3c8692005581e11017",
+      "lastModificationDate": 1623144052000,
+      "contentHash": "161d3d89b8e093eb06b4451bbfe8c3a2",
       "sourceName": "contracts/WorkerMetaTransactions.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -3199,8 +3144,7 @@
       "imports": [
         "./NetworkAgnostic.sol",
         "./interfaces/iLocalContract.sol",
-        "./libraries/LibDiamond.sol",
-        "hardhat/console.sol"
+        "./libraries/LibDiamond.sol"
       ],
       "versionPragmas": [
         "^0.7.0"
@@ -4451,6 +4395,61 @@
       ],
       "artifacts": [
         "ERC1155"
+      ]
+    },
+    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/BondingSale.sol": {
+      "lastModificationDate": 1623404418000,
+      "contentHash": "0a617b6f2edc0a1b67da935eca05d792",
+      "sourceName": "contracts/BondingSale.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/iGAME_ERC20.sol",
+        "./interfaces/iGAME_Game.sol",
+        "./interfaces/iGAME_Master.sol",
+        "./interfaces/IUniswapV2Router02.sol",
+        "./interfaces/IDiamondCut.sol",
+        "./interfaces/IDiamondLoupe.sol",
+        "./interfaces/IERC173.sol",
+        "./libraries/LibDiamond.sol",
+        "./NFTbase.sol",
+        "./openzeppelin/contracts/math/SafeMath.sol",
+        "./openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "BondingSale"
       ]
     }
   }
