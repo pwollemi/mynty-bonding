@@ -45,13 +45,19 @@ function getSelectors (contract) {
   return selectors
 }
 
+// WARNING: This deploys from the flattened files (BondedNFT.sol and WorkerMetaTX.sol)
+// To update flattened files, run "npm run flatten", then clean out the SPDX identifiers and pragmas, then copy the code
+// into BondedNFT.sol and WorkerMetaTX.sol (the flattener does not automatically overwrite those files)
+const metaTxArtifact = isMumbai ? "WorkerMetaTx" : "WorkerMetaTransactions";
+const bondedNFTArtifact = isMumbai ? "BondedNFT" : "BondingSale";
+
 async function main() {
-  const WorkerMetaTransactions = await ethers.getContractFactory("WorkerMetaTx");
+  const WorkerMetaTransactions = await ethers.getContractFactory(metaTxArtifact);
   const workerMetaTransactions = await WorkerMetaTransactions.deploy();
   await workerMetaTransactions.deployed();
   console.log("WorkerMetaTransactions address:", workerMetaTransactions.address);
 
-  const BondingSale = await ethers.getContractFactory("BondedNFT");
+  const BondingSale = await ethers.getContractFactory(bondedNFTArtifact);
   const bondingSale = await BondingSale.deploy(erc20Address, gameDataAddress, masterAddress, feeAddress);
   await bondingSale.deployed();
   await bondingSale.setFacet(workerMetaTransactions.address, FacetCutAction.Add, getSelectors(workerMetaTransactions));

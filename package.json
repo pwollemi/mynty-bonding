@@ -13,7 +13,7 @@
     "coverage": "npm run build && npx hardhat coverage --temp artifacts --network coverage",
     "deploy-mumbai": "npx hardhat run --network matic_mumbai scripts/deploy.js",
     "deploy-mainnet": "npx hardhat run --network matic_mainnet scripts/deploy.js",
-    "flatten": "npx hardhat flatten contracts/WorkerMetaTransactions.sol > WMT_flat.sol && npx hardhat flatten contracts/bondingSale.sol > BS_flat.sol"
+    "flatten": "npx hardhat flatten contracts/WorkerMetaTransactions.sol > flat/WMT_flat.sol && npx hardhat flatten contracts/bondingSale.sol > flat/BS_flat.sol"
   },
   "repository": {
     "type": "git",
