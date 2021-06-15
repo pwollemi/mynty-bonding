@@ -14,7 +14,7 @@ import "./NFTbase.sol";
 import "./openzeppelin/contracts/math/SafeMath.sol";
 import "./openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-import "hardhat/console.sol";
+//import "hardhat/console.sol";
 
 /// @title GameCreditsBondedNFTS
 /// @author Paul Barclay, Daniel Lee
@@ -281,7 +281,7 @@ contract BondingSale is NFTbase, ReentrancyGuard {
 
         // send MATIC back
         if (amounts[0] < msg.value) {
-            console.log(msg.value.sub(amounts[0]));
+            //console.log(msg.value.sub(amounts[0]));
             (bool success,) = sender.call{value: msg.value.sub(amounts[0])}("");
             require(success);
         }

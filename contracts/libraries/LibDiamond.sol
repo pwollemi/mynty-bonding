@@ -4,7 +4,7 @@ pragma experimental ABIEncoderV2;
 
 import "../interfaces/iGAME_Master.sol";
 import "../interfaces/IDiamondCut.sol";
-import "hardhat/console.sol";
+//import "hardhat/console.sol";
 
 library LibDiamond {
     bytes32 constant DIAMOND_STORAGE_POSITION = keccak256("diamond.standard.diamond.storage");
