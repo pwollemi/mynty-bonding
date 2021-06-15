@@ -10,7 +10,10 @@
     "lint": "npx solhint contracts/*.sol && npx eslint . && npx markdownlint --ignore node_modules **/*.md",
     "format": "prettier --check \"contracts/**/*.sol\" \"**/*.ts\" \"**/*.md\" \"**/*.yml\"",
     "test": "npx hardhat test",
-    "coverage": "npm run build && npx hardhat coverage --temp artifacts --network coverage"
+    "coverage": "npm run build && npx hardhat coverage --temp artifacts --network coverage",
+    "deploy-mumbai": "npx hardhat run --network matic_mumbai scripts/deploy.js",
+    "deploy-mainnet": "npx hardhat run --network matic_mainnet scripts/deploy.js",
+    "flatten": "npx hardhat flatten contracts/WorkerMetaTransactions.sol > WMT_flat.sol && npx hardhat flatten contracts/bondingSale.sol > BS_flat.sol"
   },
   "repository": {
     "type": "git",

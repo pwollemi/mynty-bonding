@@ -12,6 +12,7 @@ const ROPSTEN_PRIVATE_KEY =
   process.env.ROPSTEN_PRIVATE_KEY ||
   "0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3"; // well known private key
 const { ETHERSCAN_API_KEY } = process.env;
+const mnemonic = process.env["WORKER_SEED"];
 
 module.exports = {
   defaultNetwork: "hardhat",
@@ -34,7 +35,7 @@ module.exports = {
       url: 'http://127.0.0.1:8545/',
       timeout: 3000000,
     },
-    ropsten: {
+    /*ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_API_KEY}`,
       accounts: [process.env.ACCOUNT],
     },
@@ -43,6 +44,26 @@ module.exports = {
       url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
       accounts: [process.env.ACCOUNT],
       chainId: 5,
+      timeout: 3000000
+    },*/
+    matic_mumbai: {
+      url: `https://rpc-mumbai.matic.today`,
+      accounts: {
+        mnemonic: mnemonic,
+        initialIndex: 0,
+        count: 1
+      },
+      chainId: 80001,
+      timeout: 3000000
+    },
+    matic_mainnet: {
+      url: `https://rpc-mainnet.matic.network`,
+      accounts: {
+        mnemonic: mnemonic,
+        initialIndex: 0,
+        count: 1
+      },
+      chainId: 137,
       timeout: 3000000
     },
     coverage: {
