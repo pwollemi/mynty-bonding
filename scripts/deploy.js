@@ -21,6 +21,9 @@ const mumbai_quick_testtoken = "0x7aD20222E855CD854B15364f55896599eBbC769B";
 const mumbai_usdc_testtoken = "0xA0fb4A353B60B6Ef6ef9BA87F4B09680605a7932";
 const mumbai_usdt_testtoken = "0xD7De69D7e1ecf87f8dE45E017f7C9fDf24F14d8E";
 
+// DEPLOYED WorkerMetaTransactions:    0x6e6d713364A151EedAc47738723ddfB34AB07A84
+// DEPLOYED BondingSale:               0xAdEdf50F693f03D8bfE73e67C7D4Af06d782e803
+
 const mumbai_addresses = [mumbai_game_erc20, mumbai_game_game, mumbai_game_master, mumbai_fee_receiver];
 
 // Addresses for testnet
@@ -28,11 +31,13 @@ const mainnet_uniswap_router = "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff"
 const mainnet_game_erc20 = "0x8d1566569d5b695d44a9a234540f68D393cDC40D"
 const mainnet_game_game =  "0x1d01438aa932e95e31b2585e3e27b855e6f380f7"
 const mainnet_game_master = "0x2550aa5c84edb92a66125a85527c151923be35e1"
-const mainnet_fee_receiver = "0x0"
-const mainnet_addresses = [mainnet_game_erc20, mainnet_game_game, mainnet_game_master, mainnet_fee_receiver];
+const mainnet_fee_receiver = mainnet_game_erc20;
 
 // Select addresses based on target network
-const maticAddresses = isMumbai ? mumbai_addresses : mainnet_addresses;
+const erc20Address = isMumbai ? mumbai_game_erc20 : mainnet_game_erc20;
+const gameDataAddress = isMumbai ? mumbai_game_game : mainnet_game_game;
+const masterAddress = isMumbai ? mumbai_game_master : mainnet_game_master;
+const feeAddress = erc20Address;
 const routerAddress = isMumbai ? mumbai_uniswap_router : mainnet_uniswap_router;
 
 function getSelectors (contract) {
@@ -41,17 +46,15 @@ function getSelectors (contract) {
 }
 
 async function main() {
-  const WorkerMetaTransactions = await ethers.getContractFactory("WorkerMetaTransactions");
+  const WorkerMetaTransactions = await ethers.getContractFactory("WorkerMetaTx");
   const workerMetaTransactions = await WorkerMetaTransactions.deploy();
   await workerMetaTransactions.deployed();
   console.log("WorkerMetaTransactions address:", workerMetaTransactions.address);
 
-  const diamondCut = [
-    [workerMetaTransactions.address, FacetCutAction.Add, getSelectors(workerMetaTransactions)]
-  ]
-  const BondingSale = await ethers.getContractFactory("BondingSale");
-  const bondingSale = await BondingSale.deploy(diamondCut, maticAddresses);
+  const BondingSale = await ethers.getContractFactory("BondedNFT");
+  const bondingSale = await BondingSale.deploy(erc20Address, gameDataAddress, masterAddress, feeAddress);
   await bondingSale.deployed();
+  await bondingSale.setFacet(workerMetaTransactions.address, FacetCutAction.Add, getSelectors(workerMetaTransactions));
   await bondingSale.setUniswapRouter(routerAddress);
   console.log("BondingSale address:", bondingSale.address);
 }

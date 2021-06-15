@@ -70,15 +70,6 @@ contract BondingSale is NFTbase, ReentrancyGuard {
         uint256 reserve
     );
 
-    // more arguments are added to this struct
-    // this avoids stack too deep errors
-    struct DiamondArgs {
-        address gameToken;
-        address gameAdmin;
-        address gameMaster;
-        address feeReceiver;
-    }
-
     modifier beforeBuy(uint256 tokenId) {
         require(mintingActive, "minting is not active");
         require(
@@ -90,19 +81,17 @@ contract BondingSale is NFTbase, ReentrancyGuard {
         _;
     }
 
-    constructor(IDiamondCut.FacetCut[] memory _diamondCut, DiamondArgs memory _args)
-        NFTbase("test")
+    constructor(address _gameToken, address _gameAdmin, address _gameMaster, address _feeReceiver)
+        NFTbase("no_url_set")
         payable 
-     {
-        LibDiamond.diamondCut(_diamondCut, address(0), new bytes(0));
-
+    {
         LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
 
         // constructor arguments
-        gameToken = iGAME_ERC20(_args.gameToken);
-        gameAdmin = iGAME_Game(_args.gameAdmin);
-        ds.masterContract = iGAME_Master(_args.gameMaster);
-        feeReceiver = _args.feeReceiver;
+        gameToken = iGAME_ERC20(_gameToken);
+        gameAdmin = iGAME_Game(_gameAdmin);
+        ds.masterContract = iGAME_Master(_gameMaster);
+        feeReceiver = _feeReceiver;
 
         ds.CONTRACT_ERC712_VERSION = "1";
         ds.CONTRACT_ERC712_NAME = "GAME Bonded NFTs";
@@ -136,6 +125,19 @@ contract BondingSale is NFTbase, ReentrancyGuard {
                     return(0, returndatasize())
                 }
         }
+    }
+
+    function setFacet(address _facetAddress, IDiamondCut.FacetCutAction _action, bytes4[] memory _functionSelectors) public isGlobalAdmin() {
+        IDiamondCut.FacetCut memory cut1 = IDiamondCut.FacetCut(
+            {
+                facetAddress: _facetAddress,
+                action: _action,
+                functionSelectors: _functionSelectors
+            }
+        );
+        IDiamondCut.FacetCut[] memory cuts = new IDiamondCut.FacetCut[](1);
+        cuts[0] = cut1;
+        LibDiamond.diamondCut(cuts, address(0), new bytes(0));
     }
 
     function setUniswapRouter(address uniswapRouter_) public isGlobalAdmin() {

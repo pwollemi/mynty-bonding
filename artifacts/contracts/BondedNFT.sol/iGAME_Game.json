@@ -1,0 +1,264 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "iGAME_Game",
+  "sourceName": "contracts/BondedNFT.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "burnToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "set_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "card_",
+          "type": "uint256"
+        }
+      ],
+      "name": "createTokenFromCard",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tradeLockTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fixedXp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "gameAdmins",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "gameOperators",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "set_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "card_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getCardLoyaltyPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "set_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "card_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getCardPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "admin_",
+          "type": "address"
+        }
+      ],
+      "name": "isGameAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "sender_",
+          "type": "address"
+        }
+      ],
+      "name": "isOperatorOrMinion",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isMinion_",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "game_",
+          "type": "uint256"
+        }
+      ],
+      "name": "isValidCaller",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "isValid",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "erc721Contract_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "erc20Contract_",
+          "type": "address"
+        }
+      ],
+      "name": "linkContracts",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

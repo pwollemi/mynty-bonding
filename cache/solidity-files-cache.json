@@ -1,10 +1,56 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/cryptography/MerkleProof.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "44bd823687d58263d3b1da555235f93e",
-      "sourceName": "contracts/openzeppelin/contracts/cryptography/MerkleProof.sol",
+    "/Users/paulbarclay/bondingcontracts/contracts/AccessControl.sol": {
+      "lastModificationDate": 1623182140955,
+      "contentHash": "292a0c37041912398187ec5a17c55dbd",
+      "sourceName": "contracts/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/contracts/utils/EnumerableSet.sol",
+        "./openzeppelin/contracts/utils/Address.sol",
+        "./Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableSet.sol": {
+      "lastModificationDate": 1620063405828,
+      "contentHash": "7d5806dec94de00ddcfb1e9fdd6c9545",
+      "sourceName": "contracts/openzeppelin/contracts/utils/EnumerableSet.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -40,11 +86,95 @@
         ">=0.6.0 <0.8.0"
       ],
       "artifacts": [
-        "MerkleProof"
+        "EnumerableSet"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/Admin.sol": {
-      "lastModificationDate": 1623351941000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1620063405827,
+      "contentHash": "72d77402f6854b7ccf9af282e805f292",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/Context.sol": {
+      "lastModificationDate": 1620063405785,
+      "contentHash": "9b848c8d3591d5c693539a4fd417750e",
+      "sourceName": "contracts/Context.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/Admin.sol": {
+      "lastModificationDate": 1623684207094,
       "contentHash": "b83912b95beb86722fa8ecc0cb2a8670",
       "sourceName": "contracts/Admin.sol",
       "solcConfig": {
@@ -87,180 +217,8 @@
         "Admin"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/access/AccessControl.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "80fba54514bd6969409886d7f3d9ec78",
-      "sourceName": "contracts/openzeppelin/contracts/access/AccessControl.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../utils/EnumerableSet.sol",
-        "../utils/Address.sol",
-        "../GSN/Context.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "AccessControl"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableSet.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "7d5806dec94de00ddcfb1e9fdd6c9545",
-      "sourceName": "contracts/openzeppelin/contracts/utils/EnumerableSet.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "EnumerableSet"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "72d77402f6854b7ccf9af282e805f292",
-      "sourceName": "contracts/openzeppelin/contracts/utils/Address.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.2 <0.8.0"
-      ],
-      "artifacts": [
-        "Address"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/Context.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "2adbd82f6d055a4751566d4671512b03",
-      "sourceName": "contracts/openzeppelin/contracts/GSN/Context.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Context"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/NFTbase.sol": {
-      "lastModificationDate": 1623121777000,
+    "/Users/paulbarclay/bondingcontracts/contracts/NFTbase.sol": {
+      "lastModificationDate": 1623182140958,
       "contentHash": "959ea15a10765ad441c1123b4df084ce",
       "sourceName": "contracts/NFTbase.sol",
       "solcConfig": {
@@ -305,58 +263,8 @@
         "NFTbase"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
-      "lastModificationDate": 1621010303000,
-      "contentHash": "fe158250582bffc8fe748b4be5f42024",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./IERC1155.sol",
-        "./IERC1155MetadataURI.sol",
-        "./IERC1155Receiver.sol",
-        "../../GSN/Context.sol",
-        "../../introspection/ERC165.sol",
-        "../../math/SafeMath.sol",
-        "../../utils/Address.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC1155"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1620063405829,
       "contentHash": "32edba478e719cc27c3ec096284a44d6",
       "sourceName": "contracts/openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
@@ -397,8 +305,58 @@
         "Strings"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/ERC1155.sol": {
+      "lastModificationDate": 1623182140957,
+      "contentHash": "e033ad8d01e3d71a0a11376c790020d3",
+      "sourceName": "contracts/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "./openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
+        "./openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+        "./Context.sol",
+        "./openzeppelin/contracts/introspection/ERC165.sol",
+        "./openzeppelin/contracts/math/SafeMath.sol",
+        "./openzeppelin/contracts/utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1620063405821,
       "contentHash": "cb9dc62067a205eeab4f390c72c7fe14",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155.sol",
       "solcConfig": {
@@ -441,8 +399,8 @@
         "IERC1155"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1620063405821,
       "contentHash": "9a313e25e2a837a50f7ae87017539457",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
       "solcConfig": {
@@ -485,8 +443,8 @@
         "IERC1155MetadataURI"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1620063405821,
       "contentHash": "27af002e8fc1118d099c99fc8852bb73",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
       "solcConfig": {
@@ -529,8 +487,8 @@
         "IERC1155Receiver"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165.sol": {
-      "lastModificationDate": 1620848066000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165.sol": {
+      "lastModificationDate": 1623182140970,
       "contentHash": "c4e36d65c84a6af02f25cb08c9b2f149",
       "sourceName": "contracts/openzeppelin/contracts/introspection/ERC165.sol",
       "solcConfig": {
@@ -573,8 +531,8 @@
         "ERC165"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/math/SafeMath.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1620063405813,
       "contentHash": "4d29a22b28b7ec0e89c3cdf1c5e72b83",
       "sourceName": "contracts/openzeppelin/contracts/math/SafeMath.sol",
       "solcConfig": {
@@ -615,8 +573,8 @@
         "SafeMath"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC165.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC165.sol": {
+      "lastModificationDate": 1620063405811,
       "contentHash": "0d62a8380952235f135dae91590f90a3",
       "sourceName": "contracts/openzeppelin/contracts/introspection/IERC165.sol",
       "solcConfig": {
@@ -657,8 +615,712 @@
         "IERC165"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1620848246000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/ERC777.sol": {
+      "lastModificationDate": 1623182140979,
+      "contentHash": "05de5b0668042f0f1c222a01c4cbb4da",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/ERC777.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./IERC777.sol",
+        "./IERC777Recipient.sol",
+        "./IERC777Sender.sol",
+        "../../token/ERC20/IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol",
+        "../../introspection/IERC1820Registry.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC777"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/Context.sol": {
+      "lastModificationDate": 1620063405790,
+      "contentHash": "2adbd82f6d055a4751566d4671512b03",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/Context.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777.sol": {
+      "lastModificationDate": 1620063405826,
+      "contentHash": "5833aafefffbdbdb5f5ee567a3f51b86",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC777"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol": {
+      "lastModificationDate": 1620063405826,
+      "contentHash": "c611b2349e7afbb03e4fd314878861e0",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC777Recipient"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol": {
+      "lastModificationDate": 1620063405826,
+      "contentHash": "c59a76b8a23eaef6f259de54f672d59e",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC777Sender"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1620063405823,
+      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol": {
+      "lastModificationDate": 1620063405812,
+      "contentHash": "820888c202bc007f6112423ee95b9cf0",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC1820Registry"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol": {
+      "lastModificationDate": 1620063405823,
+      "contentHash": "1d275c09f45d34743142f399a40258a1",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../math/SafeMath.sol",
+        "../../utils/Arrays.sol",
+        "../../utils/Counters.sol",
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Snapshot"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Arrays.sol": {
+      "lastModificationDate": 1620063405827,
+      "contentHash": "1dbebf76b7e090e7b226ed3fcc29058b",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Arrays.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../math/Math.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Arrays"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1620063405827,
+      "contentHash": "304a56eb1322144704fb39f8c7e6d722",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1623182140976,
+      "contentHash": "4c045c216cb669cb2c6595fcc2fcf532",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/math/Math.sol": {
+      "lastModificationDate": 1620063405812,
+      "contentHash": "e5c844515b04deabacef7eb872abc384",
+      "sourceName": "contracts/openzeppelin/contracts/math/Math.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol": {
+      "lastModificationDate": 1623182140977,
+      "contentHash": "f9eda2d55ca425bafc4eefaeaab16535",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Capped"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol": {
+      "lastModificationDate": 1620063405823,
+      "contentHash": "42c0638e45b2c33154488610fe3091fe",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./ERC20.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Pausable"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Pausable.sol": {
+      "lastModificationDate": 1623182140980,
+      "contentHash": "607201f886bce5f6739e755f0f3b69e7",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol": {
+      "lastModificationDate": 1620063405825,
+      "contentHash": "46f79ddd76e77a7c5bf841b830d0ed1e",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./ERC721.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC721Pausable"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1623182140979,
       "contentHash": "c1982a24c36ae3659d24c8ab01bc4853",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
@@ -711,8 +1373,8 @@
         "ERC721"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "b7983b35319221315a13595768746bdf",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
@@ -755,8 +1417,8 @@
         "IERC721"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "370e7a48f316401b5063bcb604843e1b",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
       "solcConfig": {
@@ -799,8 +1461,8 @@
         "IERC721Metadata"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "eaebc3874248c26f6ea0b13b9a140a94",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol",
       "solcConfig": {
@@ -843,8 +1505,8 @@
         "IERC721Enumerable"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1620063405825,
       "contentHash": "fad0b3f4424bdbb4b35467b29ea8d334",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
       "solcConfig": {
@@ -885,8 +1547,8 @@
         "IERC721Receiver"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableMap.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/EnumerableMap.sol": {
+      "lastModificationDate": 1620063405828,
       "contentHash": "8f02d41c25552d7894bdd98db412b9b0",
       "sourceName": "contracts/openzeppelin/contracts/utils/EnumerableMap.sol",
       "solcConfig": {
@@ -927,1380 +1589,8 @@
         "EnumerableMap"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "46f79ddd76e77a7c5bf841b830d0ed1e",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Pausable.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./ERC721.sol",
-        "../../utils/Pausable.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC721Pausable"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Pausable.sol": {
-      "lastModificationDate": 1620848250000,
-      "contentHash": "607201f886bce5f6739e755f0f3b69e7",
-      "sourceName": "contracts/openzeppelin/contracts/utils/Pausable.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../GSN/Context.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Pausable"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "42c0638e45b2c33154488610fe3091fe",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Pausable.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./ERC20.sol",
-        "../../utils/Pausable.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC20Pausable"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1620848265000,
-      "contentHash": "4c045c216cb669cb2c6595fcc2fcf532",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../GSN/Context.sol",
-        "./IERC20.sol",
-        "../../math/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC20"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/IERC20.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IERC20"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "1d275c09f45d34743142f399a40258a1",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Snapshot.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../math/SafeMath.sol",
-        "../../utils/Arrays.sol",
-        "../../utils/Counters.sol",
-        "./ERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC20Snapshot"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Arrays.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "1dbebf76b7e090e7b226ed3fcc29058b",
-      "sourceName": "contracts/openzeppelin/contracts/utils/Arrays.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../math/Math.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Arrays"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Counters.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "304a56eb1322144704fb39f8c7e6d722",
-      "sourceName": "contracts/openzeppelin/contracts/utils/Counters.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../math/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Counters"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/math/Math.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "e5c844515b04deabacef7eb872abc384",
-      "sourceName": "contracts/openzeppelin/contracts/math/Math.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Math"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/ERC777.sol": {
-      "lastModificationDate": 1620914705000,
-      "contentHash": "05de5b0668042f0f1c222a01c4cbb4da",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/ERC777.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../GSN/Context.sol",
-        "./IERC777.sol",
-        "./IERC777Recipient.sol",
-        "./IERC777Sender.sol",
-        "../../token/ERC20/IERC20.sol",
-        "../../math/SafeMath.sol",
-        "../../utils/Address.sol",
-        "../../introspection/IERC1820Registry.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC777"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "5833aafefffbdbdb5f5ee567a3f51b86",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IERC777"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "c611b2349e7afbb03e4fd314878861e0",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Recipient.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IERC777Recipient"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "c59a76b8a23eaef6f259de54f672d59e",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC777/IERC777Sender.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IERC777Sender"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "820888c202bc007f6112423ee95b9cf0",
-      "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Registry.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IERC1820Registry"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol": {
-      "lastModificationDate": 1620914646000,
-      "contentHash": "d2982a4ffa1c383b3bb695ecb414cb26",
-      "sourceName": "contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./Proxy.sol",
-        "../utils/Address.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "UpgradeableProxy"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/Proxy.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "a6f1021015ca14abd4852d6a1e22861c",
-      "sourceName": "contracts/openzeppelin/contracts/proxy/Proxy.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Proxy"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol": {
-      "lastModificationDate": 1620914659000,
-      "contentHash": "939f1e9c3505e2190db118f1a411f999",
-      "sourceName": "contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./UpgradeableProxy.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "TransparentUpgradeableProxy"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "1fb4daec0de5a54ffe01e92fc9cc5aa4",
-      "sourceName": "contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../access/Ownable.sol",
-        "./TransparentUpgradeableProxy.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ProxyAdmin"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1620848198000,
-      "contentHash": "727b77a156fcd81dbf7ad6642f3d6e4f",
-      "sourceName": "contracts/openzeppelin/contracts/access/Ownable.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../GSN/Context.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Ownable"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/Escrow.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "ff1d5619edddf81b163071835903272d",
-      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/Escrow.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../math/SafeMath.sol",
-        "../../access/Ownable.sol",
-        "../../utils/Address.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Escrow"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/PullPayment.sol": {
-      "lastModificationDate": 1620848208000,
-      "contentHash": "e0a3ef3ee5ff9fbd4b1c33570f881038",
-      "sourceName": "contracts/openzeppelin/contracts/payment/PullPayment.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./escrow/Escrow.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.2 <0.8.0"
-      ],
-      "artifacts": [
-        "PullPayment"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "aa3e8c91094948828e236ec0a5603e58",
-      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./Escrow.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ConditionalEscrow"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol": {
-      "lastModificationDate": 1620848214000,
-      "contentHash": "fbda4818faf2541255f22a73ed875c86",
-      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./ConditionalEscrow.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "RefundEscrow"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol": {
-      "lastModificationDate": 1620848443000,
-      "contentHash": "a399dc9c13358928cca1c3b79cd91534",
-      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./GSNRecipient.sol",
-        "../math/SafeMath.sol",
-        "../access/Ownable.sol",
-        "../token/ERC20/SafeERC20.sol",
-        "../token/ERC20/ERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "GSNRecipientERC20Fee",
-        "__unstable__ERC20Owned"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipient.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "b1c354497eceaa86f2f253502d5693b9",
-      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipient.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./IRelayRecipient.sol",
-        "./IRelayHub.sol",
-        "./Context.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "GSNRecipient"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "33e22842646d746e5c4124c2fdc051aa",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./IERC20.sol",
-        "../../math/SafeMath.sol",
-        "../../utils/Address.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "SafeERC20"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "0bf08baf48262eb41bc206529963621d",
-      "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IRelayRecipient"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayHub.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "3d76829bda93b091eafa44820d8a7596",
-      "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayHub.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IRelayHub"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol": {
-      "lastModificationDate": 1620848243000,
-      "contentHash": "ed253360a8cea04f7ca4a204d97d2ca2",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./SafeERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "TokenTimelock"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol": {
-      "lastModificationDate": 1620848487000,
-      "contentHash": "65c1e99539df01b82b4a0582210f4706",
-      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./GSNRecipient.sol",
-        "../cryptography/ECDSA.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "GSNRecipientSignature"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/cryptography/ECDSA.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "06d35974124c53de900f77f0b35bb077",
-      "sourceName": "contracts/openzeppelin/contracts/cryptography/ECDSA.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ECDSA"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol": {
+      "lastModificationDate": 1620063405824,
       "contentHash": "36eba6b896e5b04a5a71f02ce01087fe",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Burnable.sol",
       "solcConfig": {
@@ -2344,8 +1634,8 @@
         "ERC721Burnable"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol": {
-      "lastModificationDate": 1620914630000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol": {
+      "lastModificationDate": 1623182140973,
       "contentHash": "8e8a776d9e98bc1640844fb8d92d811c",
       "sourceName": "contracts/openzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol",
       "solcConfig": {
@@ -2393,8 +1683,54 @@
         "ERC721PresetMinterPauserAutoId"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol": {
-      "lastModificationDate": 1620914611000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1620063405792,
+      "contentHash": "80fba54514bd6969409886d7f3d9ec78",
+      "sourceName": "contracts/openzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../utils/EnumerableSet.sol",
+        "../utils/Address.sol",
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol": {
+      "lastModificationDate": 1623182140973,
       "contentHash": "e5d9439156ab897ac9ee7ed9369a6e1f",
       "sourceName": "contracts/openzeppelin/contracts/presets/ERC20PresetMinterPauser.sol",
       "solcConfig": {
@@ -2441,8 +1777,8 @@
         "ERC20PresetMinterPauser"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol": {
+      "lastModificationDate": 1620063405822,
       "contentHash": "f4a80522fa4ffe888e0cfbd5ba56de6b",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Burnable.sol",
       "solcConfig": {
@@ -2486,8 +1822,8 @@
         "ERC20Burnable"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol": {
-      "lastModificationDate": 1620914595000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol": {
+      "lastModificationDate": 1623182140972,
       "contentHash": "8023dc74c374dc81f8682d9bffa32f49",
       "sourceName": "contracts/openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol",
       "solcConfig": {
@@ -2534,8 +1870,58 @@
         "ERC1155PresetMinterPauser"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1623182140975,
+      "contentHash": "fe158250582bffc8fe748b4be5f42024",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol",
+        "./IERC1155MetadataURI.sol",
+        "./IERC1155Receiver.sol",
+        "../../GSN/Context.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol": {
+      "lastModificationDate": 1620063405820,
       "contentHash": "e9e23a67a9d60cd0e6d133323b704b8d",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol",
       "solcConfig": {
@@ -2578,8 +1964,8 @@
         "ERC1155Burnable"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol": {
+      "lastModificationDate": 1620063405820,
       "contentHash": "90de6a370710a61994975feed325e093",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol",
       "solcConfig": {
@@ -2623,8 +2009,8 @@
         "ERC1155Pausable"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol": {
-      "lastModificationDate": 1621623980000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol": {
+      "lastModificationDate": 1623182140976,
       "contentHash": "879277e2ca79d0f4325186f399cf3055",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol",
       "solcConfig": {
@@ -2668,8 +2054,8 @@
         "ERC1155Receiver"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol": {
-      "lastModificationDate": 1620307102000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol": {
+      "lastModificationDate": 1620063405820,
       "contentHash": "ca5387e1c39109d459f2ff8f22deafd4",
       "sourceName": "contracts/openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol",
       "solcConfig": {
@@ -2712,8 +2098,8 @@
         "ERC1155Holder"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/access/TimelockController.sol": {
-      "lastModificationDate": 1620914566000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/access/TimelockController.sol": {
+      "lastModificationDate": 1623182140970,
       "contentHash": "4a2f202db7dd4d4f30e6da434084f180",
       "sourceName": "contracts/openzeppelin/contracts/access/TimelockController.sol",
       "solcConfig": {
@@ -2757,8 +2143,8 @@
         "TimelockController"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/payment/PaymentSplitter.sol": {
-      "lastModificationDate": 1620914577000,
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/PaymentSplitter.sol": {
+      "lastModificationDate": 1623182140971,
       "contentHash": "f95b50b2d9d20ef8d7a47596a3088f5c",
       "sourceName": "contracts/openzeppelin/contracts/payment/PaymentSplitter.sol",
       "solcConfig": {
@@ -2802,9 +2188,851 @@
         "PaymentSplitter"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/NetworkAgnostic.sol": {
-      "lastModificationDate": 1622843492000,
-      "contentHash": "7ec40ce7aac9a9b17d1c2cee53130a9f",
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipient.sol": {
+      "lastModificationDate": 1620063405790,
+      "contentHash": "b1c354497eceaa86f2f253502d5693b9",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IRelayRecipient.sol",
+        "./IRelayHub.sol",
+        "./Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "GSNRecipient"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol": {
+      "lastModificationDate": 1620063405791,
+      "contentHash": "0bf08baf48262eb41bc206529963621d",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IRelayRecipient"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/IRelayHub.sol": {
+      "lastModificationDate": 1620063405791,
+      "contentHash": "3d76829bda93b091eafa44820d8a7596",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/IRelayHub.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IRelayHub"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol": {
+      "lastModificationDate": 1623182140969,
+      "contentHash": "65c1e99539df01b82b4a0582210f4706",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientSignature.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./GSNRecipient.sol",
+        "../cryptography/ECDSA.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "GSNRecipientSignature"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/cryptography/ECDSA.sol": {
+      "lastModificationDate": 1620063405810,
+      "contentHash": "06d35974124c53de900f77f0b35bb077",
+      "sourceName": "contracts/openzeppelin/contracts/cryptography/ECDSA.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ECDSA"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol": {
+      "lastModificationDate": 1623182140968,
+      "contentHash": "a399dc9c13358928cca1c3b79cd91534",
+      "sourceName": "contracts/openzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./GSNRecipient.sol",
+        "../math/SafeMath.sol",
+        "../access/Ownable.sol",
+        "../token/ERC20/SafeERC20.sol",
+        "../token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "GSNRecipientERC20Fee",
+        "__unstable__ERC20Owned"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1623182140969,
+      "contentHash": "727b77a156fcd81dbf7ad6642f3d6e4f",
+      "sourceName": "contracts/openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
+      "lastModificationDate": 1620063405824,
+      "contentHash": "33e22842646d746e5c4124c2fdc051aa",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol": {
+      "lastModificationDate": 1623182140977,
+      "contentHash": "ed253360a8cea04f7ca4a204d97d2ca2",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/TokenTimelock.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "TokenTimelock"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol": {
+      "lastModificationDate": 1620063405818,
+      "contentHash": "1fb4daec0de5a54ffe01e92fc9cc5aa4",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/ProxyAdmin.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../access/Ownable.sol",
+        "./TransparentUpgradeableProxy.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ProxyAdmin"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol": {
+      "lastModificationDate": 1623182140974,
+      "contentHash": "939f1e9c3505e2190db118f1a411f999",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./UpgradeableProxy.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "TransparentUpgradeableProxy"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol": {
+      "lastModificationDate": 1623182140975,
+      "contentHash": "d2982a4ffa1c383b3bb695ecb414cb26",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/UpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Proxy.sol",
+        "../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "UpgradeableProxy"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/Proxy.sol": {
+      "lastModificationDate": 1620063405818,
+      "contentHash": "a6f1021015ca14abd4852d6a1e22861c",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/Proxy.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/Escrow.sol": {
+      "lastModificationDate": 1620063405815,
+      "contentHash": "ff1d5619edddf81b163071835903272d",
+      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/Escrow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../math/SafeMath.sol",
+        "../../access/Ownable.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Escrow"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/PullPayment.sol": {
+      "lastModificationDate": 1623182140971,
+      "contentHash": "e0a3ef3ee5ff9fbd4b1c33570f881038",
+      "sourceName": "contracts/openzeppelin/contracts/payment/PullPayment.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./escrow/Escrow.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "PullPayment"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol": {
+      "lastModificationDate": 1620063405815,
+      "contentHash": "aa3e8c91094948828e236ec0a5603e58",
+      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/ConditionalEscrow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Escrow.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ConditionalEscrow"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol": {
+      "lastModificationDate": 1623182140972,
+      "contentHash": "fbda4818faf2541255f22a73ed875c86",
+      "sourceName": "contracts/openzeppelin/contracts/payment/escrow/RefundEscrow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./ConditionalEscrow.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "RefundEscrow"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol": {
+      "lastModificationDate": 1620063405824,
+      "contentHash": "683d46b8e6a400847a831fc9623233cf",
+      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC721Receiver.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC721Holder"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/mocks/mockToken.sol": {
+      "lastModificationDate": 1623182140966,
+      "contentHash": "eb6c94e2f3ad6a5d196f44eef8213c31",
+      "sourceName": "contracts/mocks/mockToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "mockToken"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/NetworkAgnostic.sol": {
+      "lastModificationDate": 1623701625048,
+      "contentHash": "931459624dd0038c1696852c08d6f5d7",
       "sourceName": "contracts/NetworkAgnostic.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -2839,8 +3067,7 @@
       "imports": [
         "./openzeppelin/contracts/math/SafeMath.sol",
         "./EIP712Base.sol",
-        "./libraries/LibDiamond.sol",
-        "hardhat/console.sol"
+        "./libraries/LibDiamond.sol"
       ],
       "versionPragmas": [
         "^0.7.0"
@@ -2849,8 +3076,8 @@
         "NetworkAgnostic"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/EIP712Base.sol": {
-      "lastModificationDate": 1622842258000,
+    "/Users/paulbarclay/bondingcontracts/contracts/EIP712Base.sol": {
+      "lastModificationDate": 1623182140957,
       "contentHash": "b4bff1264368a7627b6bfefe09c4b50b",
       "sourceName": "contracts/EIP712Base.sol",
       "solcConfig": {
@@ -2893,8 +3120,53 @@
         "EIP712Base"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1622812714000,
+    "/Users/paulbarclay/bondingcontracts/contracts/libraries/LibDiamond.sol": {
+      "lastModificationDate": 1623701625048,
+      "contentHash": "3b310ac3e6065e695215f6aafd466bcd",
+      "sourceName": "contracts/libraries/LibDiamond.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/iGAME_Master.sol",
+        "../interfaces/IDiamondCut.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "LibDiamond"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1623690002036,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
@@ -2935,94 +3207,8 @@
         "console"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol": {
-      "lastModificationDate": 1620848051000,
-      "contentHash": "ad7bc13ea82f3f9dca31d215410467c2",
-      "sourceName": "contracts/interfaces/iGAME_ERC20.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./iERC20.sol"
-      ],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iGAME_ERC20"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_Game.sol": {
-      "lastModificationDate": 1620848029000,
-      "contentHash": "069d609294a2f24c93faf56b3dad6bb6",
-      "sourceName": "contracts/interfaces/iGAME_Game.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iGAME_Game"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_Master.sol": {
-      "lastModificationDate": 1620848036000,
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_Master.sol": {
+      "lastModificationDate": 1620063405787,
       "contentHash": "9f3a802d91cb8f88e33ffec54bc7f789",
       "sourceName": "contracts/interfaces/iGAME_Master.sol",
       "solcConfig": {
@@ -3063,10 +3249,10 @@
         "iGAME_Master"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IUniswapV2Router02.sol": {
-      "lastModificationDate": 1621540335000,
-      "contentHash": "0b40738178248d5a550bcb99b5451260",
-      "sourceName": "contracts/interfaces/IUniswapV2Router02.sol",
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/IDiamondCut.sol": {
+      "lastModificationDate": 1623182140961,
+      "contentHash": "6abb374afdef119cf70d35326f811daa",
+      "sourceName": "contracts/interfaces/IDiamondCut.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -3097,18 +3283,16 @@
           }
         }
       },
-      "imports": [
-        "./IUniswapV2Router01.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
-        ">=0.6.2"
+        "^0.7.0"
       ],
       "artifacts": [
-        "IUniswapV2Router02"
+        "IDiamondCut"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/WorkerMetaTransactions.sol": {
-      "lastModificationDate": 1623144052000,
+    "/Users/paulbarclay/bondingcontracts/contracts/WorkerMetaTransactions.sol": {
+      "lastModificationDate": 1623182140959,
       "contentHash": "161d3d89b8e093eb06b4451bbfe8c3a2",
       "sourceName": "contracts/WorkerMetaTransactions.sol",
       "solcConfig": {
@@ -3153,92 +3337,8 @@
         "WorkerMetaTransactions"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iERC20.sol": {
-      "lastModificationDate": 1622682679000,
-      "contentHash": "3958a5e4aa8d8e2246b4e3aebb850caa",
-      "sourceName": "contracts/interfaces/iERC20.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iERC20"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IUniswapV2Router01.sol": {
-      "lastModificationDate": 1621540331000,
-      "contentHash": "3526c6d8e16194c21ba5df9314876f13",
-      "sourceName": "contracts/interfaces/IUniswapV2Router01.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.2"
-      ],
-      "artifacts": [
-        "IUniswapV2Router01"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iLocalContract.sol": {
-      "lastModificationDate": 1620848026000,
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iLocalContract.sol": {
+      "lastModificationDate": 1620063405787,
       "contentHash": "966bb923e1bcc9938d80ab527c8cb7e1",
       "sourceName": "contracts/interfaces/iLocalContract.sol",
       "solcConfig": {
@@ -3281,1126 +3381,10 @@
         "iLocalContract"
       ]
     },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol": {
-      "lastModificationDate": 1620848239000,
-      "contentHash": "f9eda2d55ca425bafc4eefaeaab16535",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC20/ERC20Capped.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./ERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC20Capped"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/mocks/mockToken.sol": {
-      "lastModificationDate": 1622082482000,
-      "contentHash": "eb6c94e2f3ad6a5d196f44eef8213c31",
-      "sourceName": "contracts/mocks/mockToken.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../openzeppelin/contracts/token/ERC20/ERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "mockToken"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "683d46b8e6a400847a831fc9623233cf",
-      "sourceName": "contracts/openzeppelin/contracts/token/ERC721/ERC721Holder.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./IERC721Receiver.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC721Holder"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iChildToken.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "ca876f8df1e6a48b2b8d7ac4442eec56",
-      "sourceName": "contracts/interfaces/iChildToken.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iChildToken"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iERC721.sol": {
-      "lastModificationDate": 1620848012000,
-      "contentHash": "3a0435a81d84eb5202abe2bdb8803a8c",
-      "sourceName": "contracts/interfaces/iERC721.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iERC721"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iERC721Receiver.sol": {
-      "lastModificationDate": 1620848017000,
-      "contentHash": "7618664094f91961d4014dca9ed57503",
-      "sourceName": "contracts/interfaces/iERC721Receiver.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iERC721Receiver"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iGAME_ERC721.sol": {
-      "lastModificationDate": 1620848032000,
-      "contentHash": "844d13726bfbf3c52a8b2b38b1d99c01",
-      "sourceName": "contracts/interfaces/iGAME_ERC721.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iGAME_ERC721"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/iMinionManager.sol": {
-      "lastModificationDate": 1620848001000,
-      "contentHash": "84dd70531e775d98b502f3aa8f837260",
-      "sourceName": "contracts/interfaces/iMinionManager.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "iMinionManager"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/mocks/mockAdmin.sol": {
-      "lastModificationDate": 1620847971000,
-      "contentHash": "4e58d7c2db8e04c60d79dc306c272209",
-      "sourceName": "contracts/mocks/mockAdmin.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "mockAdmin"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/Context.sol": {
-      "lastModificationDate": 1623122078000,
-      "contentHash": "9b848c8d3591d5c693539a4fd417750e",
-      "sourceName": "contracts/Context.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "Context"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165Checker.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "33e1e632b2a4fc45f845e42a99bc56a4",
-      "sourceName": "contracts/openzeppelin/contracts/introspection/ERC165Checker.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.2 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC165Checker"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "a44e936347d0c6d6aeb7b0acf404d175",
-      "sourceName": "contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./IERC1820Implementer.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC1820Implementer"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "663251cfa9462cad6003a81bc876c938",
-      "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "IERC1820Implementer"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/math/SignedSafeMath.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "159169e078460f380436878421b73431",
-      "sourceName": "contracts/openzeppelin/contracts/math/SignedSafeMath.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "SignedSafeMath"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/proxy/Initializable.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "99bd69d93b6e25a9cdf9c04550e1780f",
-      "sourceName": "contracts/openzeppelin/contracts/proxy/Initializable.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.4.24 <0.8.0"
-      ],
-      "artifacts": [
-        "Initializable"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/Create2.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "79d4a7e7426effc35937c12ad475b2dc",
-      "sourceName": "contracts/openzeppelin/contracts/utils/Create2.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "Create2"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol": {
-      "lastModificationDate": 1620848254000,
-      "contentHash": "8610bead2aa403a692a9729f9e8e710b",
-      "sourceName": "contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ReentrancyGuard"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/openzeppelin/contracts/utils/SafeCast.sol": {
-      "lastModificationDate": 1620307102000,
-      "contentHash": "c227dcf457382aabf2d78218f6457799",
-      "sourceName": "contracts/openzeppelin/contracts/utils/SafeCast.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "SafeCast"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/mocks/mockMaster.sol": {
-      "lastModificationDate": 1622996979000,
-      "contentHash": "1b397872ff254aefecd1eea84bae50a8",
-      "sourceName": "contracts/mocks/mockMaster.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "mockMaster"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/libraries/LibDiamond.sol": {
-      "lastModificationDate": 1622689046000,
-      "contentHash": "1bd7f3cf322e91a9f86026b553d4cb39",
-      "sourceName": "contracts/libraries/LibDiamond.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/iGAME_Master.sol",
-        "../interfaces/IDiamondCut.sol",
-        "hardhat/console.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "LibDiamond"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IDiamondCut.sol": {
-      "lastModificationDate": 1622682679000,
-      "contentHash": "6abb374afdef119cf70d35326f811daa",
-      "sourceName": "contracts/interfaces/IDiamondCut.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "IDiamondCut"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IDiamondLoupe.sol": {
-      "lastModificationDate": 1622682679000,
-      "contentHash": "60652a58a25f2e97eabb1b1ef2c02fb4",
-      "sourceName": "contracts/interfaces/IDiamondLoupe.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "IDiamondLoupe"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IERC173.sol": {
-      "lastModificationDate": 1622682679000,
-      "contentHash": "7a33389b8beaab6763d3762fc4127e36",
-      "sourceName": "contracts/interfaces/IERC173.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "IERC173"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/interfaces/IERC165.sol": {
-      "lastModificationDate": 1622682679000,
-      "contentHash": "0071d6b2a3fe441ab722ebbf33b0faf6",
-      "sourceName": "contracts/interfaces/IERC165.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "IERC165"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/AccessControl.sol": {
-      "lastModificationDate": 1622746356000,
-      "contentHash": "292a0c37041912398187ec5a17c55dbd",
-      "sourceName": "contracts/AccessControl.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./openzeppelin/contracts/utils/EnumerableSet.sol",
-        "./openzeppelin/contracts/utils/Address.sol",
-        "./Context.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "AccessControl"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/ERC1155.sol": {
-      "lastModificationDate": 1623121890000,
-      "contentHash": "e033ad8d01e3d71a0a11376c790020d3",
-      "sourceName": "contracts/ERC1155.sol",
-      "solcConfig": {
-        "version": "0.7.3",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./openzeppelin/contracts/token/ERC1155/IERC1155.sol",
-        "./openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
-        "./openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
-        "./Context.sol",
-        "./openzeppelin/contracts/introspection/ERC165.sol",
-        "./openzeppelin/contracts/math/SafeMath.sol",
-        "./openzeppelin/contracts/utils/Address.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC1155"
-      ]
-    },
-    "/Volumes/Work/Crypto/GameCredits/bondingcontracts/contracts/BondingSale.sol": {
-      "lastModificationDate": 1623404418000,
+    "/Users/paulbarclay/bondingcontracts/contracts/bondingSale.sol": {
+      "lastModificationDate": 1623684207094,
       "contentHash": "0a617b6f2edc0a1b67da935eca05d792",
-      "sourceName": "contracts/BondingSale.sol",
+      "sourceName": "contracts/bondingSale.sol",
       "solcConfig": {
         "version": "0.7.3",
         "settings": {
@@ -4444,6 +3428,1190 @@
         "./openzeppelin/contracts/math/SafeMath.sol",
         "./openzeppelin/contracts/utils/ReentrancyGuard.sol",
         "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "BondingSale"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_ERC20.sol": {
+      "lastModificationDate": 1623182140963,
+      "contentHash": "ad7bc13ea82f3f9dca31d215410467c2",
+      "sourceName": "contracts/interfaces/iGAME_ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./iERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_ERC20"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_Game.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "069d609294a2f24c93faf56b3dad6bb6",
+      "sourceName": "contracts/interfaces/iGAME_Game.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_Game"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/IUniswapV2Router02.sol": {
+      "lastModificationDate": 1623182140963,
+      "contentHash": "0b40738178248d5a550bcb99b5451260",
+      "sourceName": "contracts/interfaces/IUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IUniswapV2Router01.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router02"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/IDiamondLoupe.sol": {
+      "lastModificationDate": 1623182140961,
+      "contentHash": "60652a58a25f2e97eabb1b1ef2c02fb4",
+      "sourceName": "contracts/interfaces/IDiamondLoupe.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IDiamondLoupe"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/IERC173.sol": {
+      "lastModificationDate": 1623182140962,
+      "contentHash": "7a33389b8beaab6763d3762fc4127e36",
+      "sourceName": "contracts/interfaces/IERC173.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC173"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+      "lastModificationDate": 1623182140980,
+      "contentHash": "8610bead2aa403a692a9729f9e8e710b",
+      "sourceName": "contracts/openzeppelin/contracts/utils/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iERC20.sol": {
+      "lastModificationDate": 1620063405786,
+      "contentHash": "3958a5e4aa8d8e2246b4e3aebb850caa",
+      "sourceName": "contracts/interfaces/iERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC20"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/IUniswapV2Router01.sol": {
+      "lastModificationDate": 1623182140962,
+      "contentHash": "3526c6d8e16194c21ba5df9314876f13",
+      "sourceName": "contracts/interfaces/IUniswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router01"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iChildToken.sol": {
+      "lastModificationDate": 1620063405786,
+      "contentHash": "ca876f8df1e6a48b2b8d7ac4442eec56",
+      "sourceName": "contracts/interfaces/iChildToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iChildToken"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/IERC165.sol": {
+      "lastModificationDate": 1623182140962,
+      "contentHash": "0071d6b2a3fe441ab722ebbf33b0faf6",
+      "sourceName": "contracts/interfaces/IERC165.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iERC721.sol": {
+      "lastModificationDate": 1620063405786,
+      "contentHash": "3a0435a81d84eb5202abe2bdb8803a8c",
+      "sourceName": "contracts/interfaces/iERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC721"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iERC721Receiver.sol": {
+      "lastModificationDate": 1620063405786,
+      "contentHash": "7618664094f91961d4014dca9ed57503",
+      "sourceName": "contracts/interfaces/iERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iERC721Receiver"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iGAME_ERC721.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "844d13726bfbf3c52a8b2b38b1d99c01",
+      "sourceName": "contracts/interfaces/iGAME_ERC721.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iGAME_ERC721"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/interfaces/iMinionManager.sol": {
+      "lastModificationDate": 1620063405787,
+      "contentHash": "84dd70531e775d98b502f3aa8f837260",
+      "sourceName": "contracts/interfaces/iMinionManager.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "iMinionManager"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/mocks/mockAdmin.sol": {
+      "lastModificationDate": 1623182140965,
+      "contentHash": "4e58d7c2db8e04c60d79dc306c272209",
+      "sourceName": "contracts/mocks/mockAdmin.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "mockAdmin"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/mocks/mockMaster.sol": {
+      "lastModificationDate": 1623182140965,
+      "contentHash": "1b397872ff254aefecd1eea84bae50a8",
+      "sourceName": "contracts/mocks/mockMaster.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "mockMaster"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/cryptography/MerkleProof.sol": {
+      "lastModificationDate": 1620063405810,
+      "contentHash": "44bd823687d58263d3b1da555235f93e",
+      "sourceName": "contracts/openzeppelin/contracts/cryptography/MerkleProof.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "MerkleProof"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC165Checker.sol": {
+      "lastModificationDate": 1620063405811,
+      "contentHash": "33e1e632b2a4fc45f845e42a99bc56a4",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/ERC165Checker.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC165Checker"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol": {
+      "lastModificationDate": 1620063405811,
+      "contentHash": "a44e936347d0c6d6aeb7b0acf404d175",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC1820Implementer.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC1820Implementer"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol": {
+      "lastModificationDate": 1620063405812,
+      "contentHash": "663251cfa9462cad6003a81bc876c938",
+      "sourceName": "contracts/openzeppelin/contracts/introspection/IERC1820Implementer.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC1820Implementer"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/math/SignedSafeMath.sol": {
+      "lastModificationDate": 1620063405813,
+      "contentHash": "159169e078460f380436878421b73431",
+      "sourceName": "contracts/openzeppelin/contracts/math/SignedSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SignedSafeMath"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/proxy/Initializable.sol": {
+      "lastModificationDate": 1620063405817,
+      "contentHash": "99bd69d93b6e25a9cdf9c04550e1780f",
+      "sourceName": "contracts/openzeppelin/contracts/proxy/Initializable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.24 <0.8.0"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/Create2.sol": {
+      "lastModificationDate": 1620063405827,
+      "contentHash": "79d4a7e7426effc35937c12ad475b2dc",
+      "sourceName": "contracts/openzeppelin/contracts/utils/Create2.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Create2"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/openzeppelin/contracts/utils/SafeCast.sol": {
+      "lastModificationDate": 1620063405829,
+      "contentHash": "c227dcf457382aabf2d78218f6457799",
+      "sourceName": "contracts/openzeppelin/contracts/utils/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/BondedNFT.sol": {
+      "lastModificationDate": 1623729781687,
+      "contentHash": "0be372398ab62de52d7e28b2c9135945",
+      "sourceName": "contracts/BondedNFT.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "AccessControl",
+        "Address",
+        "Admin",
+        "BondedNFT",
+        "Context",
+        "ERC1155",
+        "ERC165",
+        "EnumerableSet",
+        "IDiamondCut",
+        "IDiamondLoupe",
+        "IERC1155",
+        "IERC1155MetadataURI",
+        "IERC1155Receiver",
+        "IERC165",
+        "IERC173",
+        "IUniswapV2Router01",
+        "IUniswapV2Router02",
+        "LibDiamond",
+        "NFTbase",
+        "ReentrancyGuard",
+        "SafeMath",
+        "Strings",
+        "iERC20",
+        "iGAME_ERC20",
+        "iGAME_Game",
+        "iGAME_Master"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/WorkerMetaTx.sol": {
+      "lastModificationDate": 1623703387205,
+      "contentHash": "7dddba90fe75fd6a711479d301a042c5",
+      "sourceName": "contracts/WorkerMetaTx.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EIP712Base",
+        "IDiamondCut",
+        "LibDiamond",
+        "NetworkAgnostic",
+        "SafeMath",
+        "WorkerMetaTx",
+        "iGAME_Master",
+        "iLocalContract"
+      ]
+    },
+    "/Users/paulbarclay/bondingcontracts/contracts/BondingSale.sol": {
+      "lastModificationDate": 1623729781694,
+      "contentHash": "5baa713e7d8dc1752c09965d2261f64d",
+      "sourceName": "contracts/BondingSale.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/iGAME_ERC20.sol",
+        "./interfaces/iGAME_Game.sol",
+        "./interfaces/iGAME_Master.sol",
+        "./interfaces/IUniswapV2Router02.sol",
+        "./interfaces/IDiamondCut.sol",
+        "./interfaces/IDiamondLoupe.sol",
+        "./interfaces/IERC173.sol",
+        "./libraries/LibDiamond.sol",
+        "./NFTbase.sol",
+        "./openzeppelin/contracts/math/SafeMath.sol",
+        "./openzeppelin/contracts/utils/ReentrancyGuard.sol"
       ],
       "versionPragmas": [
         ">=0.6.0 <0.8.0"
